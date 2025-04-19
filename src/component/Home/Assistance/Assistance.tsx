@@ -3,7 +3,6 @@ import React from 'react';
 import './Assistance.css';
 import { GoDotFill } from 'react-icons/go';
 import { LuCircleArrowLeft, LuCircleArrowRight } from 'react-icons/lu';
-import TopToBottomReveal from '../TopToBottomReveal';
 import LeftToRightReveal from '../LeftToRightReveal';
 import RightToLeftReveal from '../RightToLeftReveal';
 import { images } from '@/data/assets';

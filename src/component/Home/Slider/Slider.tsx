@@ -6,7 +6,7 @@ import { images } from '@/data/assets';
 
 interface CardData {
   color: string;
-  image: any; // You can replace `any` with `StaticImageData` if you import with `next/image`
+  image: string; // You can replace `any` with `StaticImageData` if you import with `next/image`
   name: string;
 }
 
