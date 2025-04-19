@@ -43,7 +43,9 @@ const Home = () => {
           <TopToBottomReveal>
             <div>
               <h2 className='about-title'>About <span style={{ color: "var(--primary-color)" }}>Housing Quest</span></h2>
-              <p className='about-description'>With over 25 years of experience, Housing Quest has been at the forefront of Dubai's luxury real estate sector. We specialize in connecting discerning buyers with the city’s most iconic properties, offering unparalleled expertise in property management, buying, selling, and leasing high-end properties.</p>
+              <p className='about-description'>
+                {"With over 25 years of experience, Housing Quest has been at the forefront of Dubai's luxury real estate sector. We specialize in connecting discerning buyers with the city’s most iconic properties, offering unparalleled expertise in property management, buying, selling, and leasing high-end properties."}
+              </p>
             </div>
           </TopToBottomReveal>
 

@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef, useEffect, RefObject } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const useInView = (options?: IntersectionObserverInit) => {
   const [isInView, setIsInView] = useState(false);
