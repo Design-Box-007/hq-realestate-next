@@ -1,0 +1,123 @@
+.hero-section{
+    min-height: 100vh;
+    margin-bottom: 60px;    
+}
+
+.header-menu{
+    position: relative;
+}
+
+.header-menu-items {
+    position: absolute;
+    top: 40px;
+    left: -70px;
+    background-color: var(--black-color);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-20px); /* Initial position */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    z-index: -1; /* Prevent it from being clickable when inactive */
+}
+
+.header-menu-items.active {
+    opacity: 1; /* Fully visible when active */
+    transform: translateY(0); /* Move to its original position */
+    z-index: 1000; /* Bring it above other elements */
+}
+
+.header-menu:hover .header-menu-items{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-title{
+    font-size: 18px;
+    color: var(--white-color);
+    text-align: center;
+    font-weight: 500;
+}
+
+.hero-subtitle{
+    font-size: 60px;
+    font-weight: 500;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.hero-card{
+    border-radius: 40px;
+    background-color: var(--black-lite-color);
+    min-width: 50px;
+    max-height: 56px;
+    color: var(--white-color);
+    font-size: 20px;
+    padding: 8px 16px 8px 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-image-container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.hero-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.hero-explore{
+    font-size: 16px;
+    margin: 0;
+    color: white;
+    text-decoration: none;
+}
+
+.hero-image-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.hero-download-card{
+    background-color: var(--black-lite-color);
+    color: var(--white-color);
+    border-radius: 12px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+@media screen and (max-width: 768px){
+    .hero-title{
+        font-size: 24px;
+    }
+    .hero-subtitle{
+        font-size: 60px;
+    }
+    .hero-card{
+        font-size: 16px;
+    }
+    .hero-explore{
+        font-size: 12px;
+    }
+}

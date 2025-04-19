@@ -1,0 +1,160 @@
+
+.assistance{
+    margin-bottom: 60px;
+}
+
+.assistance-title{
+    font-weight: 500;
+    font-size: 64px;
+    color: var(--white-color);
+    margin-bottom: 20px;
+}
+
+.assistance-description{
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--white-color);
+}
+
+.assistance-form-input{
+    background: transparent;
+    border: none;
+    border: 1px solid var(--white-color);
+    padding: 12px;
+    border-radius: 6px;
+    max-width: 230px;
+}
+
+.assistance-form{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.assistance-button{
+    background-color: var(--white-color);
+    padding: 10px 20px;
+    border: none;
+    color: var(--black-color);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.assistance-grid-wrapper {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    display: flex; /* Allows scrolling on smaller devices */
+    padding-bottom: 10px; /* Optional: For spacing under the scroll bar */
+    scroll-snap-type: x mandatory; /* Smooth scrolling experience */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.assistance-grid-wrapper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.assistance-grid {
+    display: flex;
+    
+     /* Snap alignment for items */
+}
+
+
+.assistance-grid-item {
+    position: relative;
+  flex: 0 0 auto; /* Prevents the container from shrinking */
+  width: 100%; /* You can adjust the width as needed */
+  max-width: 400px; /* Maximum width for each image container */
+  margin-right: 10px; /* Space between images */
+}
+
+.assistance-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+.assistance-grid-item-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: var(--white-color);
+}
+
+.assistance-name{
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+
+}
+
+.assistance-position{
+    font-weight: 500;
+    font-size: 10px;
+    margin: 0;
+}
+
+.assistance-line{
+    border-bottom: 1px solid var(--white-color);
+}
+
+.scroll-text{
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
+    width: 80px;
+}
+
+
+.scroll-line {
+    border-bottom: 1px solid var(--white-color);
+    width: 100%;
+    height: 1px;
+    position: relative;
+}
+
+.scroll-line::before,
+.scroll-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px; /* Adjust the size of the dot */
+    height: 6px; /* Adjust the size of the dot */
+    background-color: var(--white-color);
+    border-radius: 50%;
+}
+
+.scroll-line::before {
+    left: 0; /* Adjust the position of the left dot */
+}
+
+.scroll-line::after {
+    right: 0; /* Adjust the position of the right dot */
+}
+
+
+@media  screen and (max-width: 768px) {
+    
+     /* Adjustments for smaller screens */
+     .assistance-title{
+      font-size: 32px;
+     }
+
+}

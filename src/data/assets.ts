@@ -1,0 +1,48 @@
+const images = {
+    RoundedImage1: "/about/RoundedImage1.png",
+    RoundedImage2: "/about/RoundedImage2.png",
+    RoundedImage3: "/about/RoundedImage3.png",
+    aboutImage: "/aboutImage.png",
+    PeopleImage1: "/assistance/PeopleImage1.png",
+    PeopleImage2: "/assistance/PeopleImage2.png",
+    PeopleImage3: "/assistance/PeopleImage3.png",
+    StrategicLocation: "/explore/StrategicLocation.png",
+    HeroImage: "/HeroImage.png",
+    HousingQuestPNG: "/Housing-Quest-PNG.png",
+    callIcon: "/icons/callIcon.png",
+    downloadIcon: "/icons/downloadIcon.png",
+    exploreImage: "/icons/exploreImage.png",
+    facebookIcon: "/icons/facebookIcon.png",
+    homeIcon: "/icons/homeIcon.png",
+    instagramIcon: "/icons/instagramIcon.png",
+    linkedinIcon: "/icons/linkedinIcon.png",
+    locationIcon: "/icons/locationIcon.png",
+    mapIcon: "/icons/mapIcon.png",
+    mediumIcon: "/icons/mediumIcon.png",
+    menuIcon: "/icons/menuIcon.png",
+    rentalIcon: "/icons/rentalIcon.png",
+    starsIcon: "/icons/starsIcon.png",
+    taxIcon: "/icons/taxIcon.png",
+    whatsappIcon: "/icons/whatsappIcon.png",
+    xIcon: "/icons/xIcon.png",
+    logo: "/logo.png",
+    logoSvg: "/logo.svg",
+    mapImage: "/mapImage.png",
+    OfficeImage: "/OfficeImage.png",
+    profile1: "/profiles/profile1.png",
+    profile2: "/profiles/profile2.png",
+    profile3: "/profiles/profile3.png",
+    profile4: "/profiles/profile4.png",
+    DownTownDubai: "/property/DownTownDubai.jpg",
+    MaritimeDubai: "/property/MaritimeDubai.jpg",
+    PalmJumeirah: "/property/PalmJumeirah.jpg",
+    PropertyImage1: "/property/PropertyImage1.png",
+    PropertyImage2: "/property/PropertyImage2.png",
+    PropertyImage3: "/property/PropertyImage3.png"
+}
+
+const pdf = {
+    housingQuestPitchPdf: "/housing-quest-pitch.pdf",
+}
+
+export { images, pdf }
