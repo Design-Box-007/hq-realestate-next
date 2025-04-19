@@ -1,5 +1,4 @@
-
-.footer{
+.footer {
     background: var(--black-lite-color);
     padding: 40px 50px;
     border-radius: 16px;
@@ -10,7 +9,14 @@
     gap: 30px;
 }
 
-.footer-author{
+.social-media-icons a img {
+    --size: 20px;
+    width: var(--size);
+    height: var(--size);
+    max-width: var(--size);
+}
+
+.footer-author {
     text-decoration: none;
     color: var(--white-color);
     font-size: 16px;
@@ -18,6 +24,6 @@
 
 @media screen and (max-width: 768px) {
     .footer {
-        flex-wrap: wrap;
+        flex-direction: column;
     }
 }

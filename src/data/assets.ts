@@ -25,7 +25,7 @@ const images = {
     taxIcon: "/icons/taxIcon.png",
     whatsappIcon: "/icons/whatsappIcon.png",
     xIcon: "/icons/xIcon.png",
-    logo: "/logo.png",
+    logo: "/Housing-Quest-PNG.png",
     logoSvg: "/logo.svg",
     mapImage: "/mapImage.png",
     OfficeImage: "/OfficeImage.png",

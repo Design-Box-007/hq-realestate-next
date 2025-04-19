@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         <div className="d-flex text-white align-items-center gap-2">
           {/* <h1 className='logo m-0'>HQ</h1>
               <p className='logo-name m-0'>Housing <br />Quest</p> */}
-          <img src={images.logo} alt="Housing Quest" width={100} height={50} />
+          <img src={images.logo} alt="Housing Quest" className='logo-img' width={100} height={50} />
         </div>
 
         <div className="d-flex gap-2 flex-wrap text-white align-items-center justify-content-evenly w-100">
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           <span style={{ cursor: 'pointer' }} onClick={() => handleScroll('contact')}>Contact</span>
         </div>
 
-        <div className="d-flex align-items-center gap-3">
+        <div className="d-flex align-items-center gap-3 social-media-icons">
           <a href="https://www.instagram.com/housingquest?igsh=MTZscXM4dGs1eG5jcA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
             <img src={images.instagramIcon} alt="Instagram" width={20} height={20} />
           </a>

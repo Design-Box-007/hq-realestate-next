@@ -33,7 +33,7 @@ const HeroSection = () => {
                                     <h1 className='logo m-0'>HQ</h1>
                                     <p className='logo-name m-0'>Housing <br />Quest</p>
                                 </div> */}
-                                <img src={images.logo} alt='Housing Quest' width={100} height={50} />
+                                <img src={images.logo} className='logo-img' alt='Housing Quest' width={100} height={50} />
                             </LeftToRightReveal>
 
                             <div className='d-flex text-white align-items-center gap-2'>
