@@ -38,7 +38,15 @@ const images = {
     PalmJumeirah: "/property/PalmJumeirah.jpg",
     PropertyImage1: "/property/PropertyImage1.png",
     PropertyImage2: "/property/PropertyImage2.png",
-    PropertyImage3: "/property/PropertyImage3.png"
+    PropertyImage3: "/property/PropertyImage3.png",
+    BlogHero : "/blog/blogHero.png",
+    Blog1 : "/blog/blog1.png",
+    Blog2 : "/blog/blog2.png",
+    Blog3 : "/blog/blog3.png",
+    CTAbg : "/common/ctaBg.jpg",
+    AboutHero  : "/about/abouthero.jpg",
+    AboutProfile : "/about/profile.png",
+    About2 : "/about/about2.png",
 }
 
 const pdf = {

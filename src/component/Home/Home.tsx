@@ -12,6 +12,7 @@ import LeftToRightReveal from './LeftToRightReveal'
 import VisibleReveal from './VisibleReveal'
 import CardStack from './Slider/Slider'
 import { images } from '@/data/assets'
+import AboutCard from '../Common/AboutCard'
 
 
 const Home = () => {
@@ -65,36 +66,17 @@ const Home = () => {
             </div>
           </LeftToRightReveal> */}
 
-          <div className='row mt-5'>
-            <div className='col-md-4'>
-              <TopToBottomReveal>
-                <div className='about-card'>
-                  <h4 className='about-card-title'>25+</h4>
-                  <p className='about-card-description'>Years of<br /> Experience</p>
-                </div>
-              </TopToBottomReveal>
-
-            </div>
-            <div className='col-md-4'>
-              <TopToBottomReveal>
-                <div className='about-card'>
-                  <h4 className='about-card-title'>84%</h4>
-                  <p className='about-card-description'>Customer<br />
-                    Satisfaction Rate</p>
-                </div>
-              </TopToBottomReveal>
-
-            </div>
-            <div className='col-md-4'>
-              <TopToBottomReveal>
-                <div className='about-card'>
-                  <h4 className='about-card-title'>324</h4>
-                  <p className='about-card-description'>Exquisite Properties<br />
-                    Ready for your </p>
-                </div>
-              </TopToBottomReveal>
-            </div>
-          </div>
+<div className='row mt-5'>
+      <div className='col-md-4'>
+        <AboutCard title="25+" description="Years of<br />Experience" />
+      </div>
+      <div className='col-md-4'>
+        <AboutCard title="84%" description="Customer<br />Satisfaction Rate" />
+      </div>
+      <div className='col-md-4'>
+        <AboutCard title="324" description="Exquisite Properties<br />Ready for your" />
+      </div>
+    </div>
           <section id='service' className='about-container mt-5'>
             <div className='row' >
               <div className='col-md-6 mb-3' >

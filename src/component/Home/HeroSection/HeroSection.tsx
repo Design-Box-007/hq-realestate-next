@@ -10,6 +10,8 @@ import TopToBottomReveal from '../TopToBottomReveal'
 import RightToLeftReveal from '../RightToLeftReveal'
 
 import { images, pdf } from '@/data/assets'
+import Link from 'next/link';
+import Navbar from '@/component/Common/Navbar';
 
 const HeroSection = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -27,44 +29,7 @@ const HeroSection = () => {
                 <div className='col-md-6'>
                     <div className='d-flex flex-column justify-content-between mb-4' style={{ height: "100vh" }}>
 
-                        <div className='d-flex justify-content-between align-items-start '>
-                            <LeftToRightReveal>
-                                {/* <div className='d-flex text-white align-items-center gap-2'>
-                                    <h1 className='logo m-0'>HQ</h1>
-                                    <p className='logo-name m-0'>Housing <br />Quest</p>
-                                </div> */}
-                                <img src={images.logo} className='logo-img' alt='Housing Quest' width={100} height={50} />
-                            </LeftToRightReveal>
-
-                            <div className='d-flex text-white align-items-center gap-2'>
-                                <LeftToRightReveal>
-
-                                    <span style={{ cursor: "pointer" }} onClick={() => handleScroll('map')}> <img className='icon' src={images.mapIcon} alt='map' /></span>
-                                </LeftToRightReveal>
-
-                                {/* <img className='icon' src={images.MenuIcon} alt='menu' /> */}
-                                <div className='header-menu'>
-                                    <LeftToRightReveal>
-
-                                        <span style={{ cursor: "pointer" }} onClick={() => setShowMenu(!showMenu)}>
-
-                                            {showMenu ? <IoClose size={30} style={{ margin: 0 }} /> : <IoIosMenu size={30} style={{ margin: 0 }} />}
-                                        </span>
-                                    </LeftToRightReveal>
-
-                                    <ul className={`header-menu-items ${showMenu ? 'active' : ''}`}>
-                                        <li style={{ cursor: "pointer", marginBottom: "5px" }} onClick={() => handleScroll('home')}>Home</li>
-                                        <li style={{ cursor: "pointer", marginBottom: "5px" }} onClick={() => handleScroll('about')}>About</li>
-                                        <li style={{ cursor: "pointer", marginBottom: "5px" }} onClick={() => handleScroll('property')}>Property</li>
-                                        <li style={{ cursor: "pointer", marginBottom: "5px" }} onClick={() => handleScroll('service')}>Services</li>
-                                        <li style={{ cursor: "pointer", marginBottom: "5px" }} onClick={() => handleScroll('contact')}>Contact</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-
-                        </div>
-
+                    <Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />
                         <div>
                             <TopToBottomReveal>
 
