@@ -6,7 +6,6 @@ interface HeroSectionProps {
   // Content options
   title?: string;
   subtitle?: string;
-  description?: string;
   
   // Background image options
   backgroundImage: string;
@@ -31,10 +30,9 @@ interface HeroSectionProps {
   contentClassName?: string;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({
+const Hero3: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
-  description,
   backgroundImage,
   overlay = false,
   overlayOpacity = 0.2,
@@ -74,9 +72,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         )}
         {subtitle && (
           <h1 className="display-4 font-medium text-white ">{subtitle}</h1>
-        )}
-         {description && (
-          <p className="text-base font-medium text-white mt-4">{description}</p>
         )}
       </div>
 
@@ -119,4 +114,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection;
+export default Hero3;

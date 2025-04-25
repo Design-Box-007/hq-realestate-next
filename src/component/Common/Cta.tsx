@@ -33,7 +33,7 @@ const CTA: React.FC<CTAProps> = ({
       </Head>
       
       {/* Main Container with mx-2 */}
-      <div className="mx-2 my-4 container-fluid">
+      <div className=" my-4 container-fluid">
         <div className="position-relative overflow-hidden rounded-4 h-100" style={{minHeight: '420px'}}>
           {/* Background Image */}
           <div className="position-absolute top-0 start-0 w-100 h-100">

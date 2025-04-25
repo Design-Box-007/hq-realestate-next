@@ -92,6 +92,7 @@ const Hero: React.FC<HeroProps> = ({
         <ArrowRight size={24} className="text-white" />
       </div> */}
       
+      {/* content section */}
       <div className="text-left flex flex-col gap-3 sm:gap-2 ">
        
         
@@ -146,7 +147,7 @@ const Hero: React.FC<HeroProps> = ({
       </div>
       
       {/* Optional slide indicators */}
-      {slides.length > 1 && (
+      {/* {slides.length > 1 && (
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
           {slides.map((_, index) => (
             <button 
@@ -156,7 +157,7 @@ const Hero: React.FC<HeroProps> = ({
             />
           ))}
         </div>
-      )}
+      )} */}
     </section>
   );
 };

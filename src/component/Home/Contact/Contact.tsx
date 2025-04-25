@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id='contact' className="contact">
+    <section id='contact' className="contact my-5">
       <div className='row'>
         <div className='col-md-8'>
           <LeftToRightReveal>

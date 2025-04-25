@@ -51,6 +51,7 @@ interface NavbarProps {
               { href: '/contact', label: 'Contact' },
               { href: '/blogs', label: 'Blog' },
               { href: '/experts', label: 'Experts' },
+              { href: '/properties', label: 'properties' },
             ].map(({ href, label }) => (
               <li key={label} className='mb-[5px]'>
                 <Link href={href} className=' text-white text-decoration-none hover:text-gray-400 transition-colors duration-200'>

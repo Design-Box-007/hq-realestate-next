@@ -1,3 +1,4 @@
+import { investmentAreasData } from './../component/blog/FeaturedInvestmentAreas';
 import { IconType } from "react-icons";
 
 interface Assets {
@@ -46,14 +47,24 @@ interface Gallery {
 
 
 
-interface Blog {
+ interface Blog {
+    id: string;
     title: string;
     description: string;
     imgSrc: string;
     component: string;
+    excerpt: string;
+    content: string;
+    authorName: string;
     date: string;
     updatedDate: string;
-}
+    slug: string;
+    readTime: string;
+    tags: string[];
+    investmentData?: any; // Add this property (make it optional with ? if needed)
+  }
+
+
 
 interface ContactForm {
     name: string;
@@ -102,3 +113,21 @@ export interface AboutSectionProps {
     features: FeatureCardProps[];
     ctaText?: string;
   }
+  export interface PropertyCardProps {
+    image: string;
+    title: string;
+    propertyType: string;
+    price: string;
+    installmentYears: number;
+    initialPayment: string;
+    completionDate: string;
+    icons: string;
+    contactLinks: {
+      phone?: string;
+      email?: string;
+      whatsapp?: string;
+      linkedin?: string;
+    };
+    
+  }
+  

@@ -1,124 +1,150 @@
 import { Blog } from "@/types";
 import { images } from "./assets";
-
-
-
-
+import { investmentAreasData } from "./featuredinvestment";
 
 export const blogListData: Blog[] = [
     {
+        id: "blog-1",
         title: "Top 5 Property Investment Tips",
         description: "Explore how lighting choices impact interior spaces, enhancing aesthetics and functionality in Dubai's fit-outs.",
         imgSrc: images.Blog1,
         component: "Blog1",
+        excerpt: "Lighting choices can dramatically impact the aesthetics and functionality of interior spaces in Dubai's fit-outs.",
+        content: "Detailed article content about how lighting choices impact interior spaces, focusing on the latest trends and expert advice.",
+        authorName: "John Doe",
         date: "2025-02-01",
-        updatedDate: "2025-02-01"
+        updatedDate: "2025-02-01",
+        slug: "top-5-property-investment-tips",
+        readTime: "5 min read",
+        tags: ["Property Investment", "Interior Design", "Lighting"],
+        investmentData: investmentAreasData.blog1[0] // Downtown Dubai
     },
     {
+        id: "blog-2",
         title: "Top 6 Property Investment Tips",
         description: "Discover the best materials for interior fit-outs in Dubai, from luxurious marble to eco-friendly alternatives.",
         imgSrc: images.Blog2,
         component: "Blog2",
+        excerpt: "From luxurious marble to eco-friendly alternatives, the best materials for interior fit-outs in Dubai are explored in this article.",
+        content: "In this article, we look at the materials that are trending in Dubai's interior fit-out industry, with a focus on sustainability.",
+        authorName: "Jane Smith",
         date: "2025-02-28",
-        updatedDate: "2025-02-28"
+        updatedDate: "2025-02-28",
+        slug: "top-6-property-investment-tips",
+        readTime: "6 min read",
+        tags: ["Property Investment", "Interior Fit-Outs", "Sustainability"],
+        investmentData: investmentAreasData.blog1[1] // Dubai Marina
     },
     {
+        id: "blog-3",
         title: "Top 7 Property Investment Tips",
         description: "Learn how to create immersive retail spaces that attract customers and enhance shopping experiences in Dubai.",
         imgSrc: images.Blog3,
         component: "Blog3",
+        excerpt: "Learn how to design immersive retail spaces that draw customers and create memorable shopping experiences in Dubai.",
+        content: "This article provides strategies and insights on creating retail spaces that not only look great but also attract customers and increase sales.",
+        authorName: "David Harris",
         date: "2025-03-25",
-        updatedDate: "2025-03-25"
+        updatedDate: "2025-03-25",
+        slug: "top-7-property-investment-tips",
+        readTime: "7 min read",
+        tags: ["Retail Design", "Customer Experience", "Property Investment"],
+        investmentData: investmentAreasData.blog1[2] // Business Bay
     },
     {
+        id: "blog-4",
         title: "Top 5 Property Investment Tips",
         description: "Explore how lighting choices impact interior spaces, enhancing aesthetics and functionality in Dubai's fit-outs.",
         imgSrc: images.Blog1,
         component: "Blog14",
+        excerpt: "Lighting choices can dramatically impact the aesthetics and functionality of interior spaces in Dubai's fit-outs.",
+        content: "Detailed article content about how lighting choices impact interior spaces, focusing on the latest trends and expert advice.",
+        authorName: "John Doe",
         date: "2025-02-01",
-        updatedDate: "2025-02-01"
+        updatedDate: "2025-02-01",
+        slug: "top-5-property-investment-tips",
+        readTime: "5 min read",
+        tags: ["Property Investment", "Interior Design", "Lighting"],
+        investmentData: investmentAreasData.blog1[3] // JVC
     },
     {
+        id: "blog-5",
         title: "Top 6 Property Investment Tips",
         description: "Discover the best materials for interior fit-outs in Dubai, from luxurious marble to eco-friendly alternatives.",
         imgSrc: images.Blog2,
         component: "Blog5",
+        excerpt: "From luxurious marble to eco-friendly alternatives, the best materials for interior fit-outs in Dubai are explored in this article.",
+        content: "In this article, we look at the materials that are trending in Dubai's interior fit-out industry, with a focus on sustainability.",
+        authorName: "Jane Smith",
         date: "2025-02-28",
-        updatedDate: "2025-02-28"
+        updatedDate: "2025-02-28",
+        slug: "top-6-property-investment-tips",
+        readTime: "6 min read",
+        tags: ["Property Investment", "Interior Fit-Outs", "Sustainability"],
+        investmentData: investmentAreasData.blog2[0] // Downtown Dubai 2
     },
     {
+        id: "blog-6",
         title: "Top 7 Property Investment Tips",
         description: "Learn how to create immersive retail spaces that attract customers and enhance shopping experiences in Dubai.",
         imgSrc: images.Blog3,
         component: "Blog3",
+        excerpt: "Learn how to design immersive retail spaces that draw customers and create memorable shopping experiences in Dubai.",
+        content: "This article provides strategies and insights on creating retail spaces that not only look great but also attract customers and increase sales.",
+        authorName: "David Harris",
         date: "2025-03-25",
-        updatedDate: "2025-03-25"
+        updatedDate: "2025-03-25",
+        slug: "top-7-property-investment-tips",
+        readTime: "7 min read",
+        tags: ["Retail Design", "Customer Experience", "Property Investment"],
+        investmentData: investmentAreasData.blog2[1] // Dubai Marina 2
     },
     {
+        id: "blog-7",
         title: "Top 5 Property Investment Tips",
         description: "Explore how lighting choices impact interior spaces, enhancing aesthetics and functionality in Dubai's fit-outs.",
         imgSrc: images.Blog1,
         component: "Blog6",
+        excerpt: "Lighting choices can dramatically impact the aesthetics and functionality of interior spaces in Dubai's fit-outs.",
+        content: "Detailed article content about how lighting choices impact interior spaces, focusing on the latest trends and expert advice.",
+        authorName: "John Doe",
         date: "2025-02-01",
-        updatedDate: "2025-02-01"
+        updatedDate: "2025-02-01",
+        slug: "top-5-property-investment-tips",
+        readTime: "5 min read",
+        tags: ["Property Investment", "Interior Design", "Lighting"],
+        investmentData: investmentAreasData.blog2[2] // Business Bay 2
     },
     {
+        id: "blog-8",
         title: "Top 6 Property Investment Tips",
         description: "Discover the best materials for interior fit-outs in Dubai, from luxurious marble to eco-friendly alternatives.",
         imgSrc: images.Blog2,
         component: "Blog7",
+        excerpt: "From luxurious marble to eco-friendly alternatives, the best materials for interior fit-outs in Dubai are explored in this article.",
+        content: "In this article, we look at the materials that are trending in Dubai's interior fit-out industry, with a focus on sustainability.",
+        authorName: "Jane Smith",
         date: "2025-02-28",
-        updatedDate: "2025-02-28"
+        updatedDate: "2025-02-28",
+        slug: "top-6-property-investment-tips",
+        readTime: "6 min read",
+        tags: ["Property Investment", "Interior Fit-Outs", "Sustainability"],
+        investmentData: investmentAreasData.blog2[3] // JVC 2
     },
     {
+        id: "blog-9",
         title: "Top 7 Property Investment Tips",
         description: "Learn how to create immersive retail spaces that attract customers and enhance shopping experiences in Dubai.",
         imgSrc: images.Blog3,
         component: "Blog8",
+        excerpt: "Learn how to design immersive retail spaces that draw customers and create memorable shopping experiences in Dubai.",
+        content: "This article provides strategies and insights on creating retail spaces that not only look great but also attract customers and increase sales.",
+        authorName: "David Harris",
         date: "2025-03-25",
-        updatedDate: "2025-03-25"
+        updatedDate: "2025-03-25",
+        slug: "top-7-property-investment-tips",
+        readTime: "7 min read",
+        tags: ["Retail Design", "Customer Experience", "Property Investment"],
+        investmentData: investmentAreasData.blog1[0] // Using Downtown Dubai again since we ran out of unique areas
     }
-    
-    // {
-    //     title: "Smart Furniture for Small Apartments",
-    //     description: "Explore space-saving furniture solutions designed for compact living areas.",
-    //     imgSrc: images.Blog4,
-    //     component: "DummyBlog"
-
-    // },
-    // {
-    //     title: "Sustainable Interior Design",
-    //     description: "Learn how to incorporate eco-friendly materials and practices into your home decor.",
-    //     imgSrc: images.Blog5,
-    //     component: "DummyBlog"
-
-    // },
-    // {
-    //     title: "Bohemian Style: A Cozy Home Makeover",
-    //     description: "Find out how to achieve a relaxed, artistic, and warm bohemian-style home.",
-    //     imgSrc: images.Blog6,
-    //     component: "DummyBlog"
-
-    // },
-    // {
-    //     title: "Luxury Interior Designs on a Budget",
-    //     description: "Affordable ways to bring a touch of luxury into your home without breaking the bank.",
-    //     imgSrc: images.Blog7,
-    //     component: "DummyBlog"
-
-    // },
-    // {
-    //     title: "The Art of Wall Decor",
-    //     description: "Tips on decorating your walls with art, wallpaper, and creative designs.",
-    //     imgSrc: images.Blog8,
-    //     component: "DummyBlog"
-
-    // },
-    // {
-    //     title: "Modern Kitchen Designs That Inspire",
-    //     description: "Explore trending kitchen designs that blend functionality with aesthetics.",
-    //     imgSrc: images.Blog9,
-    //     component: "DummyBlog"
-
-    // },
 ];

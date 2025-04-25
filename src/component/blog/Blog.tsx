@@ -5,29 +5,25 @@ import { Blog as BlogType } from "@/types";
 import formatToHyphenated from "@/utils/formatPathName";
 import dynamic from "next/dynamic";
 import { useParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import BlogHeader from "./BlogHeader";
+import Navbar from "../Common/Navbar";
+import FeaturedInvestmentAreas, { investmentAreasData } from "./FeaturedInvestmentAreas";
 
-const componentMap = {
-    DummyBlog: dynamic(() => import("@/data/Blogs/DummyBlog")),
-    Blog1: dynamic(() => import("@/data/Blogs/Blog1")),
-    Blog2: dynamic(() => import("@/data/Blogs/Blog2")),
-    Blog3: dynamic(() => import("@/data/Blogs/Blog3")),
-    // Add more if needed
-};
+// Dynamically import the BlogDetailPage component
+const BlogDetailPage = dynamic(() => import("./BlogHeader"), {
+  loading: () => <p>Loading blog...</p>
+});
 
 const Blog = () => {
     const { blogName } = useParams();
 
+    // Find the specific blog data based on the slug
     const blogData = blogListData.find((blog: BlogType) =>
         blogName === formatToHyphenated(blog.title)
     );
 
     if (!blogData) return <>BLOG NOT FOUND</>;
-
-    const BlogComponent = componentMap[blogData.component as keyof typeof componentMap];
-
-    if (!BlogComponent) return <>BLOG NOT FOUND</>;
 
     const structuredData = {
         "@context": "https://schema.org",
@@ -52,17 +48,71 @@ const Blog = () => {
         "dateModified": blogData.updatedDate || blogData.date
     };
 
-    return (
-        <section className='p-[10px] md:p-3 lg:p-5 font-poppins mt-[100px] space-y-10'>
+    const [showMenu, setShowMenu] = useState(false);
+               
+    const handleScroll = (sectionId:string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+    const teamData = [
+     {
+       name: "Pintér Beatrix",
+       image: "/team/team-member-1.jpg",
+       position: "Real Estate Advisor",
+       experience: 7,
+       role: "Co-Admin",
+       contactOptions: {
+         phone: true,
+         mail: true,
+         whatsapp: true
+       }
+     },
+     {
+       name: "Balla Daniella",
+       image: "/team/team-member-2.jpg",
+       position: "Senior Agent",
+       experience: 5,
+       role: "Sales Manager",
+       contactOptions: {
+         phone: false,
+         mail: true,
+         whatsapp: false
+       }
+     },
+     {
+       name: "Kelemen Krisztina",
+       image: "/team/team-member-3.jpg",
+       position: "Property Consultant",
+       experience: 3,
+       role: "Investments",
+       contactOptions: {
+         phone: true,
+         mail: false,
+         whatsapp: true
+       }
+     }
+   ];
+return (
+<div className="container-fluid ">
+<div className="position-relative">
+<div className="position-relative w-100 px-4" style={{ zIndex: 9999 }}>
+
+<Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />
+</div>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
-            <BlogHeader blog={blogData} />
-            {/* <Suspense fallback={<p>Loading blog...</p>}>
-                <BlogComponent />
-            </Suspense> */}
-        </section>
+          
+            {/* Dynamically render the BlogDetailPage component */}
+            <Suspense fallback={<p>Loading blog content...</p>}>
+                <BlogDetailPage blog={blogData} />
+            </Suspense>
+            <FeaturedInvestmentAreas title={investmentAreasData.title} areas={investmentAreasData.areas} />
+        </div>
+        </div>
     );
 };
 
