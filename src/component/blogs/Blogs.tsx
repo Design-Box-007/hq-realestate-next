@@ -9,43 +9,42 @@ import CTA from '../Common/Cta';
 
 
 const Blogs = () => {
-   
-    //    const handleScroll = (sectionId:string) => {
-    //        const section = document.getElementById(sectionId);
-    //        if (section) {
-    //            section.scrollIntoView({ behavior: 'smooth' });
-    //        }
-    //    };
-    return (
-        <section>
-              {/* <Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />     */}
-       
-        <div className="p-[10px] md:p-3 lg:p-5 space-y-10">
-      
-    
-<Hero
-  featured={true}
-  subheading="Featured"
-  heading="Illuminating Ideas: Explore the World of LED Displays"
-  content="Discover insights, trends, and solutions for events, advertising, and beyond."
-  bgImage={images.BlogHero}
-//   onNavigate={''}
-/>
+
+  //    const handleScroll = (sectionId:string) => {
+  //        const section = document.getElementById(sectionId);
+  //        if (section) {
+  //            section.scrollIntoView({ behavior: 'smooth' });
+  //        }
+  //    };
+  return (
+    <section>
+      {/* <Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />     */}
+
+      <div className="p-[10px] md:p-3 lg:p-5 space-y-10">
+
+
+        <Hero
+          featured={true}
+          subheading="Featured"
+          heading="Illuminating Ideas: Explore the World of LED Displays"
+          content="Discover insights, trends, and solutions for events, advertising, and beyond."
+          bgImage={images.BlogHero}
+        />
 
 
 
-            <h4 className='text-[32px] leading-[48px] font-medium font-poppins text-white'>Recent Blogs</h4>
-            <BlogCardGrid blogs={blogListData} />
+        <h4 className='text-[32px] leading-[48px] font-medium font-poppins text-white'>Recent Blogs</h4>
+        <BlogCardGrid blogs={blogListData} />
 
-            <CTA 
-        backgroundImage={images.CTAbg}
-        headline="Helping you find your dream property in Dubai's"
-        ctaText="Start Your Journey"
-        ctaLink="/contact"
-      />
-        </div>
-        </section>
-    )
+        <CTA
+          backgroundImage={images.CTAbg}
+          headline="Helping you find your dream property in Dubai's"
+          ctaText="Start Your Journey"
+          ctaLink="/contact"
+        />
+      </div>
+    </section>
+  )
 }
 
 export default Blogs
