@@ -2,6 +2,9 @@ import React from 'react';
 import { MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { FaArrowRight, FaEnvelope, FaPhone, FaWhatsapp } from 'react-icons/fa';
+import Link from "next/link";
+import formatToHyphenated from "@/utils/formatPathName";
+
 
 // Property Card Props Interface
 interface PropertyCardProps {
@@ -35,6 +38,10 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
 }) => {
   return (
+    <Link 
+    href={`/blogs/${formatToHyphenated(blog.title)}`} 
+    className="block w-full mt-4 text-decoration-none"
+  >
     <div className="rounded-xl overflow-hidden shadow-lg bg-[#222222] text-white border-1 border-[#333333]">
       {/* Property Image */}
       <div className="relative h-96">
@@ -134,6 +141,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
       </div>
     </div>
+    </Link>
   );
 };
 
