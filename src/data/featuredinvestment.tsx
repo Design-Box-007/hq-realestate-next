@@ -35,7 +35,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -59,7 +59,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -83,7 +83,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -133,7 +133,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -157,7 +157,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -181,7 +181,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -231,7 +231,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -255,7 +255,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -279,7 +279,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -329,7 +329,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -353,7 +353,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -377,7 +377,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -427,7 +427,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -451,7 +451,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -475,7 +475,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -525,7 +525,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -549,7 +549,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -573,7 +573,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -623,7 +623,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -647,7 +647,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -671,7 +671,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -721,7 +721,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -745,7 +745,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -769,7 +769,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {
@@ -819,7 +819,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area2",
       title: "Dubai Marina – Waterfront Living with High Demand",
-      image: "/images/dubai-marina.jpg",
+      image: images.AboutHero,
       averageROI: "6-8%",
       features: [
         {
@@ -843,7 +843,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area3",
       title: "Business Bay – A Rising Financial Hub",
-      image: "/images/business-bay.jpg",
+      image: images.AboutHero,
       averageROI: "6.5-7.5%",
       features: [
         {
@@ -867,7 +867,7 @@ export const investmentAreasData: InvestmentAreasDataType = {
     {
       id: "area4",
       title: "Jumeirah Village Circle (JVC) – Affordable & High Yielding",
-      image: "/images/jvc-dubai.jpg",
+      image: images.AboutHero,
       averageROI: "7-9%",
       features: [
         {

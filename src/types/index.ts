@@ -61,7 +61,7 @@ interface Blog {
   slug: string;
   readTime: string;
   tags: string[];
-  investmentData?: InvestmentData; // Add this property (make it optional with ? if needed)
+  investmentData?: InvestmentData[]; // Add this property (make it optional with ? if needed)
 }
 
 
