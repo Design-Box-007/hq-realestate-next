@@ -17,7 +17,7 @@ export const blogListData: Blog[] = [
         slug: "top-5-property-investment-tips",
         readTime: "5 min read",
         tags: ["Property Investment", "Interior Design", "Lighting"],
-        investmentData: investmentAreasData.blog1[0] // Downtown Dubai
+        investmentData: investmentAreasData.blog1 // Downtown Dubai
     },
     {
         id: "blog-2",
@@ -33,7 +33,7 @@ export const blogListData: Blog[] = [
         slug: "top-6-property-investment-tips",
         readTime: "6 min read",
         tags: ["Property Investment", "Interior Fit-Outs", "Sustainability"],
-        investmentData: investmentAreasData.blog1[1] // Dubai Marina
+        investmentData: investmentAreasData.blog2 // Dubai Marina
     },
     {
         id: "blog-3",
@@ -49,7 +49,7 @@ export const blogListData: Blog[] = [
         slug: "top-7-property-investment-tips",
         readTime: "7 min read",
         tags: ["Retail Design", "Customer Experience", "Property Investment"],
-        investmentData: investmentAreasData.blog1[2] // Business Bay
+        investmentData: investmentAreasData.blog3 // Business Bay
     },
     {
         id: "blog-4",
@@ -65,7 +65,7 @@ export const blogListData: Blog[] = [
         slug: "top-5-property-investment-tips",
         readTime: "5 min read",
         tags: ["Property Investment", "Interior Design", "Lighting"],
-        investmentData: investmentAreasData.blog1[3] // JVC
+        investmentData: investmentAreasData.blog4 // JVC
     },
     {
         id: "blog-5",
@@ -81,7 +81,7 @@ export const blogListData: Blog[] = [
         slug: "top-6-property-investment-tips",
         readTime: "6 min read",
         tags: ["Property Investment", "Interior Fit-Outs", "Sustainability"],
-        investmentData: investmentAreasData.blog2[0] // Downtown Dubai 2
+        investmentData: investmentAreasData.blog5 // Downtown Dubai 2
     },
     {
         id: "blog-6",
@@ -97,7 +97,7 @@ export const blogListData: Blog[] = [
         slug: "top-7-property-investment-tips",
         readTime: "7 min read",
         tags: ["Retail Design", "Customer Experience", "Property Investment"],
-        investmentData: investmentAreasData.blog2[1] // Dubai Marina 2
+        investmentData: investmentAreasData.blog6 // Dubai Marina 2
     },
     {
         id: "blog-7",
@@ -113,7 +113,7 @@ export const blogListData: Blog[] = [
         slug: "top-5-property-investment-tips",
         readTime: "5 min read",
         tags: ["Property Investment", "Interior Design", "Lighting"],
-        investmentData: investmentAreasData.blog2[2] // Business Bay 2
+        investmentData: investmentAreasData.blog7 // Business Bay 2
     },
     {
         id: "blog-8",
@@ -129,7 +129,7 @@ export const blogListData: Blog[] = [
         slug: "top-6-property-investment-tips",
         readTime: "6 min read",
         tags: ["Property Investment", "Interior Fit-Outs", "Sustainability"],
-        investmentData: investmentAreasData.blog2[3] // JVC 2
+        investmentData: investmentAreasData.blog8 // JVC 2
     },
     {
         id: "blog-9",
@@ -145,6 +145,6 @@ export const blogListData: Blog[] = [
         slug: "top-7-property-investment-tips",
         readTime: "7 min read",
         tags: ["Retail Design", "Customer Experience", "Property Investment"],
-        investmentData: investmentAreasData.blog1[0] // Using Downtown Dubai again since we ran out of unique areas
+        investmentData: investmentAreasData.blog9 // Using Downtown Dubai again since we ran out of unique areas
     }
 ];
