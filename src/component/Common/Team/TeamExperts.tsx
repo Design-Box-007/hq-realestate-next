@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Urbanist } from 'next/font/google';
 import TeamGrid from './TeamMemberCard';
 import { FaSearch } from 'react-icons/fa';
@@ -26,18 +26,18 @@ interface TeamMemberProps {
 }
 
 // Updated interface for actual team member data structure
-interface TeamMemberData {
-  name: string;
-  position: string;
-  additionalInfo: string;
-  imageSrc: string;
-  contactLinks: {
-    phone?: string;
-    email?: string;
-    whatsapp?: string;
-    linkedin?: string;
-  };
-}
+// interface TeamMemberData {
+//   name: string;
+//   position: string;
+//   additionalInfo: string;
+//   imageSrc: string;
+//   contactLinks: {
+//     phone?: string;
+//     email?: string;
+//     whatsapp?: string;
+//     linkedin?: string;
+//   };
+// }
 
 // Main component props interface
 interface TeamExpertsProps {
@@ -53,7 +53,7 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
   showSearch = false,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
- 
+
   const teamMembers = [
     {
       name: "Pintér Beatrix",
@@ -160,16 +160,16 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
   ];
 
   // Filter team members based on search query
-  const filteredMembers = searchQuery.trim() === '' 
-    ? teamMembers 
+  const filteredMembers = searchQuery.trim() === ''
+    ? teamMembers
     : teamMembers.filter(member => {
-        const searchLower = searchQuery.toLowerCase();
-        return (
-          member.name.toLowerCase().includes(searchLower) || 
-          member.position.toLowerCase().includes(searchLower) ||
-          member.additionalInfo.toLowerCase().includes(searchLower)
-        );
-      });
+      const searchLower = searchQuery.toLowerCase();
+      return (
+        member.name.toLowerCase().includes(searchLower) ||
+        member.position.toLowerCase().includes(searchLower) ||
+        member.additionalInfo.toLowerCase().includes(searchLower)
+      );
+    });
 
   return (
     <section className=" text-white py-4 pb-5 ">
@@ -179,21 +179,21 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
           <span className="bg-warning rounded-circle d-inline-block me-2" style={{ width: '8px', height: '8px' }}></span>
           <span className="small text-white-50">Leadership / Team</span>
         </div>
-        
+
         {/* Main title */}
         <div className="row mb-4">
           <div className="col-12">
             <h1 className={`display-5 fw-bold ${urbanist.className}`}>{title}</h1>
           </div>
         </div>
-        
+
         {/* Description or Search */}
         <div className="row mb-4">
           <div className="col-12">
             {description && (
               <p className="text-white md:text-2xl mb-0">{description}</p>
             )}
-            
+
             {showSearch && (
               <div className="position-relative">
                 <input
@@ -204,20 +204,20 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <span className="position-absolute top-50 end-0 translate-middle-y pe-3">
-                  <FaSearch className='text-black'/>
+                  <FaSearch className='text-black' />
                 </span>
               </div>
             )}
           </div>
         </div>
-        
+
         {/* Pass filtered members to TeamGrid */}
         <TeamGrid members={filteredMembers} />
-        
+
         {/* Show message when no results found */}
         {filteredMembers.length === 0 && (
           <div className="text-center py-5">
-            <p className="text-white-50">No team members found matching "{searchQuery}"</p>
+            <p className="text-white-50">{`No team members found matching ${searchQuery}`}</p>
           </div>
         )}
       </div>

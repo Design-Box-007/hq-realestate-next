@@ -3,14 +3,11 @@ import React from 'react'
 import './HeroSection.css'
 
 import { useState } from 'react';
-import { IoClose } from 'react-icons/io5'
-import { IoIosMenu } from 'react-icons/io'
 import LeftToRightReveal from '../LeftToRightReveal'
 import TopToBottomReveal from '../TopToBottomReveal'
 import RightToLeftReveal from '../RightToLeftReveal'
 
 import { images, pdf } from '@/data/assets'
-import Link from 'next/link';
 import Navbar from '@/component/Common/Navbar';
 
 const HeroSection = () => {

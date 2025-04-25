@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
 import PropertyCard from './PropertyCard';
 import StepNavigation from '../Common/StepNavigation';
-import { PropertyCardProps } from '@/types';
 import { properties } from '@/data/property';
 import PortfolioHeader from '../Common/PortfolioHeader';
 

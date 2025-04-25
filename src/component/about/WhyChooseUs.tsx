@@ -20,7 +20,7 @@ interface WhyChooseUsProps {
   title: string;
   imageSrc: string;
   features: FeatureCardProps[];
-  ctaText?: string;
+  // ctaText?: string;
 }
 
 const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
@@ -28,7 +28,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
   title,
   imageSrc,
   features,
-  ctaText
+  // ctaText
 }) => {
   return (
     <section className="text-white py-6">

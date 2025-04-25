@@ -1,23 +1,21 @@
 'use client';
-import React, { useState } from 'react'
+import React from 'react'
 import BlogCardGrid from './BlogCardGrid'
 import { blogListData } from '@/data/blogs'
 
 import Hero from '../Common/HeroSection/Hero'
 import { images } from '@/data/assets'
-import Navbar from '../Common/Navbar'
 import CTA from '../Common/Cta';
 
 
 const Blogs = () => {
-    const [showMenu, setShowMenu] = useState(false);
    
-       const handleScroll = (sectionId:string) => {
-           const section = document.getElementById(sectionId);
-           if (section) {
-               section.scrollIntoView({ behavior: 'smooth' });
-           }
-       };
+    //    const handleScroll = (sectionId:string) => {
+    //        const section = document.getElementById(sectionId);
+    //        if (section) {
+    //            section.scrollIntoView({ behavior: 'smooth' });
+    //        }
+    //    };
     return (
         <section>
               {/* <Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />     */}

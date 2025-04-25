@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ImageData {
   id: string;
@@ -11,15 +10,15 @@ interface ImageData {
 interface PropertyHeroProps {
   mainImage: ImageData;
   thumbnails: ImageData[];
-  propertyName: string;
-  propertyLocation: string;
+  // propertyName: string;
+  // propertyLocation: string;
 }
 
 export  function PropertyHeroSection({
   mainImage,
   thumbnails,
-  propertyName,
-  propertyLocation
+  // propertyName,
+  // propertyLocation
 }: PropertyHeroProps) {
   const [selectedImage, setSelectedImage] = useState<ImageData>(mainImage);
   const [activeThumbnailIndex, setActiveThumbnailIndex] = useState(0);
@@ -113,8 +112,8 @@ const PropertyPage = () => {
       <PropertyHeroSection 
         mainImage={sampleData.mainImage}
         thumbnails={sampleData.thumbnails}
-        propertyName={sampleData.propertyName}
-        propertyLocation={sampleData.propertyLocation}
+        // propertyName={sampleData.propertyName}
+        // propertyLocation={sampleData.propertyLocation}
       />
     </div>
   );

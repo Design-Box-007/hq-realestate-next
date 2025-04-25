@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({
   ctaLink, 
   ctaStatus = false, 
   bgImage,
-  featured = false,
+  // featured = false,
   onNavigate,
   slides = []
 }) => {
@@ -60,15 +60,15 @@ const Hero: React.FC<HeroProps> = ({
   }];
   
   // Navigation function to move to the next slide
-  const handleNavigation = () => {
-    if (onNavigate) {
-      // If custom navigation is provided, use that
-      onNavigate();
-    } else if (slides.length > 0) {
-      // Otherwise handle internal navigation between slides
-      setCurrentSlideIndex((prev) => (prev + 1) % heroSlides.length);
-    }
-  };
+  // const handleNavigation = () => {
+  //   if (onNavigate) {
+  //     // If custom navigation is provided, use that
+  //     onNavigate();
+  //   } else if (slides.length > 0) {
+  //     // Otherwise handle internal navigation between slides
+  //     setCurrentSlideIndex((prev) => (prev + 1) % heroSlides.length);
+  //   }
+  // };
   
   // Get current slide data
   const currentSlide = heroSlides[currentSlideIndex];

@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from 'react'
-import Navbar from '../Common/Navbar';
+import React from 'react'
 
 import PropertyPage  from './PropertyHero';
 import PropertyInfo  from './PropertyDetailsCard';
@@ -14,14 +13,14 @@ import Contact from '../Home/Contact/Contact';
 
 
 export default function PropertyDetailed() {
-    const [showMenu, setShowMenu] = useState(false);
+    // const [showMenu, setShowMenu] = useState(false);
 
-    const handleScroll = (sectionId: string) => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    };
+    // const handleScroll = (sectionId: string) => {
+    //   const section = document.getElementById(sectionId);
+    //   if (section) {
+    //     section.scrollIntoView({ behavior: 'smooth' });
+    //   }
+    // };
   
     return (
       

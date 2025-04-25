@@ -11,16 +11,16 @@ const urbanist = Urbanist({
   weight: ['400', '500', '600', '700', '800'],
 });
 
-interface TeamMemberProps {
-  imageSrc: string;
-  alt: string;
-}
+// interface TeamMemberProps {
+//   imageSrc: string;
+//   alt: string;
+// }
 
-interface StatProps {
-  value: string;
-  label: string;
-  sublabel: string;
-}
+// interface StatProps {
+//   value: string;
+//   label: string;
+//   sublabel: string;
+// }
 
 
 const AboutSection: React.FC<AboutSectionProps> = ({

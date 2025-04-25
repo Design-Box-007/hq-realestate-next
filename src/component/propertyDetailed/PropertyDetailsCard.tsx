@@ -1,6 +1,6 @@
 // PropertyDetailsCard.tsx
 import React from 'react';
-import { MapPin, Home, Share, Bookmark, Menu, Baby, Waves, ShoppingBag, AirVent, Shield, Car, Dumbbell, Building, PawPrint, Sliders } from 'lucide-react';
+import { MapPin, Home, Share, Bookmark, Baby, Waves, ShoppingBag, AirVent, Shield, Car, Dumbbell, Building, PawPrint, Sliders } from 'lucide-react';
 import ConsultationButton from '../Common/ConsultationBtn';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 

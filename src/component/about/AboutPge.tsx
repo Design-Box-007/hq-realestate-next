@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import Navbar from '@/component/Common/Navbar';
 import HeroSection from '@/component/Common/HeroSection/HeroSection';
 import { images } from '@/data/assets';
@@ -132,7 +130,7 @@ export default function AboutPage() {
       title="Why Clients Choose Housing Quest"
       imageSrc="/about/about3.jpg"
       features={features}
-      ctaText="Leadership / Team"
+      // ctaText="Leadership / Team"
     />
 
      <TeamExperts

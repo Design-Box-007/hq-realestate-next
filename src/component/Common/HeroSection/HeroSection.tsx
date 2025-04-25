@@ -1,46 +1,18 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-interface HeroSectionProps {
-  // Content options
-  title?: string;
-  subtitle?: string;
-  description?: string;
-  
-  // Background image options
-  backgroundImage: string;
-  overlay?: boolean;
-  overlayOpacity?: number;
-  
-  // Position for the external navbar
-  // This helps with proper spacing if navbar is absolutely positioned
-  navbarHeight?: string;
-  
-  // Consultation button
-  showConsultationButton?: boolean;
-  consultationButtonText?: string;
-  consultationIconSrc?: string;
-  consultationLink?: string;
-  
-  // Additional elements
-  additionalElement?: ReactNode;
-  
-  // Custom classes
-  className?: string;
-  contentClassName?: string;
-}
+import { HeroSectionProps } from '@/types';
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
   description,
   backgroundImage,
-  overlay = false,
-  overlayOpacity = 0.2,
+  // overlay = false,
+  // overlayOpacity = 0.2,
   navbarHeight = '80px', // Adjust based on your navbar height
   showConsultationButton = true,
-  consultationButtonText = 'Get Our Consultation',
+  // consultationButtonText = 'Get Our Consultation',
   consultationIconSrc = '/user-icon.png',
   consultationLink = '#',
   additionalElement,
