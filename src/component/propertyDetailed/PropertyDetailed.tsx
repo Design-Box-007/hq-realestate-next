@@ -1,64 +1,58 @@
-"use client";
-import React from 'react'
-
-import PropertyPage  from './PropertyHero';
-import PropertyInfo  from './PropertyDetailsCard';
+import React from 'react';
+import { useParams } from 'next/navigation';
+import PropertyPage from './PropertyHero';
+import  { PropertyDetailsCard } from './PropertyDetailsCard';
 import MapSection from '../Common/MapSection';
 import { images } from '@/data/assets';
 import SimilarProperty from './SimilarProperties';
 import CTA from '../Common/Cta';
 import Contact from '../Home/Contact/Contact';
-
-
-
+import { propertyList } from '@/data/propertyData';
+import formatToHyphenated from "@/utils/formatPathName";
+import { PropertyCardProps as PropertyCardPropsType } from "@/types";
 
 export default function PropertyDetailed() {
-    // const [showMenu, setShowMenu] = useState(false);
+  const { propertyName } = useParams();  // Get the propertyName slug from the URL
 
-    // const handleScroll = (sectionId: string) => {
-    //   const section = document.getElementById(sectionId);
-    //   if (section) {
-    //     section.scrollIntoView({ behavior: 'smooth' });
-    //   }
-    // };
-  
-    return (
-      
-  <div className="container-fluid ">
-  <div className="position-relative">
-    {/* <div className="position-absolute top-1 start-0 w-100 px-4" style={{ zIndex: 9999 }}>
-           <Navbar
-              showMenu={showMenu}
-              setShowMenu={setShowMenu}
-              handleScroll={handleScroll}
-            />
+  // Find the specific property data based on the slug (format to hyphenated title)
+  const propertyData = propertyList.find((property: PropertyCardPropsType) =>
+    propertyName === formatToHyphenated(property.title)
+  );
+
+  // If property not found, display message
+  if (!propertyData) return <>PROPERTY NOT FOUND</>;
+
+  return (
+    <div className="container-fluid">
+      <div className="position-relative">
+        <PropertyPage />  {/* Display the PropertyHero component */}
+        <PropertyDetailsCard property={propertyData} /> {/* Pass the correct propertyData */}
         
-
-          </div> */}
-          <PropertyPage/>
-          <PropertyInfo/>
-          <MapSection
-  mapImage={images.mapImage}
-  officeImage={images.OfficeImage}
-  locationIcon={images.locationIcon}
-  title="Give Us a Visit"
-  addressLines={[
-    '814, Burlington Towers, Business Bay, Dubai UAE',
-    'info@hqrealestates.com',
-    '+971 544040799',
-    '+971 563600699',
-    '044-580777',
-  ]}
-/>
-<SimilarProperty/>
-<CTA
-        backgroundImage={images.CTAbg}
-        headline="Helping you find your dream property in Dubai's"
-        ctaText="Start Your Journey"
-        ctaLink="/contact"
-      />
-      <Contact/>
+        <MapSection
+          mapImage={images.mapImage}
+          officeImage={images.OfficeImage}
+          locationIcon={images.locationIcon}
+          title="Give Us a Visit"
+          addressLines={[
+            '814, Burlington Towers, Business Bay, Dubai UAE',
+            'info@hqrealestates.com',
+            '+971 544040799',
+            '+971 563600699',
+            '044-580777',
+          ]}
+        />
+        
+        <SimilarProperty /> {/* Display similar properties */}
+        
+        <CTA
+          backgroundImage={images.CTAbg}
+          headline="Helping you find your dream property in Dubai"
+          ctaText="Start Your Journey"
+          ctaLink="/contact"
+        />
+        
+        <Contact /> {/* Display contact information */}
+      </div>
     </div>
-    </div>
-  )
+  );
 }
