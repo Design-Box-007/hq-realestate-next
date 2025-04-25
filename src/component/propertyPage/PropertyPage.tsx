@@ -8,8 +8,6 @@ import { images } from '@/data/assets';
 import Contact from '../Home/Contact/Contact';
 
 
-
-
 export default function PropertyPage() {
   const [showMenu, setShowMenu] = useState(false);
 

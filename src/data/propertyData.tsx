@@ -1,347 +1,233 @@
 // data/propertyData.ts
 
-export const propertyList = [
+import { PropertyCardProps } from "@/types";
+import { images } from "./assets";
+
+export const propertyList: PropertyCardProps[] = [
   {
-    id: "burj-khalifa-residences",
-    mainImage: {
-      id: "main-1",
-      url: "/property/property.jpg",
-      alt: "Burj Khalifa skyline"
-    },
-    thumbnails: [
-      { id: "thumb-1", url: "/property/property.jpg", alt: "Skyline view" },
-      { id: "thumb-2", url: "/property/property.jpg", alt: "Living room" },
-      { id: "thumb-3", url: "/property/property.jpg", alt: "Bedroom" },
-      { id: "thumb-4", url: "/property/property.jpg", alt: "Bathroom" }
+    "id": "burj-khalifa-residences",
+    "images": images.AboutHero,
+    "image": ["/property/1.jpg", "/property/2.jpg"],
+    "thumbnails": [
+      { "id": "thumb-1", "url": "/property/1.jpg", "alt": "Skyline view" },
+      { "id": "thumb-2", "url": "/property/2.jpg", "alt": "Living room" },
+      { "id": "thumb-3", "url": "/property/3.jpg", "alt": "Master Bedroom" },
+      { "id": "thumb-4", "url": "/property/4.jpg", "alt": "Luxury Bathroom" }
     ],
-    propertyName: "Burj Khalifa Residences",
-    propertyLocation: "Downtown Dubai, UAE",
-    title: "Burj Khalifa Residences",
-    propertyType: "Penthouse",
-    description: "Iconic views and unmatched luxury in the tallest tower.",
-    price: 900000,
-    installmentYears: 10,
-    initialPayment: 90000,
-    bedrooms: 4,
-    area: { value: 3200, unit: "sq ft" },
-    contactLinks: {
-      phone: "+971 50 1234567",
-      email: "info@burjkhalifa.com",
-      whatsapp: "+971 50 1234567"
+    "ameneties": [
+      "Children's play area",
+      "Children's pool",
+      "Built-in wardrobe",
+      "Central air conditioning",
+      "Security",
+      "Covered parking",
+      "Shared gym",
+      "Balcony",
+      "Pets allowed",
+    ],
+    "propertyName": "Burj Khalifa Residences",
+    "propertyLocation": "Downtown Dubai, UAE",
+    "title": "Luxury Living in the Sky",
+    "propertyType": "Penthouse",
+    "description": "Iconic views and unmatched luxury in the tallest tower.",
+    "price": 900000,
+    "installmentYears": 10,
+    "initialPayment": 90000,
+    "bedrooms": 4,
+    "completionDate": "09/25",
+    "area": { "value": 3200, "unit": "sq ft" },
+    "contactLinks": {
+      "phone": "+971 50 1234567",
+      "email": "info@burjkhalifa.com",
+      "whatsapp": "+971 50 1234567"
     }
   },
-    {
-      id: "dubai-marina-heights",
-      mainImage: {
-        id: "main-2",
-        url: "/property/property2.jpg",
-        alt: "Dubai Marina view"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property2.jpg", alt: "Marina view" },
-        { id: "thumb-2", url: "/property/property1.jpg", alt: "Living area" },
-        { id: "thumb-3", url: "/property/property3.jpg", alt: "Kitchen" },
-        { id: "thumb-4", url: "/property/property4.jpg", alt: "Balcony" }
-      ],
-      propertyName: "Dubai Marina Heights",
-      propertyLocation: "Dubai Marina, UAE",
-      title: "Dubai Marina Heights",
-      propertyType: "Apartment",
-      description: "Modern apartments with waterfront views and easy beach access.",
-      price: 600000,
-      installmentYears: 7,
-      initialPayment: 50000,
-      bedrooms: 3,
-      area: { value: 1850, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Private Beach Access", icon: "waves" },
-        { id: "a2", name: "Covered Parking", icon: "car" },
-        { id: "a3", name: "Children’s Area", icon: "child" },
-        { id: "a4", name: "Shared Gym", icon: "dumbbell" },
-        { id: "a5", name: "Pets Allowed", icon: "paw-print" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
-    },
-    {
-      id: "jlt-sky-villas",
-      mainImage: {
-        id: "main-3",
-        url: "/property/property3.jpg",
-        alt: "JLT skyline"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property3.jpg", alt: "Front view" },
-        { id: "thumb-2", url: "/property/property2.jpg", alt: "Lobby" },
-        { id: "thumb-3", url: "/property/property1.jpg", alt: "Rooftop" },
-        { id: "thumb-4", url: "/property/property4.jpg", alt: "Garden" }
-      ],
-      propertyName: "JLT Sky Villas",
-      propertyLocation: "Jumeirah Lake Towers, UAE",
-      title: "JLT Sky Villas",
-      propertyType: "Villa",
-      description: "Luxury living in the heart of JLT with skyline views.",
-      price: 750000,
-      installmentYears: 8,
-      initialPayment: 70000,
-      bedrooms: 3,
-      area: { value: 2100, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Children's pool", icon: "waves" },
-        { id: "a2", name: "Built-in wardrobe", icon: "shopping-bag" },
-        { id: "a3", name: "Balcony", icon: "building" },
-        { id: "a4", name: "Central AC", icon: "air-vent" },
-        { id: "a5", name: "Security", icon: "shield" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
-    },
-    {
-      id: "palm-jumeirah-resort",
-      mainImage: {
-        id: "main-4",
-        url: "/property/property4.jpg",
-        alt: "Palm resort view"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property4.jpg", alt: "Beach villa" },
-        { id: "thumb-2", url: "/property/property2.jpg", alt: "Terrace" },
-        { id: "thumb-3", url: "/property/property3.jpg", alt: "Sea view" },
-        { id: "thumb-4", url: "/property/property1.jpg", alt: "Infinity pool" }
-      ],
-      propertyName: "Palm Jumeirah Resort Homes",
-      propertyLocation: "Palm Jumeirah, UAE",
-      title: "Palm Jumeirah Resort",
-      propertyType: "Beach Villa",
-      description: "Ultimate beachfront living with direct access to the ocean.",
-      price: 1200000,
-      installmentYears: 12,
-      initialPayment: 120000,
-      bedrooms: 5,
-      area: { value: 4000, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Beachfront Access", icon: "waves" },
-        { id: "a2", name: "Private Pool", icon: "car" },
-        { id: "a3", name: "Garden", icon: "building" },
-        { id: "a4", name: "Entertainment Hall", icon: "air-vent" },
-        { id: "a5", name: "Security", icon: "shield" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
-    },
-    // Add 5 more similar variations
-    {
-      id: "downtown-loft-living",
-      mainImage: {
-        id: "main-5",
-        url: "/property/property5.jpg",
-        alt: "Loft apartment"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property5.jpg", alt: "Open space" },
-        { id: "thumb-2", url: "/property/property1.jpg", alt: "View" },
-        { id: "thumb-3", url: "/property/property2.jpg", alt: "Stairs" },
-        { id: "thumb-4", url: "/property/property3.jpg", alt: "Bedroom" }
-      ],
-      propertyName: "Downtown Loft Living",
-      propertyLocation: "Business Bay, Dubai",
-      title: "Downtown Loft Living",
-      propertyType: "Loft",
-      description: "Stylish and modern lofts with open-plan interiors.",
-      price: 450000,
-      installmentYears: 6,
-      initialPayment: 40000,
-      bedrooms: 2,
-      area: { value: 1600, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Gym", icon: "dumbbell" },
-        { id: "a2", name: "Security", icon: "shield" },
-        { id: "a3", name: "Parking", icon: "car" },
-        { id: "a4", name: "Pets Allowed", icon: "paw-print" },
-        { id: "a5", name: "Central AC", icon: "air-vent" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
-    },
-    {
-      id: "creek-harbour-heights",
-      mainImage: {
-        id: "main-6",
-        url: "/property/property6.jpg",
-        alt: "Creek Harbour"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property6.jpg", alt: "Tower view" },
-        { id: "thumb-2", url: "/property/property1.jpg", alt: "Living" },
-        { id: "thumb-3", url: "/property/property3.jpg", alt: "Kitchen" },
-        { id: "thumb-4", url: "/property/property4.jpg", alt: "Balcony" }
-      ],
-      propertyName: "Creek Harbour Heights",
-      propertyLocation: "Dubai Creek, UAE",
-      title: "Creek Harbour Heights",
-      propertyType: "Apartment",
-      description: "Modern high-rises with stunning waterfront views.",
-      price: 550000,
-      installmentYears: 9,
-      initialPayment: 55000,
-      bedrooms: 3,
-      area: { value: 1900, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Pool", icon: "waves" },
-        { id: "a2", name: "Gym", icon: "dumbbell" },
-        { id: "a3", name: "Concierge", icon: "shield" },
-        { id: "a4", name: "Parking", icon: "car" },
-        { id: "a5", name: "Balcony", icon: "building" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
-    },
-    {
-      id: "emirates-hills-estate",
-      mainImage: {
-        id: "main-7",
-        url: "/property/property7.jpg",
-        alt: "Emirates Hills"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property7.jpg", alt: "Estate view" },
-        { id: "thumb-2", url: "/property/property3.jpg", alt: "Entry" },
-        { id: "thumb-3", url: "/property/property1.jpg", alt: "Garden" },
-        { id: "thumb-4", url: "/property/property4.jpg", alt: "Driveway" }
-      ],
-      propertyName: "Emirates Hills Estate",
-      propertyLocation: "Emirates Hills, Dubai",
-      title: "Emirates Hills Estate",
-      propertyType: "Villa",
-      description: "Elite lifestyle with golf course and serene greenery.",
-      price: 2000000,
-      installmentYears: 15,
-      initialPayment: 250000,
-      bedrooms: 6,
-      area: { value: 6000, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Golf View", icon: "building" },
-        { id: "a2", name: "Security", icon: "shield" },
-        { id: "a3", name: "Pool", icon: "waves" },
-        { id: "a4", name: "Garage", icon: "car" },
-        { id: "a5", name: "Smart Home", icon: "air-vent" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
-    },
-    {
-      id: "meadows-residency",
-      mainImage: {
-        id: "main-8",
-        url: "/property/property8.jpg",
-        alt: "The Meadows Dubai"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property8.jpg", alt: "Front" },
-        { id: "thumb-2", url: "/property/property4.jpg", alt: "Living" },
-        { id: "thumb-3", url: "/property/property3.jpg", alt: "Dining" },
-        { id: "thumb-4", url: "/property/property1.jpg", alt: "Kitchen" }
-      ],
-      propertyName: "The Meadows Residency",
-      propertyLocation: "The Meadows, Dubai",
-      title: "The Meadows Residency",
-      propertyType: "Townhouse",
-      description: "Family-friendly environment with gardens and playgrounds.",
-      price: 800000,
-      installmentYears: 10,
-      initialPayment: 75000,
-      bedrooms: 4,
-      area: { value: 2500, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Park Access", icon: "building" },
-        { id: "a2", name: "Kids Zone", icon: "child" },
-        { id: "a3", name: "Security", icon: "shield" },
-        { id: "a4", name: "Parking", icon: "car" },
-        { id: "a5", name: "Central AC", icon: "air-vent" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
-    },
-    {
-      id: "bluewaters-luxury-suites",
-      mainImage: {
-        id: "main-9",
-        url: "/property/property9.jpg",
-        alt: "Bluewaters Island"
-      },
-      thumbnails: [
-        { id: "thumb-1", url: "/property/property9.jpg", alt: "Island view" },
-        { id: "thumb-2", url: "/property/property3.jpg", alt: "Balcony" },
-        { id: "thumb-3", url: "/property/property2.jpg", alt: "Pool" },
-        { id: "thumb-4", url: "/property/property4.jpg", alt: "Sea" }
-      ],
-      propertyName: "Bluewaters Luxury Suites",
-      propertyLocation: "Bluewaters Island, Dubai",
-      title: "Bluewaters Luxury Suites",
-      propertyType: "Apartment",
-      description: "Exclusive suites near Ain Dubai with sea views.",
-      price: 1100000,
-      installmentYears: 11,
-      initialPayment: 100000,
-      bedrooms: 3,
-      area: { value: 2300, unit: "sq.ft" },
-      amenities: [
-        { id: "a1", name: "Sea View", icon: "waves" },
-        { id: "a2", name: "Shared Gym", icon: "dumbbell" },
-        { id: "a3", name: "Concierge", icon: "shield" },
-        { id: "a4", name: "Smart Lock", icon: "air-vent" },
-        { id: "a5", name: "Balcony", icon: "building" }
-      ],
-      completionDate: '09/2025',
-      icons: '',
-      contactLinks: {
-        phone: '+1234567890',
-        email: 'pinter@example.com',
-        whatsapp: '1234567890',
-        linkedin: 'https://linkedin.com/in/pinter'
-      }
+  {
+    "id": "marina-vista-tower",
+    "images": images.AboutHero,
+    "image": ["/property/marina1.jpg", "/property/marina2.jpg"],
+    "thumbnails": [
+      { "id": "thumb-1", "url": "/property/marina1.jpg", "alt": "Sea view" },
+      { "id": "thumb-2", "url": "/property/marina2.jpg", "alt": "Balcony view" },
+      { "id": "thumb-3", "url": "/property/marina3.jpg", "alt": "Lobby area" },
+      { "id": "thumb-4", "url": "/property/marina4.jpg", "alt": "Rooftop pool" }
+    ],
+    "ameneties": [
+      "Children's play area",
+      "Children's pool",
+      "Built-in wardrobe",
+      "Central air conditioning",
+      "Security",
+      "Covered parking",
+      "Shared gym",
+      "Balcony",
+      "Pets allowed",
+    ],
+    "propertyName": "Marina Vista Tower",
+    "propertyLocation": "Dubai Marina, UAE",
+    "title": "Tranquil Waterfront Living",
+    "propertyType": "Apartment",
+    "description": "Wake up to stunning views of the marina.",
+    "price": 650000,
+    "installmentYears": 7,
+    "initialPayment": 65000,
+    "bedrooms": 2,
+    "completionDate": "09/25",
+    "area": { "value": 1600, "unit": "sq ft" },
+    "contactLinks": {
+      "phone": "+971 55 2233445",
+      "email": "sales@marinavista.com",
+      "whatsapp": "+971 55 2233445"
     }
-  ];
-  
+  },
+  {
+    "id": "palm-jumeirah-villa",
+    "images": images.AboutHero,
+    "image": ["/property/palm1.jpg"],
+    "thumbnails": [
+      { "id": "thumb-1", "url": "/property/palm1.jpg", "alt": "Beachfront view" },
+      { "id": "thumb-2", "url": "/property/palm2.jpg", "alt": "Garden view" },
+      { "id": "thumb-3", "url": "/property/palm3.jpg", "alt": "Swimming pool" },
+      { "id": "thumb-4", "url": "/property/palm4.jpg", "alt": "Living room" }
+    ],
+    "ameneties": [
+      "Children's play area",
+      "Children's pool",
+      "Built-in wardrobe",
+      "Central air conditioning",
+      "Security",
+      "Covered parking",
+      "Shared gym",
+      "Balcony",
+      "Pets allowed",
+    ],
+    "propertyName": "Palm Jumeirah Villa",
+    "propertyLocation": "Palm Jumeirah, UAE",
+    "title": "Beachfront Paradise",
+    "propertyType": "Villa",
+    "description": "Private villa with direct beach access and luxury amenities.",
+    "price": 2000000,
+    "installmentYears": 15,
+    "initialPayment": 200000,
+    "bedrooms": 5,
+    "completionDate": "09/25",
+    "area": { "value": 5000, "unit": "sq ft" },
+    "contactLinks": {
+      "phone": "+971 52 9876543",
+      "email": "info@palmluxury.com",
+      "whatsapp": "+971 52 9876543",
+      "linkedin": "https://linkedin.com/in/palmlux"
+    }
+  },
+  {
+    "id": "downtown-loft",
+    "images": images.AboutHero,
+    "image": ["/property/loft1.jpg", "/property/loft2.jpg"],
+    "thumbnails": [
+      { "id": "thumb-1", "url": "/property/loft1.jpg", "alt": "Urban interior" },
+      { "id": "thumb-2", "url": "/property/loft2.jpg", "alt": "Open plan space" },
+      { "id": "thumb-3", "url": "/property/loft3.jpg", "alt": "Kitchen area" },
+      { "id": "thumb-4", "url": "/property/loft4.jpg", "alt": "Mezzanine bedroom" }
+    ],
+    "ameneties": [
+      "Children's play area",
+      "Children's pool",
+      "Built-in wardrobe",
+      "Central air conditioning",
+      "Security",
+      "Covered parking",
+      "Shared gym",
+      "Balcony",
+      "Pets allowed",
+    ],
+    "propertyName": "Downtown Loft",
+    "propertyLocation": "Downtown Dubai, UAE",
+    "title": "Chic Urban Living",
+    "propertyType": "Loft",
+    "description": "A modern loft for those who love the city buzz.",
+    "price": 480000,
+    "installmentYears": 6,
+    "initialPayment": 48000,
+    "bedrooms": 1,
+    "completionDate": "09/25",
+    "area": { "value": 1000, "unit": "sq ft" },
+    "contactLinks": {
+      "email": "contact@urbanloft.com"
+    }
+  },
+  {
+    "id": "emirates-hills-mansion",
+    "images": images.AboutHero,
+    "image": ["/property/mansion1.jpg"],
+    "thumbnails": [
+      { "id": "thumb-1", "url": "/property/mansion1.jpg", "alt": "Luxury mansion" },
+      { "id": "thumb-2", "url": "/property/mansion2.jpg", "alt": "Outdoor patio" },
+      { "id": "thumb-3", "url": "/property/mansion3.jpg", "alt": "Garden" },
+      { "id": "thumb-4", "url": "/property/mansion4.jpg", "alt": "Grand staircase" }
+    ],
+    "ameneties": [
+      "Children's play area",
+      "Children's pool",
+      "Built-in wardrobe",
+      "Central air conditioning",
+      "Security",
+      "Covered parking",
+      "Shared gym",
+      "Balcony",
+      "Pets allowed",
+    ],
+    "propertyName": "Emirates Hills Mansion",
+    "propertyLocation": "Emirates Hills, Dubai",
+    "title": "The Epitome of Elegance",
+    "propertyType": "Mansion",
+    "description": "An elite residence for luxury living at its peak.",
+    "price": 7500000,
+    "installmentYears": 20,
+    "initialPayment": 750000,
+    "bedrooms": 7,
+    "completionDate": "09/25",
+    "area": { "value": 10000, "unit": "sq ft" },
+    "contactLinks": {
+      "phone": "+971 55 7654321",
+      "email": "luxury@emirateshills.com"
+    }
+  },
+  {
+    "id": "creek-harbour-apartment",
+    "images": images.AboutHero,
+    "image": ["/property/creek1.jpg", "/property/creek2.jpg"],
+    "thumbnails": [
+      { "id": "thumb-1", "url": "/property/creek1.jpg", "alt": "Creek view" },
+      { "id": "thumb-2", "url": "/property/creek2.jpg", "alt": "Modern interior" },
+      { "id": "thumb-3", "url": "/property/creek3.jpg", "alt": "Dining space" },
+      { "id": "thumb-4", "url": "/property/creek4.jpg", "alt": "Master suite" }
+    ],
+    "ameneties": [
+      "Children's play area",
+      "Children's pool",
+      "Built-in wardrobe",
+      "Central air conditioning",
+      "Security",
+      "Covered parking",
+      "Shared gym",
+      "Balcony",
+      "Pets allowed",
+    ],
+    "propertyName": "Creek Harbour Apartment",
+    "propertyLocation": "Dubai Creek Harbour",
+    "title": "Modern Life at the Creek",
+    "propertyType": "Apartment",
+    "description": "Stylish living in one of Dubai’s most vibrant new districts.",
+    "price": 550000,
+    "installmentYears": 8,
+    "initialPayment": 55000,
+    "bedrooms": 2,
+    "completionDate": "09/25",
+    "area": { "value": 1400, "unit": "sq ft" },
+    "contactLinks": {
+      "email": "sales@creekapts.com",
+      "phone": "+971 58 3332211",
+      "whatsapp": "+971 58 3332211"
+    }
+  }
+];

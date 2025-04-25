@@ -128,21 +128,35 @@ export interface WhyChooseUsProps {
   // ctaText?: string;
 }
 export interface PropertyCardProps {
-  image: string;
+  id: string;
+  images: string; // main image path or directory
+  thumbnails: {
+    id: string;
+    url: string;
+    alt: string;
+  }[];
+  ameneties: string[];
+  image?: string[]; // optional array of main images
+  propertyName: string;
+  propertyLocation: string;
   title: string;
   propertyType: string;
-  price: string;
+  description: string;
+  price: string | number;
   installmentYears: number;
-  initialPayment: string;
-  completionDate: string;
-  icons: string;
+  initialPayment: string | number;
+  completionDate?: string; // optional if not always provided
+  bedrooms: number;
+  area: {
+    value: number;
+    unit: string;
+  };
   contactLinks: {
     phone?: string;
     email?: string;
     whatsapp?: string;
     linkedin?: string;
   };
-
 }
 export interface HeroSectionProps {
   // Content options

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import PropertyCard from './PropertyCard';
 import StepNavigation from '../Common/StepNavigation';
-import { properties } from '@/data/property';
+import { propertyList } from '@/data/propertyData';
 import PortfolioHeader from '../Common/PortfolioHeader';
 
 
@@ -28,9 +28,9 @@ const PropertyPortfolio: React.FC = () => {
     setCurrentStep(step);
   };
 
- 
 
-  const filteredProperties = properties.filter((property) =>
+
+  const filteredProperties = propertyList.filter((property) =>
     property.title.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -53,18 +53,18 @@ const PropertyPortfolio: React.FC = () => {
             </button>
           </div>
         </div> */}
-<PortfolioHeader
-  title="Explore Our Property Portfolio"
-  showSearch={true}
-  searchValue={search}
-  onSearchChange={setSearch}
-  // Make sure this icon exists in your public or assets folder
-/>
+        <PortfolioHeader
+          title="Explore Our Property Portfolio"
+          showSearch={true}
+          searchValue={search}
+          onSearchChange={setSearch}
+        // Make sure this icon exists in your public or assets folder
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProperties.map((property, index) => (
             <PropertyCard
               key={index}
-              image={property.image}
+              images={property.images}
               title={property.title}
               propertyType={property.propertyType}
               price={property.price}
@@ -72,17 +72,24 @@ const PropertyPortfolio: React.FC = () => {
               initialPayment={property.initialPayment}
               completionDate={property.completionDate}
               contactLinks={property.contactLinks}
-              icons={property.icons}
+              id={property.id}
+              thumbnails={property.thumbnails}
+              ameneties={property.ameneties}
+              propertyName={property.title}
+              propertyLocation={property.propertyLocation}
+              description={property.description}
+              bedrooms={property.bedrooms}
+              area={property.area}
             />
           ))}
         </div>
         <StepNavigation
-      currentStep={currentStep}
-      totalSteps={totalSteps}
-      onPrevious={handlePrevious}
-      onNext={handleNext}
-      onStepClick={handleStepClick}
-    />
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          onStepClick={handleStepClick}
+        />
       </div>
     </div>
   );

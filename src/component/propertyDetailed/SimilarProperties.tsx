@@ -3,9 +3,9 @@
 import React from 'react';
 // import StepNavigation from '../Common/StepNavigation';
 // import { PropertyCardProps } from '@/types';
-import { properties } from '@/data/property';
 import PortfolioHeader from '../Common/PortfolioHeader';
 import PropertyCard from '../propertyPage/PropertyCard';
+import { propertyList } from '@/data/propertyData';
 
 
 const SimilarProperty: React.FC = () => {
@@ -25,10 +25,10 @@ const SimilarProperty: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {properties.map((property, index) => (
+          {propertyList.map((property, index) => (
             <PropertyCard
               key={index}
-              image={property.image}
+              images={property.images}
               title={property.title}
               propertyType={property.propertyType}
               price={property.price}
@@ -36,7 +36,14 @@ const SimilarProperty: React.FC = () => {
               initialPayment={property.initialPayment}
               completionDate={property.completionDate}
               contactLinks={property.contactLinks}
-              icons={property.icons}
+              id={property.id}
+              thumbnails={property.thumbnails}
+              ameneties={property.ameneties}
+              propertyName={property.title}
+              propertyLocation={property.propertyLocation}
+              description={property.description}
+              bedrooms={property.bedrooms}
+              area={property.area}
             />
           ))}
         </div>

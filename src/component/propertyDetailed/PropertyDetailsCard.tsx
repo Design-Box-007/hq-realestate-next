@@ -3,35 +3,18 @@ import React from 'react';
 import { MapPin, Home, Share, Bookmark, Baby, Waves, ShoppingBag, AirVent, Shield, Car, Dumbbell, Building, PawPrint, Sliders } from 'lucide-react';
 import ConsultationButton from '../Common/ConsultationBtn';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import { PropertyCardProps } from '@/types';
 
-interface PropertyDetails {
-  title: string;
-  propertyType: string;
-  description: string;
-  price: number;
-  installmentYears: number;
-  initialPayment: number;
-  bedrooms: number;
-  area: {
-    value: number;
-    unit: string;
-  };
-  amenities: Array<{
-    id: string;
-    name: string;
-    icon: string;
-  }>;
-}
 
 interface PropertyDetailsCardProps {
-  property: PropertyDetails;
+  property: PropertyCardProps;
 }
 
 export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
   // Function to render the appropriate icon based on the icon name
   const renderIcon = (iconName: string) => {
     const iconProps = { size: 18, className: "text-[#BD9167]" };
-    
+
     switch (iconName) {
       case 'child': return <Baby {...iconProps} />;
       case 'waves': return <Waves {...iconProps} />;
@@ -125,51 +108,16 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
       <div className="mb-4">
         <h3 className="text-xl font-semibold mb-4">Features & Amenities</h3>
         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-          {property.amenities.map((amenity) => (
-            <div className="col" key={amenity.id}>
+          {property.ameneties.map((amenity: string, index: number) => (
+            <div className="col" key={index}>
               <div className="d-flex align-items-center p-3 rounded border-1 border-[#BD9167] h-100">
-                {renderIcon(amenity.icon)}
-                <span className="ms-2 text-base md:text-lg">{amenity.name}</span>
+                {/* {renderIcon(amenity.icon)} */}
+                <span className="ms-2 text-base md:text-lg">{amenity}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
-  );
-}
-
-// Sample JSON data
-export const propertyData: PropertyDetails = {
-  title: "Burj Khalifa Residences",
-  propertyType: "Villa",
-  description: "A modern property provides a range of amenities ensuring a comfortable living. The project's location offers a well-developed infrastructure. Residents can find security, children's play area, children's pool, shared gym, central air conditioning, built-in wardrobe, covered parking, balcony and entertainment options in proximity.",
-  price: 300000.00,
-  installmentYears: 10,
-  initialPayment: 30000,
-  bedrooms: 2,
-  area: {
-    value: 1436,
-    unit: "sq.ft"
-  },
-  amenities: [
-    { id: "a1", name: "Children's play area", icon: "child" },
-    { id: "a2", name: "Children's pool", icon: "waves" },
-    { id: "a3", name: "Built-in wardrobe", icon: "shopping-bag" },
-    { id: "a4", name: "Central air conditioning", icon: "air-vent" },
-    { id: "a5", name: "Security", icon: "shield" },
-    { id: "a6", name: "Covered parking", icon: "car" },
-    { id: "a7", name: "Shared gym", icon: "dumbbell" },
-    { id: "a8", name: "Balcony", icon: "building" },
-    { id: "a9", name: "Pets allowed", icon: "paw-print" }
-  ]
-};
-
-// Example usage in a page component
-export default function PropertyInfo() {
-  return (
-    <div className="container mx-auto py-8">
-      <PropertyDetailsCard property={propertyData} />
     </div>
   );
 }
