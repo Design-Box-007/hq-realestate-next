@@ -8,14 +8,6 @@ interface InvestmentFeature {
   description: string;
 }
 
-interface InvestmentArea {
-  id: string;
-  title: string;
-  image: string;
-  averageROI: string;
-  features: InvestmentFeature[];
-  bestInvestmentType: string;
-}
 
 interface FeaturedInvestmentAreasProps {
   title: string;
