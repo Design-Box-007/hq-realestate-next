@@ -11,7 +11,7 @@ import CTA from '../Common/Cta';
 import Contact from '../Home/Contact/Contact';
 import { propertyList } from '@/data/propertyData';
 import formatToHyphenated from "@/utils/formatPathName";
-import { PropertyCardProps, PropertyCardProps as PropertyCardPropsType } from "@/types";
+import { PropertyCardProps } from "@/types";
 
 export default function PropertyDetailed() {
   const { propertyName } = useParams();  // Get the propertyName slug from the URL

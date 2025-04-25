@@ -2,13 +2,6 @@
 import { InvestmentData } from '@/types';
 import React from 'react';
 
-interface InvestmentFeature {
-  id: string;
-  title: string;
-  description: string;
-}
-
-
 interface FeaturedInvestmentAreasProps {
   title: string;
   areas: InvestmentData[];

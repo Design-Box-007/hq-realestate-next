@@ -1,6 +1,6 @@
 // PropertyDetailsCard.tsx
 import React from 'react';
-import { MapPin, Home, Share, Bookmark, Baby, Waves, ShoppingBag, AirVent, Shield, Car, Dumbbell, Building, PawPrint, Sliders } from 'lucide-react';
+import { MapPin, Home, Share, Bookmark, Sliders } from 'lucide-react';
 import ConsultationButton from '../Common/ConsultationBtn';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import { PropertyCardProps } from '@/types';
@@ -12,22 +12,22 @@ interface PropertyDetailsCardProps {
 
 export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
   // Function to render the appropriate icon based on the icon name
-  const renderIcon = (iconName: string) => {
-    const iconProps = { size: 18, className: "text-[#BD9167]" };
+  // const renderIcon = (iconName: string) => {
+  //   const iconProps = { size: 18, className: "text-[#BD9167]" };
 
-    switch (iconName) {
-      case 'child': return <Baby {...iconProps} />;
-      case 'waves': return <Waves {...iconProps} />;
-      case 'shopping-bag': return <ShoppingBag {...iconProps} />;
-      case 'air-vent': return <AirVent {...iconProps} />;
-      case 'shield': return <Shield {...iconProps} />;
-      case 'car': return <Car {...iconProps} />;
-      case 'dumbbell': return <Dumbbell {...iconProps} />;
-      case 'building': return <Building {...iconProps} />;
-      case 'paw-print': return <PawPrint {...iconProps} />;
-      default: return <Baby {...iconProps} />;
-    }
-  };
+  //   switch (iconName) {
+  //     case 'child': return <Baby {...iconProps} />;
+  //     case 'waves': return <Waves {...iconProps} />;
+  //     case 'shopping-bag': return <ShoppingBag {...iconProps} />;
+  //     case 'air-vent': return <AirVent {...iconProps} />;
+  //     case 'shield': return <Shield {...iconProps} />;
+  //     case 'car': return <Car {...iconProps} />;
+  //     case 'dumbbell': return <Dumbbell {...iconProps} />;
+  //     case 'building': return <Building {...iconProps} />;
+  //     case 'paw-print': return <PawPrint {...iconProps} />;
+  //     default: return <Baby {...iconProps} />;
+  //   }
+  // };
 
   return (
     <div className="container-fluid py-4  text-white rounded-lg">
