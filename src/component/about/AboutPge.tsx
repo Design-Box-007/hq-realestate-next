@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React  from 'react';
 // import Navbar from '@/component/Common/Navbar';
 import HeroSection from '@/component/Common/HeroSection/HeroSection';
 import { images } from '@/data/assets';
