@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import TeamExperts from '../Common/Team/TeamExperts';
 import HeroSection from '../Common/HeroSection/HeroSection';
 import { images } from '@/data/assets';
@@ -11,7 +11,7 @@ import Navbar from '../Common/NavbarMenu';
 
 export default function ExpertsPage() {
   // const [showMenu, setShowMenu] = useState(false);
-               
+
   //              const handleScroll = (sectionId:string) => {
   //                  const section = document.getElementById(sectionId);
   //                  if (section) {
@@ -68,7 +68,7 @@ export default function ExpertsPage() {
             backgroundImage={images.AboutHero}
             title="A Firm of Expertise & "
             subtitle="Excellence."
-            navbarHeight="80px" 
+            navbarHeight="80px"
             showConsultationButton={true}
             consultationIconSrc={images.AboutProfile}
             consultationLink="/contact"
