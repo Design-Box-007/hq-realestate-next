@@ -185,3 +185,14 @@ export interface HeroSectionProps {
   className?: string;
   contentClassName?: string;
 }
+
+export interface AgentData {
+    agent_name_: string;
+    profile_image: number; // WordPress Media ID
+    position: string;
+    experience: number;
+    email: string;
+    phone_number: string;
+    whatsapp: string; // empty string if not available
+}
+
