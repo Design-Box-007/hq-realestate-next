@@ -12,45 +12,50 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="footer">
-      <div className="d-flex justify-content-between gap-3">
-        <div className="d-flex text-white align-items-center gap-2">
-          {/* <h1 className='logo m-0'>HQ</h1>
-              <p className='logo-name m-0'>Housing <br />Quest</p> */}
-          <img src={images.logo} alt="Housing Quest" className='logo-img' width={100} height={50} />
+    <div className="footer container-fluid">
+      {/* Top Section */}
+      <div className="row align-items-center text-white gy-4">
+        
+        {/* Logo */}
+        <div className="col-12 col-md-3 d-flex align-items-center justify-content-center justify-content-md-start">
+          <img src={images.logo} alt="Housing Quest" className="logo-img" width={100} height={50} />
         </div>
 
-        <div className="d-flex gap-2 flex-wrap text-white align-items-center justify-content-evenly w-100">
-          <span style={{ cursor: 'pointer' }} onClick={() => handleScroll('home')}>Home</span>
-          <span style={{ cursor: 'pointer' }} onClick={() => handleScroll('about')}>About Us</span>
-          <span style={{ cursor: 'pointer' }} onClick={() => handleScroll('service')}>Service</span>
-          <span style={{ cursor: 'pointer' }} onClick={() => handleScroll('property')}>Property</span>
-          <span style={{ cursor: 'pointer' }} onClick={() => handleScroll('contact')}>Contact</span>
+        {/* Navigation Links */}
+        <div className="col-12 col-md-6 d-flex flex-wrap justify-content-center gap-3">
+          <span className="footer-link" onClick={() => handleScroll('home')}>Home</span>
+          <span className="footer-link" onClick={() => handleScroll('about')}>About Us</span>
+          <span className="footer-link" onClick={() => handleScroll('service')}>Service</span>
+          <span className="footer-link" onClick={() => handleScroll('property')}>Property</span>
+          <span className="footer-link" onClick={() => handleScroll('contact')}>Contact</span>
         </div>
 
-        <div className="d-flex align-items-center gap-3 social-media-icons">
+        {/* Social Media Icons */}
+        <div className="col-12 col-md-3 d-flex justify-content-center justify-content-md-end gap-3">
           <a href="https://www.instagram.com/housingquest?igsh=MTZscXM4dGs1eG5jcA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
-            <img src={images.instagramIcon} alt="Instagram" width={20} height={20} />
+            <img src={images.instagramIcon} alt="Instagram" className="social-icon" />
           </a>
           <a href="https://medium.com/@housingquestrealestates" target="_blank" rel="noopener noreferrer">
-            <img src={images.mediumIcon} alt="Medium" width={20} height={20} />
+            <img src={images.mediumIcon} alt="Medium" className="social-icon" />
           </a>
           <a href="https://wa.me/+971563600699" target="_blank" rel="noopener noreferrer">
-            <img src={images.whatsappIcon} alt="Whatsapp" width={20} height={20} />
+            <img src={images.whatsappIcon} alt="Whatsapp" className="social-icon" />
           </a>
           <a href="https://www.facebook.com/people/Housing-Quest-Real-Estates/61574138710378/" target="_blank" rel="noopener noreferrer">
-            <img src={images.facebookIcon} alt="Facebook" width={20} height={20} />
+            <img src={images.facebookIcon} alt="Facebook" className="social-icon" />
           </a>
           <a href="https://x.com/Hqrealestates" target="_blank" rel="noopener noreferrer">
-            <img src={images.xIcon} alt="X" width={20} height={20} />
+            <img src={images.xIcon} alt="X" className="social-icon" />
           </a>
           <a href="https://www.linkedin.com/company/106353735/admin/dashboard/" target="_blank" rel="noopener noreferrer">
-            <img src={images.linkedinIcon} alt="Linkedin" width={20} height={20} />
+            <img src={images.linkedinIcon} alt="LinkedIn" className="social-icon" />
           </a>
         </div>
+
       </div>
 
-      <div className="text-center">
+      {/* Bottom Section */}
+      <div className="text-center mt-4">
         <a className="footer-author" href="https://www.pixelpanda.ae/" target="_blank" rel="noopener noreferrer">
           This website is Designed and Developed by <b>The Pixel Panda Technology</b>
         </a>

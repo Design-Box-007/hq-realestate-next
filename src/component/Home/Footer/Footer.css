@@ -1,29 +1,50 @@
 .footer {
     background: var(--black-lite-color);
-    padding: 40px 50px;
+    padding: 40px 30px;
     border-radius: 16px;
     min-height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
-}
-
-.social-media-icons a img {
-    --size: 20px;
-    width: var(--size);
-    height: var(--size);
-    max-width: var(--size);
-}
-
-.footer-author {
+  }
+  
+  .logo-img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .footer-link {
+    cursor: pointer;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .footer-link:hover {
+    color: var(--primary-color); /* Your theme's main color */
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .footer-author {
     text-decoration: none;
     color: var(--white-color);
     font-size: 16px;
-}
-
-@media screen and (max-width: 768px) {
+  }
+  
+  .footer-author b {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
     .footer {
-        flex-direction: column;
+      padding: 30px 20px;
     }
-}
+  }
+  

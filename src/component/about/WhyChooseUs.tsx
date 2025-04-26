@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Urbanist } from 'next/font/google';
+import { motion } from 'framer-motion'; // import framer motion
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -20,44 +21,81 @@ interface WhyChooseUsProps {
   title: string;
   imageSrc: string;
   features: FeatureCardProps[];
-  // ctaText?: string;
 }
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
 
 const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
   subtitle,
   title,
   imageSrc,
   features,
-  // ctaText
 }) => {
   return (
-    <section className="text-white py-6">
+    <section className="text-white py-6 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-6 md:mb-8">
+        
+        {/* Text Content Animation */}
+        <motion.div 
+          className="mb-6 md:mb-8"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <p className="text-white/50 text-sm md:text-base mb-2">{subtitle}</p>
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 ${urbanist.className}`}>{title}</h2>
-        </div>
+          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 ${urbanist.className}`}>
+            {title}
+          </h2>
+        </motion.div>
 
-        <div className="relative mb-8 md:mb-12">
-          {/* Main image */}
-          <div className="relative rounded overflow-hidden h-64 sm:h-96 md:h-[480px] lg:h-[600px]">
+        <div className="relative">
+          {/* Image Animation */}
+          <motion.div 
+            className="relative rounded overflow-hidden h-64 sm:h-96 md:h-[480px] lg:h-[600px] w-full"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
             <Image
               src={imageSrc}
               alt="Office environment"
               fill
               className="object-cover"
-              
+              sizes="(max-width: 768px) 100vw, 1200px"
             />
-          </div>
+          </motion.div>
 
-          {/* Overlay cards container */}
-          <div className="mt-6 md:absolute md:bottom-6 md:left-0 md:right-0 mx-4">
-            <div className="rounded overflow-hidden bg-[#333333] mx-0 md:mx-4 shadow-lg">
-              <div className="flex flex-wrap justify-center gap-4 p-4">
+          {/* Features Animation */}
+          <motion.div 
+            className="w-full md:px-4 mt-6 md:absolute md:bottom-6 md:left-0 md:right-0"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="rounded overflow-hidden bg-[#333333] shadow-lg mx-auto w-full"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
                 {features.map((feature, index) => (
-                  <div
+                  <motion.div
                     key={index}
-                    className="w-full sm:w-[48%] lg:w-[23%] p-4 bg-gradient-to-b from-[#222222] to-[#444444] shadow-md rounded-lg flex flex-col"
+                    className="p-4 bg-gradient-to-b from-[#222222] to-[#444444] shadow-md rounded-lg flex flex-col"
+                    variants={itemVariants}
                   >
                     <div className="mb-3">
                       <Image
@@ -70,22 +108,12 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
                     </div>
                     <h6 className="text-yellow-400 font-bold mb-2 text-lg">{feature.title}</h6>
                     <p className="text-sm text-white/70">{feature.description}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-
-        {/* CTA section */}
-        {/* {ctaText && (
-          <div className="flex items-center mt-6 md:mt-8">
-            <div className="flex items-center">
-              <span className="bg-yellow-400 rounded-full inline-block mr-2 w-2 h-2"></span>
-              <span className="text-sm md:text-base">{ctaText}</span>
-            </div>
-          </div>
-        )} */}
       </div>
     </section>
   );

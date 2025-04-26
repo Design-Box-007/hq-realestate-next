@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import { Urbanist } from 'next/font/google';
 import TeamGrid from './TeamMemberCard';
 import { FaSearch } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -64,7 +66,7 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
         phone: "+1234567890",
         email: "pinter@example.com",
         whatsapp: "1234567890",
-        linkedin: "https://linkedin.com/in/pinter"
+        
       }
     },
     {
@@ -86,7 +88,8 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
       contactLinks: {
         phone: "+1234567892",
         email: "kelemen@example.com",
-        linkedin: "https://linkedin.com/in/kelemen"
+        whatsapp: "1234567890",
+       
       }
     },
     {
@@ -98,7 +101,7 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
         phone: "+1234567890",
         email: "pinter@example.com",
         whatsapp: "1234567890",
-        linkedin: "https://linkedin.com/in/pinter"
+        
       }
     },
     {
@@ -120,7 +123,8 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
       contactLinks: {
         phone: "+1234567892",
         email: "kelemen@example.com",
-        linkedin: "https://linkedin.com/in/kelemen"
+        whatsapp: "1234567890",
+        
       }
     },
     {
@@ -132,7 +136,7 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
         phone: "+1234567890",
         email: "pinter@example.com",
         whatsapp: "1234567890",
-        linkedin: "https://linkedin.com/in/pinter"
+       
       }
     },
     {
@@ -172,56 +176,87 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
     });
 
   return (
-    <section className=" text-white py-4 pb-5 ">
-      <div className="container-fluid ">
-        {/* Header with title indicator */}
-        <div className="d-flex align-items-center mb-3">
-          <span className="bg-warning rounded-circle d-inline-block me-2" style={{ width: '8px', height: '8px' }}></span>
-          <span className="small text-white-50">Leadership / Team</span>
+    <section className="text-white pb-3">
+    <div className="container-fluid">
+      {/* Header */}
+      <motion.div 
+        className="d-flex align-items-center mb-3"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <span className="bg-warning rounded-circle d-inline-block me-2" style={{ width: '8px', height: '8px' }}></span>
+        <span className="small text-white-50">Leadership / Team</span>
+      </motion.div>
+
+      {/* Title */}
+      <motion.div 
+        className="row mb-4"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <div className="col-12">
+          <h1 className={`display-5 fw-bold ${urbanist.className}`}>{title}</h1>
         </div>
+      </motion.div>
 
-        {/* Main title */}
-        <div className="row mb-4">
-          <div className="col-12">
-            <h1 className={`display-5 fw-bold ${urbanist.className}`}>{title}</h1>
-          </div>
+      {/* Description / Search */}
+      <motion.div 
+        className="row mb-4"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <div className="col-12">
+          {description && (
+            <p className="text-white md:text-2xl mb-0">{description}</p>
+          )}
+
+          {showSearch && (
+            <div className="position-relative mt-3">
+              <input
+                type="text"
+                className="form-control bg-white text-gray-700 border-0 rounded-pill py-2 ps-3 pe-5"
+                placeholder="Search by name or position"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <span className="position-absolute top-50 end-0 translate-middle-y pe-3">
+                <FaSearch className='text-black' />
+              </span>
+            </div>
+          )}
         </div>
+      </motion.div>
 
-        {/* Description or Search */}
-        <div className="row mb-4">
-          <div className="col-12">
-            {description && (
-              <p className="text-white md:text-2xl mb-0">{description}</p>
-            )}
-
-            {showSearch && (
-              <div className="position-relative">
-                <input
-                  type="text"
-                  className="form-control bg-white text-gray-700 border-0 rounded-pill py-2 ps-3 pe-5"
-                  placeholder="Search by name or position"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <span className="position-absolute top-50 end-0 translate-middle-y pe-3">
-                  <FaSearch className='text-black' />
-                </span>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Pass filtered members to TeamGrid */}
+      {/* Team Members */}
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        viewport={{ once: true }}
+      >
         <TeamGrid members={filteredMembers} />
+      </motion.div>
 
-        {/* Show message when no results found */}
-        {filteredMembers.length === 0 && (
-          <div className="text-center py-5">
-            <p className="text-white-50">{`No team members found matching ${searchQuery}`}</p>
-          </div>
-        )}
-      </div>
-    </section>
+      {/* No results found */}
+      {filteredMembers.length === 0 && (
+        <motion.div
+          className="text-center py-5"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-white-50">{`No team members found matching "${searchQuery}"`}</p>
+        </motion.div>
+      )}
+    </div>
+  </section>
   );
 };
 

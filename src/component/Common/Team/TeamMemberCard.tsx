@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { FaPhone, FaEnvelope, FaWhatsapp, FaArrowRight } from 'react-icons/fa';
-
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 interface TeamMemberProps {
   name: string;
   position: string;
@@ -29,10 +30,17 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,  // triggers when 20% of card is visible
+  });
   return (
-    <div
-      className="relative rounded overflow-hidden transition-all duration-300
-"
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 2, ease: "easeOut" }}
+      className="relative rounded overflow-hidden transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ height: '499px' }}
@@ -71,7 +79,7 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({
 
       {/* Contact links - Shown when hovered */}
       <div
-  className="absolute -left-3 bottom-0 w-full px-6 py-4 transition-all duration-300 flex gap-3  "
+  className="absolute -left-3 bottom-0 w-full px-6 py-4 transition-all duration-300 flex gap-2 "
   style={{
     opacity: isHovered ? 1 : 0,
     transform: isHovered ? 'translateY(0)' : 'translateY(100%)'
@@ -80,42 +88,43 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({
   {contactLinks.phone && (
     <a 
       href={`tel:${contactLinks.phone}`} 
-      className="flex items-center justify-center rounded-full bg-[#171717] py-2 px-2 text-white   hover:border-amber-500 transition-all text-decoration-none"
+      className="flex items-center justify-center rounded-full bg-[#171717] py-2 px-2 text-white   hover:border-[#EDBE8C] transition-all text-decoration-none"
     >
-      <div className="rounded-full bg-amber-500 p-1.5 flex items-center justify-center">
-        <FaPhone className="text-black text-[10px]" />
-      </div>
+     <div className="rounded-full bg-[#EDBE8C] p-1.5 flex items-center justify-center">
+  <FaPhone className="text-black text-[10px] transform rotate-155" />
+</div>
+
       <span className="mx-2 text-[10px]">Phone</span>
-      <div className="rounded-full border-1 border-amber-500 w-6 h-6 flex items-center justify-center">
-      <FaArrowRight className="text-amber-500 text-[10px]" />
+      <div className="rounded-full ml-2 border-1 border-[#EDBE8C] w-6 h-6 flex items-center justify-center">
+      <FaArrowRight className="text-[#EDBE8C] text-[10px] " />
       </div>
     </a>
   )}
   {contactLinks.email && (
     <a 
       href={`mailto:${contactLinks.email}`} 
-       className="flex items-center justify-center rounded-full bg-[#171717] py-2 px-2 text-white   hover:border-amber-500 transition-all text-decoration-none"
+       className="flex items-center justify-center rounded-full bg-[#171717] py-2 px-2 text-white   hover:border-[#EDBE8C] transition-all text-decoration-none"
     >
-      <div className="rounded-full bg-amber-500 p-1.5 flex items-center justify-center">
-        <FaEnvelope className="text-black text-[10px]" />
+      <div className="rounded-full flex items-center justify-center">
+        <FaEnvelope className="text-[#EDBE8C]  text-[16px]" />
       </div>
       <span className="mx-2 text-[10px]">Mail</span>
-      <div className="rounded-full border-1 border-amber-500 w-6 h-6 flex items-center justify-center">
-      <FaArrowRight className="text-amber-500 text-[10px]" />
+      <div className="rounded-full ml-2 border-1 border-[#EDBE8C] w-6 h-6 flex items-center justify-center">
+      <FaArrowRight className="text-[#EDBE8C] text-[10px]" />
       </div>
     </a>
   )}
   {contactLinks.whatsapp && (
     <a 
       href={`https://wa.me/${contactLinks.whatsapp}`} 
-      className="flex items-center justify-center rounded-full bg-[#171717] py-2 px-2 text-white   hover:border-amber-500 transition-all text-decoration-none"
+      className="flex items-center justify-center rounded-full bg-[#171717] py-2 px-2 text-white   hover:border-[#EDBE8C] transition-all text-decoration-none"
     >
-      <div className="rounded-full bg-amber-500 p-1.5 flex items-center justify-center">
-        <FaWhatsapp className="text-black text-[10px]" />
+      <div className="rounded-full bg-[#EDBE8C] p-0.5 flex items-center justify-center">
+        <FaWhatsapp className="text-black text-[14px]" />
       </div>
       <span className="mx-2 text-[10px]">Whatsapp</span>
-      <div className="rounded-full border-1 border-amber-500 w-6 h-6 flex items-center justify-center">
-      <FaArrowRight className="text-amber-500 text-[10px]" />
+      <div className="rounded-full ml-2 border-1 border-[#EDBE8C] w-6 h-6 flex items-center justify-center">
+      <FaArrowRight className="text-[#EDBE8C] text-[10px]" />
       </div>
     </a>
   )}
@@ -123,13 +132,13 @@ const TeamMemberCard: React.FC<TeamMemberProps> = ({
 </div>
 
 
-    </div>
+    </motion.div>
   );
 };
 
 const TeamGrid: React.FC<TeamGridProps> = ({ members }) => {
   return (
-    <div className=" py-5">
+    <div className="">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {members.map((member, index) => (
           <div key={index}>

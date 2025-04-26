@@ -13,6 +13,7 @@ import VisibleReveal from './VisibleReveal'
 import CardStack from './Slider/Slider'
 import { images } from '@/data/assets'
 import AboutCard from '../Common/AboutCard'
+import MapSection from '../Common/MapSection'
 
 
 const Home = () => {
@@ -194,41 +195,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <Assistance /> */}
-
-      {/* <Testimonial /> */}
-
-      <section id='map' className='map'>
-        <VisibleReveal>
-          <div className='map-image-container'>
-            <img src={images.mapImage} alt='Map Image' className='map-image' width="100%" height="100%" />
-            <div className='map-content'>
-              <div className='d-sm-flex gap-5 justify-content-between'>
-                <div>
-                  <LeftToRightReveal>
-                    <div className='d-flex flex-column'>
-                      <h2 className='map-title'>Give Us a Visit</h2>
-                      <p className='map-address'><img src={images.locationIcon} alt='LocationIcon' width={20} height={20} /> 814, Burlington Towers, Business Bay,<br /> Dubai UAE</p>
-                      <p className='map-address'>info@hqrealestates.com</p>
-                      <p className='map-address'>+971 544040799</p>
-                      <p className='map-address'>+971 563600699</p>
-                      <p className='map-address'>044-580777</p>
-                    </div>
-                  </LeftToRightReveal>
-                </div>
-                <LeftToRightReveal>
-                  <div className='d-flex flex-column justify-content-end align-items-end'>
-                    <div className='office-image-container'>
-                      <img src={images.OfficeImage} alt='Office Image' className='office-image' width="100%" height="100%" />
-                    </div>
-                  </div>
-                </LeftToRightReveal>
-              </div>
-            </div>
-          </div>
-        </VisibleReveal>
-      </section>
-
+  
+ <MapSection
+  mapImage={images.mapImage}
+  officeImage={images.OfficeImage}
+  locationIcon={images.locationIcon}
+  title="Give Us a Visit"
+  addressLines={[
+    '814, Burlington Towers, Business Bay, Dubai UAE',
+    // 'info@hqrealestates.com',
+    // '+971 544040799',
+    // '+971 563600699',
+    // '044-580777',
+  ]}
+  />
       <Contact />
     </section>
   )

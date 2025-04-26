@@ -21,7 +21,7 @@ const MapSection: React.FC<MapSectionProps> = ({
   addressLines,
 }) => {
   return (
-    <section id="map" className="map my-6">
+    <section id="map" className="map">
       <VisibleReveal>
         <div className="map-image-container">
           <img src={mapImage} alt="Map Image" className="map-image" width="100%" height="100%" />
@@ -44,7 +44,7 @@ const MapSection: React.FC<MapSectionProps> = ({
               </div>
               <LeftToRightReveal>
                 <div className="d-flex flex-column justify-content-end align-items-end">
-                  <div className="office-image-container">
+                  <div className="office-image-container mt-5">
                     <img src={officeImage} alt="Office Image" className="office-image" width="100%" height="100%" />
                   </div>
                 </div>
