@@ -56,8 +56,9 @@ const Blog = () => {
     <div className="container-fluid ">
       <div className="position-relative">
         <Navbar />
+        <div className="my-2">
         <BlogHeader blog={blogData} />
-
+        </div>
         <FeaturedInvestmentAreas title={blogData.blog_subtitle} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
         <div className="my-5">
           <RecentBlogsSection

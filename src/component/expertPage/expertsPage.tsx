@@ -66,7 +66,7 @@ export default function ExpertsPage() {
         <div className="hero-section mb-5">
           <Navbar isAbsolute={true} />
           <HeroSection
-            backgroundImage={images.AboutHero}
+            backgroundImage='/about/expert.jpg'
             title="A Firm of Expertise & "
             subtitle="Excellence."
             navbarHeight="80px"

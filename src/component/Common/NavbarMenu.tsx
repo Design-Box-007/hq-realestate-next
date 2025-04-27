@@ -22,9 +22,9 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
     { name: 'About', href: '/about' },
     { name: 'Property', href: '/property' },
     // { name: 'Services', href: '/services' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog' },
     { name: 'Experts', href: '/experts' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
     // { name: 'properties', href: '/properties' },
   ];
 
@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
     <header
       className={`w-full ${isAbsolute ? 'absolute' : 'relative'} transition-all duration-300 z-50`}
     >
-      <div className="container px-0 py-0 flex justify-between  lg:px-0 " style={{padding:0 }}>
+      <div className="container !px-0 !py-0 flex justify-between  !lg:px-0 " style={{padding:0 }}>
 
         {/* Logo */}
         <LeftToRightReveal>
@@ -40,9 +40,9 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
             <img
               src={images.logo}
               alt="Housing Quest"
-              className="logo-img"
+              className="logo-img object-cover"
               width={100}
-              height={50}
+              height={60}
             />
           </div>
         </LeftToRightReveal>
@@ -51,9 +51,9 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
         <div className="flex text-white items-center gap-4">
           <LeftToRightReveal>
             {/* Map Icon */}
-            <span style={{ cursor: 'pointer' }}>
+            <Link href={"/contact"} style={{ cursor: 'pointer' }}>
               <img src={images.mapIcon} alt="map" className="icon" />
-            </span>
+            </Link>
           </LeftToRightReveal>
 
           {/* Menu Toggle */}

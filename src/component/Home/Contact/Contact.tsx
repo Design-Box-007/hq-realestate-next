@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Name"
-                className='contact-input'
+                className='contact-input text-white'
                 required
               />
             </div>
@@ -119,7 +119,7 @@ const Contact: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email"
-                className='contact-input'
+                className='contact-input text-white'
                 required
               />
             </div>
@@ -130,7 +130,7 @@ const Contact: React.FC = () => {
                 value={formData.mobile}
                 onChange={handleChange}
                 placeholder="Mobile No"
-                className='contact-input'
+                className='contact-input text-white'
                 required
               />
             </div>
@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
                 value={formData.propertyType}
                 onChange={handleChange}
                 required
-                className='contact-input custom-dropdown'
+                className='contact-input text-gray-700 custom-dropdown'
               >
                 <option value="">Select Property Type</option>
                 <option value='Off Plan'>Off Plan</option>
@@ -154,7 +154,7 @@ const Contact: React.FC = () => {
                 name='description'
                 value={formData.description}
                 onChange={handleChange}
-                className='contact-input'
+                className='contact-input text-white'
                 required
               />
             </div>

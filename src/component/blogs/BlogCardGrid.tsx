@@ -17,9 +17,9 @@ const containerVariants = {
 
 const BlogCardGrid: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
   const [currentStep, setCurrentStep] = React.useState(1);
-  
-  const blogsPerPage = 6; // 👈 how many blogs per page you want (you can change)
-  const totalSteps = Math.ceil(blogs.length / blogsPerPage); // 👈 total pages auto-calculated
+
+  const blogsPerPage = 6; // how many blogs per page
+  const totalSteps = Math.ceil(blogs.length / blogsPerPage); // total pages
 
   const startIndex = (currentStep - 1) * blogsPerPage;
   const endIndex = startIndex + blogsPerPage;
@@ -68,14 +68,16 @@ const BlogCardGrid: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
         ))}
       </motion.section>
 
-      {/* Step Navigation below */}
-      <StepNavigation
-        currentStep={currentStep}
-        totalSteps={totalSteps}
-        onPrevious={handlePrevious}
-        onNext={handleNext}
-        onStepClick={handleStepClick}
-      />
+      {/* Only show StepNavigation if blogs length is exactly 6 */}
+      {blogs.length === 6 && (
+        <StepNavigation
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          onStepClick={handleStepClick}
+        />
+      )}
     </>
   );
 };

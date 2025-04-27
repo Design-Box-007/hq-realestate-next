@@ -15,7 +15,7 @@ export default function ContactPage() {
         <HeroSection
           title="Discover Your Dream Property in Dubai"
           description='Explore a Curated Selection of Luxury Homes, Apartments, and Investment Opportunities'
-          backgroundImage="/property/property.jpg"
+          backgroundImage="/contact/contact.jpg"
           navbarHeight="80px"
           showConsultationButton={false}
         />
