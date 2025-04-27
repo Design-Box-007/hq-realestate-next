@@ -61,7 +61,7 @@ const Blog = () => {
         </div>
         <BlogHeader blog={blogData} />
 
-        <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
+        <FeaturedInvestmentAreas title={blogData.blog_subtitle} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
       </div>
     </div>
   );

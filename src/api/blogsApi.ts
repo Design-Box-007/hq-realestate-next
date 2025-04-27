@@ -8,9 +8,10 @@ export interface Blog {
     modified: string;
     acf: {
         blog_description: string;
+        blog_subtitle: string;
         blog_cover_image: string;
         blog_author_name: string;
-        market_insights:string;
+        market_insights: string;
         blog_tags: { blog_tag: string }[];
         investment_data: {
             investment_title: string;
@@ -44,13 +45,14 @@ const blogFormatter = async (data: Blog[]): Promise<IBlog[]> => {
 
             const formattedBlog: IBlog = {
                 blog_title: d.title.rendered,
+                blog_subtitle: acf.blog_subtitle,
                 blog_description: acf.blog_description,
                 cover_image: acf.blog_cover_image,
                 blog_authorName: acf.blog_author_name,
                 created_date: d.date, // The 'date' field from WordPress is used as the created date
                 updatedDate: d.modified, // The 'modified' field from WordPress is used as the updated date
                 readTime: calculateReadTime(acf.blog_description), // Assuming you want a simple read time calculation
-                market_insights:acf.market_insights,
+                market_insights: acf.market_insights,
                 tags: acf.blog_tags.map(tag => tag.blog_tag),
                 investmentData: acf.investment_data.map((investment): IInvestmentData => ({
                     investment_title: investment.investment_title,
