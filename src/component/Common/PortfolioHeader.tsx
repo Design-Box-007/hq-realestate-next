@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link from Next.js
 
 interface PortfolioHeaderProps {
   title: string;
@@ -20,18 +21,21 @@ const PortfolioHeader: React.FC<PortfolioHeaderProps> = ({
   return (
     <div className="d-flex justify-content-between align-items-center mb-4">
       <div className="d-flex align-items-center gap-2">
-        
         <h1 className="text-white fs-2 fw-bold mb-0">{title}</h1>
       </div>
       {iconSrc && (
-          <Image
-            src={iconSrc}
-            alt="Property Icon"
-            width={44}
-            height={44}
-            style={{ objectFit: 'contain' }}
-          />
-        )}
+        <Link href="/contact"> {/* Wrap icon in Link component */}
+          <a>
+            <Image
+              src={iconSrc}
+              alt="Property Icon"
+              width={44}
+              height={44}
+              style={{ objectFit: 'contain' }}
+            />
+          </a>
+        </Link>
+      )}
       {showSearch && (
         <div className="position-relative">
           <input

@@ -4,9 +4,9 @@ import { blogListData } from "@/data/blogs";
 import { Blog as BlogType } from "@/types";
 import formatToHyphenated from "@/utils/formatPathName";
 import { useParams } from "next/navigation";
-import { useState } from "react";
-import Navbar from "../Common/Navbar";
+
 import FeaturedInvestmentAreas from "./FeaturedInvestmentAreas";
+import Navbar from "../Common/NavbarMenu";
 import BlogHeader from "./BlogHeader";
 
 
@@ -31,9 +31,7 @@ import BlogHeader from "./BlogHeader";
 const Blog = () => {
   const { blogName } = useParams();
 
-  const [showMenu, setShowMenu] = useState(false);
-
-
+ 
   // Find the specific blog data based on the slug
   const blogData = blogListData.find((blog: BlogType) =>
     blogName === formatToHyphenated(blog.title)
@@ -42,19 +40,12 @@ const Blog = () => {
   if (!blogData) return <>BLOG NOT FOUND</>;
   if (!blogData.investmentData) return <>Blog Not Found</>
 
-  const handleScroll = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+
 
   return (
     <div className="container-fluid ">
       <div className="position-relative">
-        <div className="position-relative w-100 px-4" style={{ zIndex: 9999 }}>
-          <Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />
-        </div>
+        <Navbar isAbsolute={true}/>
         <BlogHeader blog={blogData} />
 
         <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} />

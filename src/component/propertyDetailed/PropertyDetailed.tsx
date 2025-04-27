@@ -16,9 +16,9 @@ import Navbar from '../Common/NavbarMenu';
 import LocationSection from '../Common/MapSection';
 
 export default function PropertyDetailed() {
-  const { propertyName } = useParams();  // Get the propertyName slug from the URL
+  const { propertyName } = useParams();  
 
-  // Find the specific property data based on the slug (format to hyphenated title)
+  
   const propertyData = propertyList.find((property) =>
     propertyName === formatToHyphenated(property.title)
   ) as PropertyCardProps;
@@ -29,47 +29,65 @@ export default function PropertyDetailed() {
   return (
     <div className="container-fluid">
       <div className="position-relative">
-        <Navbar />
-        <PropertyPage />  {/* Display the PropertyHero component */}
-        <PropertyDetailsCard property={propertyData} /> {/* Pass the correct propertyData */}
+        {/* Wrap each component inside a div with my-5 */}
+        <div >
+          <Navbar />
+        </div>
 
-        <LocationSection
-      address="Suite 756 031 Ines Riverway, Khanmanchester"
-      mapImageSrc={images.mapImage}
-      imageGallery={[
-        {
-          id: "main",
-          src: images.OfficeImage,
-          alt: "Modern office interior"
-        },
-        {
-          id: "thumb-1",
-          src: "/office/office1.png",
-          alt: "Office hallway with glass partitions"
-        },
-        {
-          id: "thumb-2",
-          src: "/office/office2.png",
-          alt: "Contemporary living space"
-        },
-        {
-          id: "thumb-3",
-          src: "/office/office3.png",
-          alt: "Contemporary living space"
-        }
+        <div className="mb-5">
+          <PropertyPage />  {/* Display the PropertyHero component */}
+        </div>
 
-      ]}
-    />
-        <SimilarProperty /> {/* Display similar properties */}
+        <div className="mt-5 mb-16">
+          <PropertyDetailsCard property={propertyData} /> {/* Pass the correct propertyData */}
+        </div>
 
-        <CTA
-          backgroundImage={images.CTAbg}
-          headline="Helping you find your dream property in Dubai"
-          ctaText="Start Your Journey"
-          ctaLink="/contact"
-        />
+        <div className="my-5">
+          <LocationSection
+            title="Give Us a Visit"
+            address="Suite 756 031 Ines Riverway, Khanmanchester"
+            mapImageSrc={images.mapImage}
+            imageGallery={[
+              {
+                id: "main",
+                src: images.OfficeImage,
+                alt: "Modern office interior"
+              },
+              {
+                id: "thumb-1",
+                src: "/office/office1.png",
+                alt: "Office hallway with glass partitions"
+              },
+              {
+                id: "thumb-2",
+                src: "/office/office2.png",
+                alt: "Contemporary living space"
+              },
+              {
+                id: "thumb-3",
+                src: "/office/office3.png",
+                alt: "Contemporary living space"
+              }
+            ]}
+          />
+        </div>
 
-        <Contact /> {/* Display contact information */}
+        <div className="my-5">
+          <SimilarProperty /> {/* Display similar properties */}
+        </div>
+
+        <div className="my-5">
+          <CTA
+            backgroundImage={images.CTAbg}
+            headline="Helping you find your dream property in Dubai"
+            ctaText="Start Your Journey"
+            ctaLink="/contact"
+          />
+        </div>
+
+        <div className="my-5">
+          <Contact /> {/* Display contact information */}
+        </div>
       </div>
     </div>
   );

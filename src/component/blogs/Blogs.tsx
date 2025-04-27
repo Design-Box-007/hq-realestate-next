@@ -5,6 +5,7 @@ import { blogListData } from '@/data/blogs'
 import Hero from '../Common/HeroSection/Hero'
 import { images } from '@/data/assets'
 import CTA from '../Common/Cta';
+import Navbar from '../Common/NavbarMenu';
 
 
 const Blogs = () => {
@@ -17,8 +18,8 @@ const Blogs = () => {
     //  };
   return (
     <section>
-      {/* <Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />     */}
-
+      
+      <Navbar/>
       <div className="p-[10px] md:p-3 lg:p-5 space-y-10">
 
 

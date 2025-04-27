@@ -8,6 +8,7 @@ import { MapPin } from 'lucide-react';
 interface LocationProps {
   address: string;
   mapImageSrc: string;
+  title: string;
   imageGallery: {
     id: string;
     src: string;
@@ -18,100 +19,89 @@ interface LocationProps {
 const LocationSection: React.FC<LocationProps> = ({ 
   address, 
   mapImageSrc, 
-  imageGallery 
+  imageGallery,
+  title
 }) => {
-  // State to track which image is currently being displayed
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [fade, setFade] = useState(false);
 
-  // Animation variants for staggered revealing
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
+  const handleThumbnailClick = (image: any, index: number) => {
+    if (imageGallery[activeImageIndex].id !== image.id) {
+      setFade(true);
+      setTimeout(() => {
+        setActiveImageIndex(index);
+        setFade(false);
+      }, 200);
     }
   };
 
   return (
     <motion.div 
-      className="w-full h-[600px] bg-black text-white relative overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
+      className="w-full min-h-screen text-white relative overflow-hidden mx-2"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 2, ease: 'easeOut' }}
       viewport={{ once: true, margin: "-100px" }}
-      variants={containerVariants}
-      style={{ position: 'relative' }}
     >
       {/* Background Map Image */}
-      <div className="absolute inset-0 z-0 opacity-70">
+      <div className="absolute inset-0 z-0 opacity-60">
         <Image
           src={mapImageSrc}
           alt="Location Map"
           fill
-          className="object-cover"
+          className="object-cover rounded-xl"
           priority
         />
       </div>
 
-      <div className="container mx-auto relative z-10 h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6  py-8 px-4">
+      <div className="container mx-auto relative z-10 h-full px-4 py-12 md:py-16 lg:py-20">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12">
           {/* Left Side - Location Info */}
-          <motion.div variants={itemVariants} className="text-center lg:text-left">
-            <h2 className="font-['Poppins'] font-medium text-3xl sm:text-4xl md:text-5xl mb-6 tracking-wider">
-              Location
-            </h2>
-            <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-            <MapPin/>
-              <p className="font-['Poppins'] font-medium text-base sm:text-lg tracking-wider text-center">
+          <motion.div 
+            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ x: '-100%', opacity: 0 }}
+            transition={{ duration: 2, ease: 'easeInOut' }}
+            className="col-12 col-lg-6 mb-4"
+          >
+            <h2 className="display-4 mb-4">{title}</h2>
+            <div className="d-flex align-items-center gap-2">
+              <MapPin className="text-[#EDBE8C]" size={24} />
+              <p className="font-['Poppins'] text-base md:text-lg tracking-wider mb-0">
                 {address}
               </p>
             </div>
           </motion.div>
 
           {/* Right Side - Image Gallery */}
-          <motion.div variants={itemVariants} className="flex justify-center lg:justify-end">
-            <div className="relative w-full md:w-3/4 lg:w-full max-w-[724px]">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: '100%' }}
+            transition={{ duration: 2, ease: 'easeOut', delay: 0.2 }}
+            className="w-full lg:w-1/2"
+          >
+            <div className="relative w-full">
               {/* Main Image */}
-              <div className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[457px] relative rounded-lg overflow-hidden">
+              <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 relative rounded-lg overflow-hidden">
                 <Image
                   src={imageGallery[activeImageIndex].src}
                   alt={imageGallery[activeImageIndex].alt}
                   fill
-                  className="object-cover"
+                  className={`object-cover transition-opacity ${fade ? 'opacity-0' : 'opacity-100'}`}
                 />
               </div>
 
               {/* Thumbnails */}
-              <div className="absolute bottom-4 right-4 left-4 flex justify-center md:justify-start gap-2">
-                {imageGallery.map((image, index) => (
-                  <motion.div 
+              <div className="absolute bottom-4 right-4 flex gap-2 rounded-lg">
+                {imageGallery.slice(0, 3).map((image, index) => (
+                  <motion.div
                     key={image.id}
-                    className={`w-[100px] h-[60px] sm:w-[149px] sm:h-[94px] relative rounded-lg overflow-hidden cursor-pointer ${
+                    className={`w-16 h-20 sm:w-20 sm:h-14 md:w-24 md:h-16 relative rounded-lg overflow-hidden cursor-pointer ${
                       activeImageIndex === index ? 'ring-1 ring-[#EDBE8C]' : ''
                     }`}
-                    onClick={() => setActiveImageIndex(index)}
-                    variants={itemVariants}
-                    style={{
-                      background: 'transparent',
-                      borderRadius: '8px',
-                      borderWidth: '1px',
-                      borderStyle: 'solid',
-                      borderImageSource: 'linear-gradient(180deg, #EDBE8C 0%, #BD9167 100%)',
-                      borderImageSlice: '1'
-                    }}
+                    onClick={() => handleThumbnailClick(image, index)}
+                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 1, delay: 0.3 * index }}
                   >
                     <Image
                       src={image.src}
