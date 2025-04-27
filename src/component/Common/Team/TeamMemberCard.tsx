@@ -7,17 +7,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { IAgent } from '@/types';
 
-interface TeamMemberProps {
-  name: string;
-  position: string;
-  additionalInfo: string;
-  imageSrc: string;
-  member: {
-    phone?: string;
-    email?: string;
-    whatsapp?: string;
-  };
-}
 
 interface TeamGridProps {
   members: IAgent[];

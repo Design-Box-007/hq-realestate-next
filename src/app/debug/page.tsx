@@ -1,6 +1,6 @@
 'use client' // if using Next.js App Router, otherwise skip this line
 
-import { Agent, getAgents } from '@/api/agentsApi'
+import { getAgents } from '@/api/agentsApi'
 import { useEffect } from 'react'
 
 export default function Debug() {

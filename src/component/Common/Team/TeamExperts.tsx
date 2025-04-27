@@ -13,19 +13,6 @@ const urbanist = Urbanist({
   weight: ['400', '500', '600', '700', '800'],
 });
 
-// Team member card props interface
-interface TeamMemberProps {
-  name: string;
-  image: string;
-  position: string;
-  experience: number;
-  role: string;
-  contactOptions?: {
-    phone?: boolean;
-    mail?: boolean;
-    whatsapp?: boolean;
-  };
-}
 
 // Updated interface for actual team member data structure
 // interface TeamMemberData {
