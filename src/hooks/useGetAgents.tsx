@@ -13,8 +13,8 @@ export function useGetAgents() {
             try {
                 const data = await getAgents();
                 setAgents(data);
-            } catch (e:unknown) {
-                setError("Something went wrong");
+            } catch (e: unknown) {
+                setError((e as Error).message || "Something went wrong");
             } finally {
                 setLoading(false);
             }
