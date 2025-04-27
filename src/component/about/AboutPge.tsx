@@ -5,7 +5,6 @@ import HeroSection from '@/component/Common/HeroSection/HeroSection';
 import { images } from '@/data/assets';
 import AboutSection from './AboutSection';
 import Contact from '../Home/Contact/Contact';
-import MapSection from '../Common/MapSection';
 import WhyChooseUs from './WhyChooseUs';
 import TeamExperts from '../Common/Team/TeamExperts';
 import Navbar from '../Common/NavbarMenu';
@@ -107,34 +106,34 @@ export default function AboutPage() {
 
         {/* Map Section */}
         <div className="my-5">
-        <LocationSection
-      title="Give Us a Visit"
-      address="Suite 756 031 Ines Riverway, Khanmanchester"
-      mapImageSrc={images.mapImage}
-      imageGallery={[
-        {
-          id: "main",
-          src: images.OfficeImage,
-          alt: "Modern office interior"
-        },
-        {
-          id: "thumb-1",
-          src: "/office/office1.png",
-          alt: "Office hallway with glass partitions"
-        },
-        {
-          id: "thumb-2",
-          src: "/office/office2.png",
-          alt: "Contemporary living space"
-        },
-        {
-          id: "thumb-3",
-          src: "/office/office3.png",
-          alt: "Contemporary living space"
-        }
+          <LocationSection
+            title="Give Us a Visit"
+            address="Suite 756 031 Ines Riverway, Khanmanchester"
+            mapImageSrc={images.mapImage}
+            imageGallery={[
+              {
+                id: "main",
+                src: images.OfficeImage,
+                alt: "Modern office interior"
+              },
+              {
+                id: "thumb-1",
+                src: "/office/office1.png",
+                alt: "Office hallway with glass partitions"
+              },
+              {
+                id: "thumb-2",
+                src: "/office/office2.png",
+                alt: "Contemporary living space"
+              },
+              {
+                id: "thumb-3",
+                src: "/office/office3.png",
+                alt: "Contemporary living space"
+              }
 
-      ]}
-    />
+            ]}
+          />
         </div>
 
         {/* Contact Section */}
