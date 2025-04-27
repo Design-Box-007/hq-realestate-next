@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
     <header
       className={`w-full ${isAbsolute ? 'absolute' : 'relative'} transition-all duration-300 z-50`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-start space-x-10">
+      <div className="container mx-auto px-12 py-4 flex justify-between items-start ">
 
         {/* Logo */}
         <LeftToRightReveal>

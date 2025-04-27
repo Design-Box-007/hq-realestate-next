@@ -39,7 +39,7 @@ const TeamMemberCard: React.FC<{ member: IAgent }> = ({
           alt={member.agent_name_}
           layout="fill"
           objectFit="cover"
-          className="w-full h-full"
+          className="w-full h-full brightness-75"
         />
       </div>
       <div className=''>

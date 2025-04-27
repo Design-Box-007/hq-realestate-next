@@ -1,11 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import HeroSection from '../Common/HeroSection/HeroSection';
-import Navbar from '../Common/Navbar';
+
 import PropertyPortfolio from './PropertyGrid';
 import CTA from '../Common/Cta';
 import { images } from '@/data/assets';
 import Contact from '../Home/Contact/Contact';
+import Navbar from '../Common/NavbarMenu';
 
 
 export default function PropertyPage() {
@@ -23,13 +24,7 @@ export default function PropertyPage() {
 <div className="container-fluid ">
 
 <div className="position-relative">
-  <div className="position-absolute top-1 start-0 w-100 px-4" style={{ zIndex: 9999 }}>
-         <Navbar
-            showMenu={showMenu}
-            setShowMenu={setShowMenu}
-            handleScroll={handleScroll}
-          />
-        </div>
+    <Navbar isAbsolute={true}/>
 
         <HeroSection
           title="Discover Your Dream Property in Dubai"
