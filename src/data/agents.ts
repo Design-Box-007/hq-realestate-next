@@ -1,9 +1,10 @@
-import { AgentData } from "@/types";
+import { IAgent } from "@/types";
+import { images } from "./assets";
 
-const agents: AgentData[] = [
+const agents: IAgent[] = [
     {
         agent_name_: "Pintér Beatrix",
-        profile_image: 109, // placeholder ID, you will replace later
+        profile_image: images.agent1,
         position: "Co-Admin",
         experience: 7,
         email: "pinter@example.com",
@@ -12,7 +13,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Balla Daniella",
-        profile_image: 110,
+        profile_image: images.agent2,
         position: "Developer",
         experience: 9,
         email: "balla@example.com",
@@ -21,7 +22,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Kelemen",
-        profile_image: 111,
+        profile_image: images.agent3,
         position: "Team Lead",
         experience: 5,
         email: "kelemen@example.com",
@@ -30,7 +31,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Pintér Beatrix",
-        profile_image: 109,
+        profile_image: images.agent1,
         position: "Co-Admin",
         experience: 7,
         email: "pinter@example.com",
@@ -39,7 +40,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Balla Daniella",
-        profile_image: 110,
+        profile_image: images.agent2,
         position: "Developer",
         experience: 9,
         email: "balla@example.com",
@@ -48,7 +49,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Kelemen",
-        profile_image: 111,
+        profile_image: images.agent3,
         position: "Team Lead",
         experience: 5,
         email: "kelemen@example.com",
@@ -57,7 +58,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Pintér Beatrix",
-        profile_image: 109,
+        profile_image: images.agent1,
         position: "Co-Admin",
         experience: 7,
         email: "pinter@example.com",
@@ -66,7 +67,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Balla Daniella",
-        profile_image: 110,
+        profile_image: images.agent2,
         position: "Developer",
         experience: 9,
         email: "balla@example.com",
@@ -75,7 +76,7 @@ const agents: AgentData[] = [
     },
     {
         agent_name_: "Kelemen",
-        profile_image: 111,
+        profile_image: images.agent3,
         position: "Team Lead",
         experience: 5,
         email: "kelemen@example.com",

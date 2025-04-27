@@ -186,9 +186,9 @@ export interface HeroSectionProps {
   contentClassName?: string;
 }
 
-export interface AgentData {
+export interface IAgent {
     agent_name_: string;
-    profile_image: number; // WordPress Media ID
+    profile_image: string; // WordPress Media ID
     position: string;
     experience: number;
     email: string;

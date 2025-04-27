@@ -19,44 +19,44 @@ export default function ExpertsPage() {
   //                  }
   //              };
 
-  const teamData = [
-    {
-      name: "Pintér Beatrix",
-      image: "/team/team-member-1.jpg",
-      position: "Real Estate Advisor",
-      experience: 7,
-      role: "Co-Admin",
-      contactOptions: {
-        phone: true,
-        mail: true,
-        whatsapp: true
-      }
-    },
-    {
-      name: "Balla Daniella",
-      image: "/team/team-member-2.jpg",
-      position: "Senior Agent",
-      experience: 5,
-      role: "Sales Manager",
-      contactOptions: {
-        phone: false,
-        mail: true,
-        whatsapp: false
-      }
-    },
-    {
-      name: "Kelemen Krisztina",
-      image: "/team/team-member-3.jpg",
-      position: "Property Consultant",
-      experience: 3,
-      role: "Investments",
-      contactOptions: {
-        phone: true,
-        mail: false,
-        whatsapp: true
-      }
-    }
-  ];
+  // const teamData = [
+  //   {
+  //     name: "Pintér Beatrix",
+  //     image: "/team/team-member-1.jpg",
+  //     position: "Real Estate Advisor",
+  //     experience: 7,
+  //     role: "Co-Admin",
+  //     contactOptions: {
+  //       phone: true,
+  //       mail: true,
+  //       whatsapp: true
+  //     }
+  //   },
+  //   {
+  //     name: "Balla Daniella",
+  //     image: "/team/team-member-2.jpg",
+  //     position: "Senior Agent",
+  //     experience: 5,
+  //     role: "Sales Manager",
+  //     contactOptions: {
+  //       phone: false,
+  //       mail: true,
+  //       whatsapp: false
+  //     }
+  //   },
+  //   {
+  //     name: "Kelemen Krisztina",
+  //     image: "/team/team-member-3.jpg",
+  //     position: "Property Consultant",
+  //     experience: 3,
+  //     role: "Investments",
+  //     contactOptions: {
+  //       phone: true,
+  //       mail: false,
+  //       whatsapp: true
+  //     }
+  //   }
+  // ];
 
   return (
     <div className="container-fluid">
@@ -80,7 +80,6 @@ export default function ExpertsPage() {
           <TeamExperts
             title="Meet the Experts Behind Housing Quest"
             showSearch={true}
-            teamMembers={[...teamData, ...teamData]} // Duplicate to show more cards
           />
         </div>
 
