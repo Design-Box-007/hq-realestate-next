@@ -20,7 +20,7 @@ const cardVariants = {
 const BlogCard: React.FC<{ blog: IBlog }> = ({ blog }) => {
   return (
     <motion.div
-      className="flex flex-col overflow-hidden rounded-xl bg-[var(--black-lite-color)] shadow-[0px_4px_10px_0px_#78787826]"
+      className="flex flex-col overflow-hidden rounded-xl  bg-[var(--black-lite-color)] shadow-[0px_4px_10px_0px_#78787826]"
       variants={cardVariants}
     >
       <div className="relative w-full h-60 rounded-xl overflow-hidden mb-4">
@@ -33,7 +33,7 @@ const BlogCard: React.FC<{ blog: IBlog }> = ({ blog }) => {
       </div>
 
       <div className="m-2 ">
-        <h3 className="fs-4 font-bold text-white">{blog.blog_title}</h3>
+        <h3 className="fs-4 font-bold text-white truncate">{blog.blog_title}</h3>
         <p className="text-base text-gray-300 mt-2">{blog.blog_description}</p>
         <Link
           href={`/blog/${formatToHyphenated(blog.blog_title)}`}

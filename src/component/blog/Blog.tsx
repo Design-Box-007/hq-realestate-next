@@ -8,6 +8,7 @@ import FeaturedInvestmentAreas from "./FeaturedInvestmentAreas";
 import Navbar from "../Common/NavbarMenu";
 import BlogHeader from "./BlogHeader";
 import blogListDataV2 from "@/data/blog-v2";
+import CTA from "../Common/Cta";
 
 
 // interface TeamData {
@@ -45,10 +46,11 @@ const Blog = () => {
   return (
     <div className="container-fluid ">
       <div className="position-relative">
-        <Navbar isAbsolute={true}/>
+        <Navbar />
         <BlogHeader blog={blogData} />
 
         <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} />
+        
       </div>
     </div>
   );
