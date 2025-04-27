@@ -6,6 +6,7 @@ import { FaPhone, FaEnvelope, FaWhatsapp, FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { IAgent } from '@/types';
+import { images } from '@/data/assets';
 
 
 interface TeamGridProps {
@@ -35,7 +36,7 @@ const TeamMemberCard: React.FC<{ member: IAgent }> = ({
       {/* Member Image */}
       <div className="relative h-full w-full">
         <Image
-          src={member.profile_image}
+          src={member.profile_image ? member.profile_image : images.agent2}
           alt={member.agent_name_}
           layout="fill"
           objectFit="cover"

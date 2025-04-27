@@ -187,12 +187,12 @@ export interface HeroSectionProps {
 }
 
 export interface IAgent {
-    agent_name_: string;
-    profile_image: string; // WordPress Media ID
-    position: string;
-    experience: number;
-    email: string;
-    phone_number: string;
-    whatsapp: string; // empty string if not available
+  agent_name_: string;
+  profile_image: string;
+  position: string;
+  experience: number;
+  email: string;
+  phone_number: string;
+  whatsapp: string; // empty string if not available
 }
 

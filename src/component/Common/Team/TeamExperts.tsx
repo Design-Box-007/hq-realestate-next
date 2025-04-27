@@ -1,32 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-// import Image from 'next/image';
 import { Urbanist } from 'next/font/google';
 import TeamGrid from './TeamMemberCard';
 import { FaSearch } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import agents from '@/data/agents';
+import { useGetAgents } from '@/hooks/useGetAgents'; // ✅ correct hook
+import { IAgent } from '@/types';
 
 const urbanist = Urbanist({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
 });
-
-
-// Updated interface for actual team member data structure
-// interface TeamMemberData {
-//   name: string;
-//   position: string;
-//   additionalInfo: string;
-//   imageSrc: string;
-//   contactLinks: {
-//     phone?: string;
-//     email?: string;
-//     whatsapp?: string;
-//     linkedin?: string;
-//   };
-// }
 
 // Main component props interface
 interface TeamExpertsProps {
@@ -42,123 +27,35 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  // const agents = [
-  //   {
-  //     name: "Pintér Beatrix",
-  //     position: "Experience 7",
-  //     additionalInfo: "Co-Admin",
-  //     imageSrc: "/team/team1.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567890",
-  //       email: "pinter@example.com",
-  //       whatsapp: "1234567890",
+  // 🔥 Real API call
+  const { agents, loading, error } = useGetAgents();
 
-  //     }
-  //   },
-  //   {
-  //     name: "Balla Daniella",
-  //     position: "Experience 9",
-  //     additionalInfo: "Developer",
-  //     imageSrc: "/team/team2.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567891",
-  //       email: "balla@example.com",
-  //       whatsapp: "1234567891"
-  //     }
-  //   },
-  //   {
-  //     name: "Kelemen",
-  //     position: "Experience 5",
-  //     additionalInfo: "Team Lead",
-  //     imageSrc: "/team/team3.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567892",
-  //       email: "kelemen@example.com",
-  //       whatsapp: "1234567890",
-
-  //     }
-  //   },
-  //   {
-  //     name: "Pintér Beatrix",
-  //     position: "Experience 7",
-  //     additionalInfo: "Co-Admin",
-  //     imageSrc: "/team/team1.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567890",
-  //       email: "pinter@example.com",
-  //       whatsapp: "1234567890",
-
-  //     }
-  //   },
-  //   {
-  //     name: "Balla Daniella",
-  //     position: "Experience 9",
-  //     additionalInfo: "Developer",
-  //     imageSrc: "/team/team2.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567891",
-  //       email: "balla@example.com",
-  //       whatsapp: "1234567891"
-  //     }
-  //   },
-  //   {
-  //     name: "Kelemen",
-  //     position: "Experience 5",
-  //     additionalInfo: "Team Lead",
-  //     imageSrc: "/team/team3.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567892",
-  //       email: "kelemen@example.com",
-  //       whatsapp: "1234567890",
-
-  //     }
-  //   },
-  //   {
-  //     name: "Pintér Beatrix",
-  //     position: "Experience 7",
-  //     additionalInfo: "Co-Admin",
-  //     imageSrc: "/team/team1.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567890",
-  //       email: "pinter@example.com",
-  //       whatsapp: "1234567890",
-
-  //     }
-  //   },
-  //   {
-  //     name: "Balla Daniella",
-  //     position: "Experience 9",
-  //     additionalInfo: "Developer",
-  //     imageSrc: "/team/team2.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567891",
-  //       email: "balla@example.com",
-  //       whatsapp: "1234567891"
-  //     }
-  //   },
-  //   {
-  //     name: "Kelemen",
-  //     position: "Experience 5",
-  //     additionalInfo: "Team Lead",
-  //     imageSrc: "/team/team3.jpg",
-  //     contactLinks: {
-  //       phone: "+1234567892",
-  //       email: "kelemen@example.com",
-  //       linkedin: "https://linkedin.com/in/kelemen"
-  //     }
-  //   }
-  // ];
-
-  // Filter team members based on search query
+  // 🧹 Filter team members based on search query
   const filteredMembers = searchQuery.trim() === ''
     ? agents
-    : agents.filter(member => {
+    : agents.filter((member: IAgent) => {
       const searchLower = searchQuery.toLowerCase();
       return (
         member.agent_name_.toLowerCase().includes(searchLower) ||
         member.position.toLowerCase().includes(searchLower)
       );
     });
+
+  if (loading) {
+    return (
+      <div className="text-center py-5">
+        <p>Loading team members...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-5">
+        <p>Failed to load team members. Please try again.</p>
+      </div>
+    );
+  }
 
   return (
     <section className="text-white pb-3">
