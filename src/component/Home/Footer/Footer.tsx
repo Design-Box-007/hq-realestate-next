@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 import { FaInstagram, FaWhatsapp, FaFacebook, FaLinkedinIn, FaMediumM } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
