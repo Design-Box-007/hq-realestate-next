@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React  from 'react';
 import HeroSection from '../Common/HeroSection/HeroSection';
 
 import PropertyPortfolio from './PropertyGrid';
