@@ -4,17 +4,23 @@ import BlogCardGrid from './BlogCardGrid'
 import Hero from '../Common/HeroSection/Hero'
 import { images } from '@/data/assets'
 import CTA from '../Common/Cta';
-import blogListDataV2 from '@/data/blog-v2';
+import { useGetBlogs } from '@/hooks/useGetBlogs';
 
 
 const Blogs = () => {
 
-    //  const handleScroll = (sectionId:string) => {
-    //      const section = document.getElementById(sectionId);
-    //      if (section) {
-    //          section.scrollIntoView({ behavior: 'smooth' });
-    //      }
-    //  };
+  //  const handleScroll = (sectionId:string) => {
+  //      const section = document.getElementById(sectionId);
+  //      if (section) {
+  //          section.scrollIntoView({ behavior: 'smooth' });
+  //      }
+  //  };
+
+  const { blogs, loading, error } = useGetBlogs();
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   return (
     <section>
       {/* <Navbar showMenu={showMenu} setShowMenu={setShowMenu} handleScroll={handleScroll} />     */}
@@ -33,7 +39,7 @@ const Blogs = () => {
 
 
         <h4 className='text-[32px] leading-[48px] font-medium font-poppins text-white'>Recent Blogs</h4>
-        <BlogCardGrid blogs={blogListDataV2} />
+        <BlogCardGrid blogs={blogs} />
 
         <CTA
           backgroundImage={images.CTAbg}

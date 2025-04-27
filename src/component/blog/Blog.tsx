@@ -7,7 +7,7 @@ import { useState } from "react";
 import Navbar from "../Common/Navbar";
 import FeaturedInvestmentAreas from "./FeaturedInvestmentAreas";
 import BlogHeader from "./BlogHeader";
-import blogListDataV2 from "@/data/blog-v2";
+import { useGetBlogs } from "@/hooks/useGetBlogs";
 
 
 // interface TeamData {
@@ -32,10 +32,14 @@ const Blog = () => {
   const { blogName } = useParams();
 
   const [showMenu, setShowMenu] = useState(false);
+  const { blogs, loading, error } = useGetBlogs();
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
 
   // Find the specific blog data based on the slug
-  const blogData = blogListDataV2.find((blog: IBlog) =>
+  const blogData = blogs.find((blog: IBlog) =>
     blogName === formatToHyphenated(blog.blog_title)
   );
 
@@ -57,7 +61,7 @@ const Blog = () => {
         </div>
         <BlogHeader blog={blogData} />
 
-        <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} />
+        <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
       </div>
     </div>
   );

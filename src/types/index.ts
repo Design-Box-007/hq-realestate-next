@@ -87,6 +87,7 @@ export interface IBlog {
   updatedDate: string;
   readTime: number;
   tags: string[];
+  market_insights: string;
   investmentData?: IInvestmentData[]; // Add this property (make it optional with ? if needed)
 }
 
