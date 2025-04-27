@@ -1,14 +1,15 @@
 // FeaturedInvestmentAreas.tsx
-import { IInvestmentData, InvestmentData } from '@/types';
+import { IBlog, IInvestmentData } from '@/types';
 import Image from 'next/image';
 import React from 'react';
 
 interface FeaturedInvestmentAreasProps {
-  title: string;
+  title: IBlog['blog_title'];
   areas: IInvestmentData[];
+  marketInsights: IBlog['market_insights']
 }
 
-const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title, areas }) => {
+const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title, areas, marketInsights }) => {
   return (
     <div className="w-full  text-white font-poppins mt-12">
       <h2 className="text-2xl md:text-3xl font-medium mb-8">{title}</h2>
@@ -59,7 +60,7 @@ const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title
       <div className="mt-8 p-4 bg-[#121212] rounded-lg">
         <h3 className="text-xl font-medium mb-2">Market Insights & Investment Potential</h3>
         <p className="text-sm text-gray-300">
-          {" Dubai's real estate market continues to show strong growth due to consistent demand, limited supply in premium areas, and the city's strategic position as a global business hub. Investors can anticipate annual rental yields of 6-8% on average with potential for significant capital appreciation in developing neighborhoods."}
+          {marketInsights}
         </p>
       </div>
     </div>

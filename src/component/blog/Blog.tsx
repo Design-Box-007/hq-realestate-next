@@ -7,8 +7,7 @@ import { useParams } from "next/navigation";
 import FeaturedInvestmentAreas from "./FeaturedInvestmentAreas";
 import Navbar from "../Common/NavbarMenu";
 import BlogHeader from "./BlogHeader";
-import blogListDataV2 from "@/data/blog-v2";
-import CTA from "../Common/Cta";
+import { useGetBlogs } from "@/hooks/useGetBlogs";
 
 
 // interface TeamData {
@@ -32,9 +31,15 @@ import CTA from "../Common/Cta";
 const Blog = () => {
   const { blogName } = useParams();
 
- 
+  const [showMenu, setShowMenu] = useState(false);
+  const { blogs, loading, error } = useGetBlogs();
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
+
   // Find the specific blog data based on the slug
-  const blogData = blogListDataV2.find((blog: IBlog) =>
+  const blogData = blogs.find((blog: IBlog) =>
     blogName === formatToHyphenated(blog.blog_title)
   );
 
@@ -49,8 +54,7 @@ const Blog = () => {
         <Navbar />
         <BlogHeader blog={blogData} />
 
-        <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} />
-        
+        <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
       </div>
     </div>
   );
