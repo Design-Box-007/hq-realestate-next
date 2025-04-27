@@ -30,36 +30,36 @@ const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title
             <div className="p-4 space-y-4">
               <div className="flex flex-col space-y-1">
                 <h3 className="text-xl font-medium">{area.investment_title}</h3>
-                <p className="text-sm text-gray-400">
+                <p className="text-lg text-white">
                   Average ROI: <span className="text-white font-medium">{area.average_roi}</span>
                 </p>
               </div>
 
               <div>
-                <p className="text-sm font-medium text-gray-400 mb-2">Why Invest?</p>
+                <p className="text-lg font-medium text-white mb-2">Why Invest?</p>
                 <ul className="space-y-2">
                   {area.features.map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
-                      <span className="mr-2 text-[#BD9167] text-sm">•</span>
-                      <span className="text-sm text-gray-300">{feature}</span>
+                      <span className="mr-2 text-white text-lg">•</span>
+                      <span className="text-lg text-white">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <p className="text-sm ">
-                <span className="text-gray-400">Best Investment Type:</span>{" "}
+              <p className="text-lg ">
+                <span className="text-white">Best Investment Type:</span>{" "}
                 <span className="text-white">{area.best_investment_type}</span>
               </p>
-              <div className='border-b my-4'></div>
+              <div className='border-b my-4 pt-2'></div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="mt-8 p-4 bg-[#121212] rounded-lg">
+      <div className="px-4  rounded-lg">
         <h3 className="text-xl font-medium mb-2">Market Insights & Investment Potential</h3>
-        <p className="text-sm text-gray-300">
+        <p className="text-lg text-white">
           {marketInsights}
         </p>
       </div>
