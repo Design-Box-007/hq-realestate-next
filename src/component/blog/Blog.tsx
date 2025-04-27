@@ -8,6 +8,10 @@ import FeaturedInvestmentAreas from "./FeaturedInvestmentAreas";
 import Navbar from "../Common/NavbarMenu";
 import BlogHeader from "./BlogHeader";
 import { useGetBlogs } from "@/hooks/useGetBlogs";
+import RecentBlogsSection from "../blogs/RecentBlogsSection";
+import blogListDataV2 from "@/data/blog-v2";
+import CTA from "../Common/Cta";
+import { images } from "@/data/assets";
 
 
 // interface TeamData {
@@ -31,7 +35,7 @@ import { useGetBlogs } from "@/hooks/useGetBlogs";
 const Blog = () => {
   const { blogName } = useParams();
 
-  const [showMenu, setShowMenu] = useState(false);
+
   const { blogs, loading, error } = useGetBlogs();
 
   if (loading) return <div>Loading...</div>;
@@ -55,6 +59,22 @@ const Blog = () => {
         <BlogHeader blog={blogData} />
 
         <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
+      <div className="my-5">
+        <RecentBlogsSection
+        blogs={blogListDataV2} 
+        title="Explore Our Blogs" 
+        viewAllLink="/blog"
+        limit={3} // Shows only the first 3 blogs (indexes 0-2)
+      />
+      </div>
+      <div className="my-5">
+      <CTA
+          backgroundImage={images.CTAbg}
+          headline="Helping you find your dream property in Dubai's"
+          ctaText="Start Your Journey"
+          ctaLink="/contact"
+        />
+        </div>
       </div>
     </div>
   );

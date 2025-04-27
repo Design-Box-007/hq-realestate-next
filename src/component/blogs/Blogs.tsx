@@ -4,12 +4,9 @@ import BlogCardGrid from './BlogCardGrid'
 import Hero from '../Common/HeroSection/Hero'
 import { images } from '@/data/assets'
 import CTA from '../Common/Cta';
-<<<<<<< HEAD
-import blogListDataV2 from '@/data/blog-v2';
-import Navbar from '../Common/NavbarMenu';
-=======
 import { useGetBlogs } from '@/hooks/useGetBlogs';
->>>>>>> dc04c59569970b44420bf01decb0bb8847ae332f
+import Navbar from '../Common/NavbarMenu';
+
 
 
 const Blogs = () => {
@@ -42,17 +39,10 @@ const Blogs = () => {
         />
 
 
-<<<<<<< HEAD
-      <div className='my-5'>
-        <h4 className='text-[32px] leading-[48px] font-medium font-poppins text-white mt-3'>Recent Blogs</h4>
-        <BlogCardGrid blogs={blogListDataV2} />
-        </div>
-=======
 
         <h4 className='text-[32px] leading-[48px] font-medium font-poppins text-white'>Recent Blogs</h4>
         <BlogCardGrid blogs={blogs} />
 
->>>>>>> dc04c59569970b44420bf01decb0bb8847ae332f
         <CTA
           backgroundImage={images.CTAbg}
           headline="Helping you find your dream property in Dubai's"
