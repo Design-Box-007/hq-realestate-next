@@ -1,10 +1,11 @@
 // FeaturedInvestmentAreas.tsx
-import { InvestmentData } from '@/types';
+import { IInvestmentData, InvestmentData } from '@/types';
+import Image from 'next/image';
 import React from 'react';
 
 interface FeaturedInvestmentAreasProps {
   title: string;
-  areas: InvestmentData[];
+  areas: IInvestmentData[];
 }
 
 const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title, areas }) => {
@@ -13,32 +14,33 @@ const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title
       <h2 className="text-2xl md:text-3xl font-medium mb-8">{title}</h2>
 
       <div className="flex flex-col gap-6">
-        {areas.map((area) => (
-          <div key={area.id} className="flex flex-col rounded-lg overflow-hidden w-full min-h-[400px]">
+        {areas.map((area: IInvestmentData, index: number) => (
+          <div key={index} className="flex flex-col rounded-lg overflow-hidden w-full min-h-[400px]">
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-              <img
-                src={area.image}
-                alt={area.title}
-                // fill
+              <Image
+                src={area.investment_cover_image}
+                alt={area.investment_title}
+                width={1386}
+                height={500}
                 className="object-cover w-full h-full"
               />
             </div>
 
             <div className="p-4 space-y-4">
               <div className="flex flex-col space-y-1">
-                <h3 className="text-xl font-medium">{area.title}</h3>
+                <h3 className="text-xl font-medium">{area.investment_title}</h3>
                 <p className="text-sm text-gray-400">
-                  Average ROI: <span className="text-white font-medium">{area.averageROI}</span>
+                  Average ROI: <span className="text-white font-medium">{area.average_roi}</span>
                 </p>
               </div>
 
               <div>
                 <p className="text-sm font-medium text-gray-400 mb-2">Why Invest?</p>
                 <ul className="space-y-2">
-                  {area.features.map((feature) => (
-                    <li key={feature.id} className="flex items-start">
+                  {area.features.map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
                       <span className="mr-2 text-[#BD9167] text-sm">•</span>
-                      <span className="text-sm text-gray-300">{feature.description}</span>
+                      <span className="text-sm text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -46,7 +48,7 @@ const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title
 
               <p className="text-sm ">
                 <span className="text-gray-400">Best Investment Type:</span>{" "}
-                <span className="text-white">{area.bestInvestmentType}</span>
+                <span className="text-white">{area.best_investment_type}</span>
               </p>
               <div className='border-b my-4'></div>
             </div>

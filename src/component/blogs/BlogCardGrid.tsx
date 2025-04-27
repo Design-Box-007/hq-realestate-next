@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import { Blog } from "@/types";
+import { IBlog } from "@/types";
 import BlogCard from "./BlogCard";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ const containerVariants = {
     },
 };
 
-const BlogCardGrid: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
+const BlogCardGrid: React.FC<{ blogs: IBlog[] }> = ({ blogs }) => {
     return (
         <motion.section
             className="grid p-[14px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 font-poppins"
@@ -23,7 +23,7 @@ const BlogCardGrid: React.FC<{ blogs: Blog[] }> = ({ blogs }) => {
             whileInView="visible"
             viewport={{ once: true }}
         >
-            {blogs.map((blog: Blog, index: number) => (
+            {blogs.map((blog: IBlog, index: number) => (
                 <BlogCard blog={blog} key={index} />
             ))}
         </motion.section>

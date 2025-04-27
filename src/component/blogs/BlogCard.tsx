@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Blog } from "@/types";
+import { IBlog } from "@/types";
 import Link from "next/link";
 import formatToHyphenated from "@/utils/formatPathName";
 import { ArrowRight } from "lucide-react";
@@ -17,7 +17,7 @@ const cardVariants = {
   },
 };
 
-const BlogCard: React.FC<{ blog: Blog }> = ({ blog }) => {
+const BlogCard: React.FC<{ blog: IBlog }> = ({ blog }) => {
   return (
     <motion.div
       className="flex flex-col overflow-hidden rounded-xl bg-[var(--black-lite-color)] shadow-[0px_4px_10px_0px_#78787826]"
@@ -25,18 +25,18 @@ const BlogCard: React.FC<{ blog: Blog }> = ({ blog }) => {
     >
       <div className="relative w-full h-60 rounded-xl overflow-hidden mb-4">
         <Image
-          src={blog.imgSrc}
-          alt={blog.title}
+          src={blog.cover_image}
+          alt={blog.blog_title}
           layout="fill"
           className="object-cover"
         />
       </div>
-      
+
       <div className="m-2 ">
-        <h3 className="fs-4 font-bold text-white">{blog.title}</h3>
-        <p className="text-base text-gray-300 mt-2">{blog.description}</p>
-        <Link 
-          href={`/blogs/${formatToHyphenated(blog.title)}`} 
+        <h3 className="fs-4 font-bold text-white">{blog.blog_title}</h3>
+        <p className="text-base text-gray-300 mt-2">{blog.blog_description}</p>
+        <Link
+          href={`/blog/${formatToHyphenated(blog.blog_title)}`}
           className="block w-full mt-4 text-decoration-none"
         >
           <button className="w-full rounded-3 bg-white text-gray-800 font-medium py-3 px-4 rounded-xl flex items-center justify-center">
