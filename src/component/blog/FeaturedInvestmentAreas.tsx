@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 
 interface FeaturedInvestmentAreasProps {
-  title: IBlog['blog_title'];
+  title: IBlog['blog_subtitle'];
   areas: IInvestmentData[];
   marketInsights: IBlog['market_insights']
 }
@@ -12,7 +12,7 @@ interface FeaturedInvestmentAreasProps {
 const FeaturedInvestmentAreas: React.FC<FeaturedInvestmentAreasProps> = ({ title, areas, marketInsights }) => {
   return (
     <div className="w-full  text-white font-poppins mt-12">
-      <h2 className="text-2xl md:text-3xl font-medium mb-8">{title}</h2>
+      <h2 className="text-5xl md:text-3xl font-medium mb-8">{title}</h2>
 
       <div className="flex flex-col gap-6">
         {areas.map((area: IInvestmentData, index: number) => (

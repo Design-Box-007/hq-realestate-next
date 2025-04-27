@@ -58,22 +58,22 @@ const Blog = () => {
         <Navbar />
         <BlogHeader blog={blogData} />
 
-        <FeaturedInvestmentAreas title={"Featured Areas for High ROI Investments"} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
-      <div className="my-5">
-        <RecentBlogsSection
-        blogs={blogListDataV2} 
-        title="Explore Our Blogs" 
-        viewAllLink="/blog"
-        limit={3} // Shows only the first 3 blogs (indexes 0-2)
-      />
-      </div>
-      <div className="my-5">
-      <CTA
-          backgroundImage={images.CTAbg}
-          headline="Helping you find your dream property in Dubai's"
-          ctaText="Start Your Journey"
-          ctaLink="/contact"
-        />
+        <FeaturedInvestmentAreas title={blogData.blog_subtitle} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
+        <div className="my-5">
+          <RecentBlogsSection
+            blogs={blogListDataV2}
+            title="Explore Our Blogs"
+            viewAllLink="/blog"
+            limit={3} // Shows only the first 3 blogs (indexes 0-2)
+          />
+        </div>
+        <div className="my-5">
+          <CTA
+            backgroundImage={images.CTAbg}
+            headline="Helping you find your dream property in Dubai's"
+            ctaText="Start Your Journey"
+            ctaLink="/contact"
+          />
         </div>
       </div>
     </div>

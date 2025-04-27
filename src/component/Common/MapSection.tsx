@@ -5,27 +5,30 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
+
+interface ImageGalleryType {
+  id: string;
+  src: string;
+  alt: string;
+}
+
 interface LocationProps {
   address: string;
   mapImageSrc: string;
   title: string;
-  imageGallery: {
-    id: string;
-    src: string;
-    alt: string;
-  }[];
+  imageGallery: ImageGalleryType[];
 }
 
-const LocationSection: React.FC<LocationProps> = ({ 
-  address, 
-  mapImageSrc, 
+const LocationSection: React.FC<LocationProps> = ({
+  address,
+  mapImageSrc,
   imageGallery,
   title
 }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [fade, setFade] = useState(false);
 
-  const handleThumbnailClick = (image: any, index: number) => {
+  const handleThumbnailClick = (image: ImageGalleryType, index: number) => {
     if (imageGallery[activeImageIndex].id !== image.id) {
       setFade(true);
       setTimeout(() => {
@@ -36,7 +39,7 @@ const LocationSection: React.FC<LocationProps> = ({
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="w-full min-h-screen text-white relative overflow-hidden mx-2"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -57,7 +60,7 @@ const LocationSection: React.FC<LocationProps> = ({
       <div className="container mx-auto relative z-10 h-full px-4 py-12 md:py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12">
           {/* Left Side - Location Info */}
-          <motion.div 
+          <motion.div
             whileInView={{ x: 0, opacity: 1 }}
             initial={{ x: '-100%', opacity: 0 }}
             transition={{ duration: 2, ease: 'easeInOut' }}
@@ -95,9 +98,8 @@ const LocationSection: React.FC<LocationProps> = ({
                 {imageGallery.slice(0, 3).map((image, index) => (
                   <motion.div
                     key={image.id}
-                    className={`w-16 h-20 sm:w-20 sm:h-14 md:w-24 md:h-16 relative rounded-lg overflow-hidden cursor-pointer ${
-                      activeImageIndex === index ? 'ring-1 ring-[#EDBE8C]' : ''
-                    }`}
+                    className={`w-16 h-20 sm:w-20 sm:h-14 md:w-24 md:h-16 relative rounded-lg overflow-hidden cursor-pointer ${activeImageIndex === index ? 'ring-1 ring-[#EDBE8C]' : ''
+                      }`}
                     onClick={() => handleThumbnailClick(image, index)}
                     whileInView={{ opacity: 1 }}
                     initial={{ opacity: 0 }}

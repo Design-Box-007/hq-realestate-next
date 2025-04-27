@@ -4,6 +4,8 @@ import { images } from "./assets";
 const blogListDataV2: IBlog[] = [
     {
         blog_title: "Top 5 Property Investment Tips",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "Explore how lighting choices impact interior spaces, enhancing aesthetics and functionality in Dubai's fit-outs.",
         cover_image: images.Blog1,
         blog_authorName: "John Doe",
@@ -38,6 +40,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "How to Maximize Rental Yields in Dubai Real Estate",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "Discover strategies to maximize rental yields with prime properties in Dubai, targeting high-demand areas.",
         cover_image: images.Blog2,
         blog_authorName: "Jane Smith",
@@ -72,6 +76,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "The Future of Dubai’s Luxury Real Estate Market",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "Understand the upcoming trends in Dubai’s luxury real estate market and how they will shape investments in the future.",
         cover_image: images.Blog3,
         blog_authorName: "Ali Akram",
@@ -106,6 +112,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "The Best Investment Areas in Dubai for 2025",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "Explore the top investment opportunities in Dubai for 2025, from luxury properties to up-and-coming neighborhoods.",
         cover_image: images.BlogHero,
         blog_authorName: "Sara Khan",
@@ -140,6 +148,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "Exploring the Impact of Expo 2020 on Dubai’s Property Market",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "How Expo 2020 has influenced the Dubai property market, driving demand in certain areas and changing market dynamics.",
         cover_image: images.Blog1,
         blog_authorName: "Mohammad Tariq",
@@ -174,6 +184,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "Investing in Dubai’s Commercial Real Estate Market",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "A guide to investing in Dubai’s commercial real estate market, focusing on key areas, ROI, and future trends.",
         cover_image: images.Blog2,
         blog_authorName: "Ahmed Farooq",
@@ -208,6 +220,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "Why Dubai is the Top Choice for Real Estate Investment in 2025",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "Discover why Dubai continues to be a prime destination for real estate investment in 2025, from its booming economy to its investor-friendly policies.",
         cover_image: images.Blog3,
         blog_authorName: "Rania Al-Farsi",
@@ -242,6 +256,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "How to Build a Successful Property Portfolio in Dubai",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "A guide to building a successful property portfolio in Dubai, from selecting the right properties to understanding market trends and financing options.",
         cover_image: images.BlogHero,
         blog_authorName: "Tariq Ali",
@@ -276,6 +292,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "How Dubai’s Expo 2020 Has Transformed the Property Landscape",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "An analysis of how Expo 2020 has reshaped Dubai’s property market, from infrastructure development to new investment opportunities.",
         cover_image: images.Blog1,
         blog_authorName: "Laila Noor",
@@ -310,6 +328,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "Investing in Off-Plan Properties in Dubai: What You Need to Know",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "A comprehensive guide on investing in off-plan properties in Dubai, including key considerations, risks, and potential rewards.",
         cover_image: images.Blog2,
         blog_authorName: "Ahmed Zayed",
@@ -344,6 +364,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "Dubai’s Rental Yields: Best Areas to Invest in 2025",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "Explore the best areas in Dubai offering high rental yields in 2025, perfect for property investors looking to maximize returns.",
         cover_image: images.Blog3,
         blog_authorName: "Samiya Al-Hassan",
@@ -378,6 +400,8 @@ const blogListDataV2: IBlog[] = [
     },
     {
         blog_title: "The Future of Dubai Real Estate: Trends to Watch in 2025 and Beyond",
+        blog_subtitle: "Featured Areas for High ROI Investments",
+        market_insights: "Dubai’s real estate market continues to thrive, with government incentives such as golden visas for investors and developer-backed payment plans making it even more attractive. Whether you're looking for luxury, affordability, or high rental yields, these five locations offer proven returns and sustainable growth.",
         blog_description: "A look at the key trends shaping the future of Dubai’s real estate market, including smart homes, sustainable development, and more.",
         cover_image: images.BlogHero,
         blog_authorName: "Mona Khaled",

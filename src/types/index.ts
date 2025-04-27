@@ -80,6 +80,7 @@ export interface InvestmentData {
 
 export interface IBlog {
   blog_title: string;
+  blog_subtitle:string;
   blog_description: string;
   cover_image: string;
   blog_authorName: string;
