@@ -64,7 +64,6 @@ interface Blog {
   investmentData?: InvestmentData[]; // Add this property (make it optional with ? if needed)
 }
 
-
 export interface InvestmentData {
   id: string;
   title: string;
@@ -77,6 +76,30 @@ export interface InvestmentData {
   }[]
   bestInvestmentType: string;
 }
+
+
+export interface IBlog {
+  blog_title: string;
+  blog_description: string;
+  cover_image: string;
+  blog_authorName: string;
+  created_date: string;
+  updatedDate: string;
+  readTime: number;
+  tags: string[];
+  investmentData?: IInvestmentData[]; // Add this property (make it optional with ? if needed)
+}
+
+export interface IInvestmentData {
+  investment_title: string;
+  investment_cover_image: string;
+  average_roi: string;
+  best_investment_type: string;
+  features: string[];
+}
+
+
+
 
 
 

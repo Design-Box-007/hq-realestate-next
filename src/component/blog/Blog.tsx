@@ -1,13 +1,13 @@
 'use client'
 
-import { blogListData } from "@/data/blogs";
-import { Blog as BlogType } from "@/types";
+import { IBlog } from "@/types";
 import formatToHyphenated from "@/utils/formatPathName";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import Navbar from "../Common/Navbar";
 import FeaturedInvestmentAreas from "./FeaturedInvestmentAreas";
 import BlogHeader from "./BlogHeader";
+import blogListDataV2 from "@/data/blog-v2";
 
 
 // interface TeamData {
@@ -35,8 +35,8 @@ const Blog = () => {
 
 
   // Find the specific blog data based on the slug
-  const blogData = blogListData.find((blog: BlogType) =>
-    blogName === formatToHyphenated(blog.title)
+  const blogData = blogListDataV2.find((blog: IBlog) =>
+    blogName === formatToHyphenated(blog.blog_title)
   );
 
   if (!blogData) return <>BLOG NOT FOUND</>;

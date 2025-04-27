@@ -1,10 +1,10 @@
 'use client';
 import React from 'react'
 import BlogCardGrid from './BlogCardGrid'
-import { blogListData } from '@/data/blogs'
 import Hero from '../Common/HeroSection/Hero'
 import { images } from '@/data/assets'
 import CTA from '../Common/Cta';
+import blogListDataV2 from '@/data/blog-v2';
 
 
 const Blogs = () => {
@@ -33,7 +33,7 @@ const Blogs = () => {
 
 
         <h4 className='text-[32px] leading-[48px] font-medium font-poppins text-white'>Recent Blogs</h4>
-        <BlogCardGrid blogs={blogListData} />
+        <BlogCardGrid blogs={blogListDataV2} />
 
         <CTA
           backgroundImage={images.CTAbg}
