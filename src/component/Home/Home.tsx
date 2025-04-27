@@ -13,7 +13,8 @@ import VisibleReveal from './VisibleReveal'
 import CardStack from './Slider/Slider'
 import { images } from '@/data/assets'
 import AboutCard from '../Common/AboutCard'
-import MapSection from '../Common/MapSection'
+import LocationSection from '../Common/MapSection'
+
 
 
 const Home = () => {
@@ -196,19 +197,34 @@ const Home = () => {
       </section>
 
   
- <MapSection
-  mapImage={images.mapImage}
-  officeImage={images.OfficeImage}
-  locationIcon={images.locationIcon}
-  title="Give Us a Visit"
-  addressLines={[
-    '814, Burlington Towers, Business Bay, Dubai UAE',
-    // 'info@hqrealestates.com',
-    // '+971 544040799',
-    // '+971 563600699',
-    // '044-580777',
-  ]}
-  />
+      <LocationSection
+      title="Give Us a Visit"
+      address="Suite 756 031 Ines Riverway, Khanmanchester"
+      mapImageSrc={images.mapImage}
+      imageGallery={[
+        {
+          id: "main",
+          src: images.OfficeImage,
+          alt: "Modern office interior"
+        },
+        {
+          id: "thumb-1",
+          src: "/office/office1.png",
+          alt: "Office hallway with glass partitions"
+        },
+        {
+          id: "thumb-2",
+          src: "/office/office2.png",
+          alt: "Contemporary living space"
+        },
+        {
+          id: "thumb-3",
+          src: "/office/office3.png",
+          alt: "Contemporary living space"
+        }
+
+      ]}
+    />
       <Contact />
     </section>
   )

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getBlogs } from "@/api/blogsApi"; // Update with the correct path to your blogApi
 import { IBlog } from "@/types"; // Assuming your blog type is IBlog
+import blogListDataV2 from "@/data/blog-v2";
 
 export function useGetBlogs() {
     const [blogs, setBlogs] = useState<IBlog[]>([]);
@@ -11,7 +12,7 @@ export function useGetBlogs() {
         async function fetchBlogs() {
             try {
                 const data = await getBlogs(); // Fetch blogs using the function you defined
-                setBlogs(data);
+                setBlogs([...blogListDataV2]);
             } catch (e: unknown) {
                 setError((e as Error).message || "Something went wrong");
             } finally {

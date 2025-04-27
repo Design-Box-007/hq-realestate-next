@@ -13,22 +13,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [scrolled, setScrolled] = useState(false);
-
-  // Scroll effect
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 50) {
-  //       setScrolled(true);
-  //     } else {
-  //       setScrolled(false);
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
-
+ 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -36,18 +21,18 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Property', href: '/property' },
-    { name: 'Services', href: '/services' },
+    // { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
     { name: 'Experts', href: '/experts' },
-    { name: 'properties', href: '/properties' },
+    // { name: 'properties', href: '/properties' },
   ];
 
   return (
     <header
       className={`w-full ${isAbsolute ? 'absolute' : 'relative'} transition-all duration-300 z-50`}
     >
-      <div className="container mx-auto px-12 py-4 flex justify-between items-start ">
+      <div className="container px-0 py-0 flex justify-between  lg:px-0 " style={{padding:0 }}>
 
         {/* Logo */}
         <LeftToRightReveal>

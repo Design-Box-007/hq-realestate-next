@@ -14,18 +14,19 @@ const SimilarProperty: React.FC = () => {
   // const filteredProperties = properties.filter((property) =>
   //   property.title.toLowerCase().includes(search.toLowerCase())
   // );
+  const limitedProperties = propertyList.slice(0, 2);
 
   return (
     <div className="py-4">
       <div>
         <PortfolioHeader
-          title="Property Overview"
+          title="Similar Properties you may Like"
           showSearch={false}
           iconSrc="/property/Frame.png"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {propertyList.map((property, index) => (
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+{limitedProperties.map((property, index) => (
             <PropertyCard
               key={index}
               images={property.images}

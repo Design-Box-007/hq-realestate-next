@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
@@ -42,11 +43,8 @@ const Hero: React.FC<HeroProps> = ({
   ctaLink,
   ctaStatus = false,
   bgImage,
-  // featured = false,
-  // onNavigate,
   slides = []
 }) => {
-
 
   // Use provided slides or create a default with current props
   const heroSlides = slides.length > 0 ? slides : [{
@@ -58,43 +56,27 @@ const Hero: React.FC<HeroProps> = ({
     ctaName
   }];
 
-  // Navigation function to move to the next slide
-  // const handleNavigation = () => {
-  //   if (onNavigate) {
-  //     // If custom navigation is provided, use that
-  //     onNavigate();
-  //   } else if (slides.length > 0) {
-  //     // Otherwise handle internal navigation between slides
-  //     setCurrentSlideIndex((prev) => (prev + 1) % heroSlides.length);
-  //   }
-  // };
-
-  // Get current slide data
   const currentSlide = heroSlides[0];
 
   return (
     <section className="text-white w-full flex flex-col justify-end relative rounded-xl overflow-hidden min-h-[520px] max-[500px]:pt-[100px] p-8 sm:p-6 md:p-10 lg:p-12">
-      <Image
-        loading="eager"
-        src={currentSlide.bgImage || bgImage}
-        width={1153}
-        height={641}
-        alt="background"
-        className="-z-10 h-full rounded-xl absolute w-full brightness-[0.8] top-0 right-0 left-0 object-cover"
-      />
+      
+      {/* Background Layer with Left to Right Reveal */}
+      <motion.div
+        initial={{ x: '-100%' }}
+        animate={{ x: '0%' }}
+        transition={{ duration: 4, ease: 'easeInOut' }}   
+        className="absolute top-0 left-0 w-full h-full bg-cover bg-center z-0 brightness-[0.8] filter"
+        style={{ backgroundImage: `url(${currentSlide.bgImage || bgImage})` }}
+      ></motion.div>
 
-      {/* Navigation arrow */}
-      {/* <div 
-        className="absolute top-1/2 right-4 bg-white/10 backdrop-blur-sm rounded-full p-2 cursor-pointer hover:bg-white/20 transition-all"
-        onClick={handleNavigation}
+      {/* Content Section */}
+      <motion.div
+        initial={{ y: '-80px', opacity: 0 }}   
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 2, ease: 'easeOut', delay: 3 }} 
+        className="text-left flex flex-col gap-3 sm:gap-2 z-10"
       >
-        <ArrowRight size={24} className="text-white" />
-      </div> */}
-
-      {/* content section */}
-      <div className="text-left flex flex-col gap-3 sm:gap-2 ">
-
-
         {/* Subheading */}
         {currentSlide.subheading && (
           <motion.p
@@ -109,6 +91,7 @@ const Hero: React.FC<HeroProps> = ({
           </motion.p>
         )}
 
+        {/* Heading */}
         <motion.h1
           className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-white font-bold"
           dangerouslySetInnerHTML={{ __html: currentSlide.heading || heading }}
@@ -119,6 +102,7 @@ const Hero: React.FC<HeroProps> = ({
           key={`heading-${0}`}
         />
 
+        {/* Content */}
         <motion.p
           className="text-xl md:text-2xl text-white/90"
           dangerouslySetInnerHTML={{ __html: currentSlide.content || content }}
@@ -129,7 +113,7 @@ const Hero: React.FC<HeroProps> = ({
           key={`content-${0}`}
         />
 
-        {/* Conditionally render CTA button */}
+        {/* Conditionally Render CTA Button */}
         {ctaStatus && currentSlide.ctaName && currentSlide.ctaLink && (
           <a
             href={currentSlide.ctaLink}
@@ -143,20 +127,7 @@ const Hero: React.FC<HeroProps> = ({
             </span>
           </a>
         )}
-      </div>
-
-      {/* Optional slide indicators */}
-      {/* {slides.length > 1 && (
-        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
-          {slides.map((_, index) => (
-            <button 
-              key={index}
-              className={`w-2 h-2 rounded-full ${index === currentSlideIndex ? 'bg-white' : 'bg-white/50'}`}
-              onClick={() => setCurrentSlideIndex(index)}
-            />
-          ))}
-        </div>
-      )} */}
+      </motion.div>
     </section>
   );
 };
