@@ -31,18 +31,18 @@ export default function PropertyDetailed() {
         <PropertyDetailsCard property={propertyData} /> {/* Pass the correct propertyData */}
 
         <MapSection
-          mapImage={images.mapImage}
-          officeImage={images.OfficeImage}
-          locationIcon={images.locationIcon}
-          title="Give Us a Visit"
-          addressLines={[
-            '814, Burlington Towers, Business Bay, Dubai UAE',
-            'info@hqrealestates.com',
-            '+971 544040799',
-            '+971 563600699',
-            '044-580777',
-          ]}
-        />
+            mapImage={images.mapImage}
+            officeImage={images.OfficeImage}
+            locationIcon={images.locationIcon}
+            title="Give Us a Visit"
+            addressLines={[
+              '814, Burlington Towers, Business Bay, Dubai UAE',
+              // 'info@hqrealestates.com',
+              // '+971 544040799',
+              // '+971 563600699',
+              // '044-580777',
+            ]}
+          />
 
         <SimilarProperty /> {/* Display similar properties */}
 

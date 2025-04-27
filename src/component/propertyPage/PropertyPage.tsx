@@ -10,14 +10,14 @@ import Navbar from '../Common/NavbarMenu';
 
 
 export default function PropertyPage() {
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
 
-  const handleScroll = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const handleScroll = (sectionId: string) => {
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
     
@@ -34,12 +34,14 @@ export default function PropertyPage() {
           showConsultationButton={false}
         />
       <PropertyPortfolio/>
+      <div className='my-5'>
       <CTA 
         backgroundImage={images.CTAbg}
         headline="Helping you find your dream property in Dubai's"
         ctaText="Start Your Journey"
         ctaLink="/contact"
       />
+      </div>
         <Contact/>
 
       </div>
