@@ -20,9 +20,10 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
     <div className="flex items-center justify-between w-full bg-[#171717] text-white px-4 py-3 my-6">
       {/* Previous button */}
       <button 
-        onClick={onPrevious}
-        className="flex items-center text-sm hover:text-gray-300 transition-colors"
-      >
+  onClick={(e) => { e.preventDefault(); onPrevious(); }}
+  className="flex items-center text-sm hover:text-gray-300 transition-colors"
+>
+
         <ChevronLeft size={16}  className='text-[#EDBE8C] '/>
         <span>Preview</span>
       </button>
@@ -31,8 +32,11 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
       <div className="flex items-center gap-2">
         {Array.from({ length: totalSteps }, (_, i) => (
           <button
-            key={i}
-            onClick={() => onStepClick?.(i + 1)}
+          key={i}
+          onClick={(e) => { 
+            e.preventDefault(); 
+            onStepClick?.(i + 1); 
+          }}
             className={`w-6 h-6 rounded flex items-center justify-center text-xs
               ${i + 1 === currentStep 
                 ? 'bg-[#EDBE8C] text-black font-medium' 
@@ -48,9 +52,10 @@ const StepNavigation: React.FC<StepNavigationProps> = ({
 
       {/* Next button */}
       <button 
-        onClick={onNext}
-        className="flex items-center text-sm hover:text-gray-300 transition-colors"
-      >
+  onClick={(e) => { e.preventDefault(); onNext(); }}
+  className="flex items-center text-sm hover:text-gray-300 transition-colors"
+>
+
         <span>Next</span>
         <ChevronRight size={16} />
       </button>
