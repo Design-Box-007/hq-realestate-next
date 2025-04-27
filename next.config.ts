@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['uzq.bth.mybluehostin.me'],
+  },
 };
 
 export default nextConfig;

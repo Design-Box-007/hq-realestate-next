@@ -1,17 +1,12 @@
 'use client' // if using Next.js App Router, otherwise skip this line
 
-import { getAgents } from '@/api/agentsApi'
-import { useEffect } from 'react'
+import { useGetAgents } from '@/hooks/useGetAgents'
 
 export default function Debug() {
-    useEffect(() => {
-        async function getData() {
-            const data = await getAgents();
-            console.log(data);
-        }
 
-        getData()
-    }, [])
+    const { agents } = useGetAgents();
+
+    console.log(agents);
 
     return (
         <div style={{ padding: 20 }}>
