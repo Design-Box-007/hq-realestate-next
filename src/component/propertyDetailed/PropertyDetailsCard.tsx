@@ -1,28 +1,29 @@
 // PropertyDetailsCard.tsx
 import React from 'react';
-import { 
-  Baby, 
-  Waves, 
-  Home, 
-  AirVent, 
-  Shield, 
-  Car, 
-  Dumbbell, 
-  ShoppingBag, 
-  PawPrint, 
+import {
+  Baby,
+  Waves,
+  Home,
+  AirVent,
+  Shield,
+  Car,
+  Dumbbell,
+  ShoppingBag,
+  PawPrint,
   Share,
   Bookmark,
   Sliders,
   MapPin
-} from 'lucide-react';import ConsultationButton from '../Common/ConsultationBtn';
+} from 'lucide-react'; import ConsultationButton from '../Common/ConsultationBtn';
 import { motion } from 'framer-motion'; // 👈 Framer Motion
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { PropertyCardProps } from '@/types';
+import { IProperty } from '@/types';
 import { FaStar } from 'react-icons/fa';
+import { images } from '@/data/assets';
 
 // Interface
 interface PropertyDetailsCardProps {
-  property: PropertyCardProps;
+  property: IProperty;
 }
 
 
@@ -40,7 +41,7 @@ const amenityIcons: Record<string, React.ReactNode> = {
 
 export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 100 }}  // 👈 Start from bottom with opacity 0
       whileInView={{ opacity: 1, y: 0 }}  // 👈 Fade in and move up
       viewport={{ once: true }}
@@ -103,7 +104,7 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
         <div className="col">
           <div className="h-100">
             <p className="text-base md:text-lg text-[#A9A9A9] mb-1">Bed Rooms</p>
-            <p className="text-xl md:text-2xl">{property.bedrooms} Bed Rooms</p>
+            <p className="text-xl md:text-2xl">{property.units} Bed Rooms</p>
           </div>
         </div>
         <div className="col">
@@ -117,7 +118,7 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
             <ConsultationButton
               show={true}
               link="/consultation"
-              iconSrc="/icons/consultation-icon.png"
+              iconSrc={images.agent1}
             />
           </div>
         </div>
@@ -128,7 +129,7 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
         <h3 className="text-xl font-semibold mb-4">Features & Amenities</h3>
         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
           {property.ameneties.map((amenity: string, index: number) => (
-            <motion.div 
+            <motion.div
               className="col"
               key={index}
               initial={{ opacity: 0, x: 100 }}
@@ -137,11 +138,11 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="d-flex align-items-center p-3 rounded border-1 border-[#BD9167] h-100">
-              <div className="flex items-center space-x-2">
-              {amenityIcons[amenity] || <FaStar className="text-[#BD9167]" />}
+                <div className="flex items-center space-x-2">
+                  {amenityIcons[amenity] || <FaStar className="text-[#BD9167]" />}
 
-  <span className="text-base md:text-lg">{amenity}</span>
-</div>
+                  <span className="text-base md:text-lg">{amenity}</span>
+                </div>
 
               </div>
             </motion.div>

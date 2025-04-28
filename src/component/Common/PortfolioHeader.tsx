@@ -24,7 +24,7 @@ const PortfolioHeader: React.FC<PortfolioHeaderProps> = ({
         <h1 className="text-white fs-2 fw-bold mb-0">{title}</h1>
       </div>
       {iconSrc && (
-        <Link href="/contact"> {/* Wrap icon in Link component */}
+        <Link href="/contact" passHref> {/* Wrap icon in Link component */}
           <a>
             <Image
               src={iconSrc}

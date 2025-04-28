@@ -11,17 +11,30 @@ import CTA from '../Common/Cta';
 import Contact from '../Home/Contact/Contact';
 import { propertyList } from '@/data/propertyData';
 import formatToHyphenated from "@/utils/formatPathName";
-import { PropertyCardProps } from "@/types";
+import { IProperty, PropertyCardProps } from "@/types";
 import Navbar from '../Common/NavbarMenu';
 import LocationSection from '../Common/MapSection';
+import { useGetProperties } from '@/hooks/useGetProperties';
 
 export default function PropertyDetailed() {
-  const { propertyName } = useParams();  
+  const { propertyName } = useParams();
+  const { properties, loading, error } = useGetProperties();
 
-  
-  const propertyData = propertyList.find((property) =>
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (properties.length === 0) {
+    return <div>No properties found</div>;
+  }
+
+  const propertyData = properties.find((property: IProperty) =>
     propertyName === formatToHyphenated(property.title)
-  ) as PropertyCardProps;
+  ) as IProperty;
 
   // If property not found, display message
   if (!propertyData) return <>PROPERTY NOT FOUND</>;
@@ -73,7 +86,7 @@ export default function PropertyDetailed() {
         </div>
 
         <div className="my-5">
-          <SimilarProperty /> {/* Display similar properties */}
+          <SimilarProperty propertyList={properties}/> {/* Display similar properties */}
         </div>
 
         <div className="my-5">

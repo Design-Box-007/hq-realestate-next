@@ -1,9 +1,9 @@
 // data/propertyData.ts
 
-import { PropertyCardProps } from "@/types";
+import { IProperty } from "@/types";
 import { images } from "./assets";
 
-export const propertyList: PropertyCardProps[] = [
+export const propertyList: IProperty[] = [
   {
     "id": "burj-khalifa-residences",
     "images": images.AboutHero,

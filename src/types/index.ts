@@ -80,7 +80,7 @@ export interface InvestmentData {
 
 export interface IBlog {
   blog_title: string;
-  blog_subtitle:string;
+  blog_subtitle: string;
   blog_description: string;
   cover_image: string;
   blog_authorName: string;
@@ -152,6 +152,8 @@ export interface WhyChooseUsProps {
   features: FeatureCardProps[];
   // ctaText?: string;
 }
+
+
 export interface PropertyCardProps {
   id: string;
   images: string; // main image path or directory
@@ -183,6 +185,39 @@ export interface PropertyCardProps {
     linkedin?: string;
   };
 }
+
+
+
+// types.ts
+
+export interface IProperty {
+  title: string;
+  propertyLocation: string;
+  image: string;
+  thumbnails: string[];
+  ameneties: string[];
+  images?: string[];
+  propertyType: string;
+  propertyCategoryType: "commercial" | "residential";
+  description: string;
+  price: string | number;
+  installmentYears: number;
+  initialPayment: string | number;
+  completionDate?: string;
+  units: number;
+  area: {
+    value: number;
+    unit: string;
+  };
+  contactLinks: {
+    phone?: string;
+    email?: string;
+    whatsapp?: string;
+  };
+}
+
+
+
 export interface HeroSectionProps {
   // Content options
   title?: string;

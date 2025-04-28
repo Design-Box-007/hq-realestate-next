@@ -5,12 +5,27 @@ import PropertyCard from './PropertyCard';
 import StepNavigation from '../Common/StepNavigation';
 import { propertyList } from '@/data/propertyData';
 import PortfolioHeader from '../Common/PortfolioHeader';
+import { useGetProperties } from '@/hooks/useGetProperties';
+import { IProperty } from '@/types';
 
 const PropertyPortfolio: React.FC = () => {
   const [search, setSearch] = useState('');
   const [currentStep, setCurrentStep] = useState(1);
+  const { properties, loading, error } = useGetProperties();
 
-  const filteredProperties = propertyList.filter((property) =>
+  if (loading) {
+      return <div>Loading...</div>;
+  }
+
+  if (error) {
+      return <div>Error: {error}</div>;
+  }
+
+  if (properties.length === 0) {
+      return <div>No properties found</div>;
+  }
+
+  const filteredProperties =properties.filter((property:IProperty) =>
     property.title.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -61,8 +76,8 @@ const PropertyPortfolio: React.FC = () => {
       
       <div id="property-grid" className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {paginatedProperties.length > 0 ? (
-          paginatedProperties.map((property, index) => (
-            <PropertyCard key={index} {...property} />
+          paginatedProperties.map((property:IProperty, index) => (
+            <PropertyCard key={index} property={property} />
           ))
         ) : (
           <div className="col-span-2 text-center text-gray-400 py-10">
