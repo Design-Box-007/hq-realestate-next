@@ -13,7 +13,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
- 
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
     <header
       className={`w-full ${isAbsolute ? 'absolute' : 'relative'} transition-all duration-300 z-50`}
     >
-      <div className="container !px-0 !py-0 flex justify-between  !lg:px-0 " style={{padding:0 }}>
+      <div className="container !px-0 !py-0 flex justify-between  !lg:px-0 " style={{ padding: 0 }}>
 
         {/* Logo */}
         <LeftToRightReveal>
@@ -40,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
             <img
               src={images.logo}
               alt="Housing Quest"
-              className="logo-img object-cover"
+              className="object-cover"
               width={100}
               height={60}
             />

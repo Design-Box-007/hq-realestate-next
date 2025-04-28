@@ -20,6 +20,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { IProperty } from '@/types';
 import { FaStar } from 'react-icons/fa';
 import { images } from '@/data/assets';
+import { getPropertyIcon } from '../propertyPage/PropertyCard';
 
 // Interface
 interface PropertyDetailsCardProps {
@@ -56,8 +57,8 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
           <MapPin className="text-[#BD9167] mr-2" size={30} />
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold">{property.title}</h1>
         </div>
-        <div className="d-flex align-items-center bg-[#171717] backdrop-blur-lg px-6 py-2 rounded-2xl">
-          <Home className="text-[#BD9167] mr-2" size={20} />
+        <div className="d-flex align-items-center bg-[#171717] backdrop-blur-lg px-6 py-2 rounded-2xl space-x-4">
+          {getPropertyIcon(property.propertyCategoryType)}
           <span className="text-lg md:text-xl">{property.propertyType}</span>
         </div>
       </div>
@@ -103,8 +104,8 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
         </div>
         <div className="col">
           <div className="h-100">
-            <p className="text-base md:text-lg text-[#A9A9A9] mb-1">Bed Rooms</p>
-            <p className="text-xl md:text-2xl">{property.units} Bed Rooms</p>
+            <p className="text-base md:text-lg text-[#A9A9A9] mb-1">{property.propertyCategoryType == "commercial" ? "Units" : "Bedrooms"}</p>
+            <p className="text-xl md:text-2xl">{property.units} {property.propertyCategoryType == "commercial" ? "Units" : "Bedrooms"}</p>
           </div>
         </div>
         <div className="col">
@@ -117,7 +118,7 @@ export function PropertyDetailsCard({ property }: PropertyDetailsCardProps) {
           <div className="py-3">
             <ConsultationButton
               show={true}
-              link="/consultation"
+              link="/contact"
               iconSrc={images.agent1}
             />
           </div>

@@ -42,6 +42,13 @@ const images = {
     PropertyImage1: "/property/PropertyImage1.png",
     PropertyImage2: "/property/PropertyImage2.png",
     PropertyImage3: "/property/PropertyImage3.png",
+
+
+    property11: "/property/property-D/property1-1.png",
+    property12: "/property/property-D/property1-2.png",
+    property13: "/property/property-D/property1-3.png",
+    property14: "/property/property-D/property1-4.png",
+
     BlogHero: "/blog/blogHero.png",
     Blog1: "/blog/blog1.png",
     Blog2: "/blog/blog2.png",

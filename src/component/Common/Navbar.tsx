@@ -20,7 +20,7 @@ const Navbar: React.FC<NavbarProps> = ({ showMenu, setShowMenu, handleScroll }) 
         {/* Logo */}
         <img
           src={images.logo}
-          className='logo-img'
+          // className='logo-img'
           alt='Housing Quest'
           width={100}
           height={50}

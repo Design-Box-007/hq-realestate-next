@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
                 value={formData.propertyType}
                 onChange={handleChange}
                 required
-                className='contact-input text-gray-700 custom-dropdown'
+                className='contact-input custom-dropdown !text-[#8d8d7b]'
               >
                 <option value="">Select Property Type</option>
                 <option value='Off Plan'>Off Plan</option>
