@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               <img
                 src={images.logo}
                 alt="Housing Quest"
-                className="logo-img object-cover"
+                className="object-cover"
                 width={100}
               />
             </Link>
