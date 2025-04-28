@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import PropertyCard from './PropertyCard';
 import StepNavigation from '../Common/StepNavigation';
-import { propertyList } from '@/data/propertyData';
 import PortfolioHeader from '../Common/PortfolioHeader';
 import { useGetProperties } from '@/hooks/useGetProperties';
 import { IProperty } from '@/types';

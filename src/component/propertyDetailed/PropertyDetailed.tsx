@@ -9,9 +9,8 @@ import { images } from '@/data/assets';
 import SimilarProperty from './SimilarProperties';
 import CTA from '../Common/Cta';
 import Contact from '../Home/Contact/Contact';
-import { propertyList } from '@/data/propertyData';
 import formatToHyphenated from "@/utils/formatPathName";
-import { IProperty, PropertyCardProps } from "@/types";
+import { IProperty } from "@/types";
 import Navbar from '../Common/NavbarMenu';
 import LocationSection from '../Common/MapSection';
 import { useGetProperties } from '@/hooks/useGetProperties';
@@ -86,7 +85,7 @@ export default function PropertyDetailed() {
         </div>
 
         <div className="my-5">
-          <SimilarProperty propertyList={properties}/> {/* Display similar properties */}
+          <SimilarProperty propertyList={properties} /> {/* Display similar properties */}
         </div>
 
         <div className="my-5">

@@ -7,7 +7,6 @@ import formatToHyphenated from "@/utils/formatPathName";
 import { IProperty } from '@/types';
 import { motion } from 'framer-motion';
 import TopToBottomReveal from '../Home/TopToBottomReveal';
-import { image } from 'framer-motion/client';
 
 // Property Card Component
 const PropertyCard: React.FC<{ property: IProperty }> = ({
