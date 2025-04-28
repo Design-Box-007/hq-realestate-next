@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
         <div className='col-md-8'>
           <LeftToRightReveal>
             <div>
-              <h2 className='contact-title'>Lets Have a Quick<br /> Conversation</h2>
+              <h2 className='contact-title !text-[80px]'>Lets Have a Quick<br /> Conversation</h2>
             </div>
           </LeftToRightReveal>
         </div>
@@ -146,6 +146,7 @@ const Contact: React.FC = () => {
                 <option value='Off Plan'>Off Plan</option>
                 <option value='Ready To Move'>Ready To Move</option>
                 <option value='Rent'>Rent</option>
+                <option value='Leasing'>Leasing</option>
               </select>
             </div>
             <div className='col-md-12'>

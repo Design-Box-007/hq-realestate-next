@@ -7,6 +7,7 @@ import formatToHyphenated from "@/utils/formatPathName";
 import { IProperty } from '@/types';
 import { motion } from 'framer-motion';
 import TopToBottomReveal from '../Home/TopToBottomReveal';
+import { formatNumber } from '@/utils/formatCurrency';
 
 export const getPropertyIcon = (type: string | undefined) => {
   if (!type) return null;
@@ -74,7 +75,7 @@ const PropertyCard: React.FC<{ property: IProperty }> = ({ property }) => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-xs mb-4">
             <div>
               <p className="text-[#A9A9A9] text-[12px]">Price</p>
-              <p className="font-bold text-white text-base">from {property.price}</p>
+              <p className="font-bold text-white text-base">from ${formatNumber(property.price)}</p>
             </div>
             <div>
               <p className="text-[#A9A9A9] text-[12px]">Installment</p>
@@ -82,7 +83,7 @@ const PropertyCard: React.FC<{ property: IProperty }> = ({ property }) => {
             </div>
             <div>
               <p className="text-[#A9A9A9] text-[12px]">Initial Payment</p>
-              <p className="font-bold text-white text-base">{property.initialPayment}</p>
+              <p className="font-bold text-white text-base">${property.initialPayment.toLocaleString()}</p>
             </div>
             <div>
               <p className="text-[#A9A9A9] text-[12px]">Completion Date</p>
@@ -97,7 +98,7 @@ const PropertyCard: React.FC<{ property: IProperty }> = ({ property }) => {
                 href={`tel:${property.contactLinks.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-between rounded-full bg-[#171717] py-2 px-3 text-white hover:border-[#EDBE8C] border transition-all"
+                className="flex-1 flex items-center justify-between text-decoration-none rounded-full bg-[#171717] py-2 px-3 text-white hover:border-[#EDBE8C] border transition-all"
               >
                 <div className="flex flex-row gap-1 items-center">
                   <div className="rounded-full bg-[#EDBE8C] p-1.5 sm:p-1 flex items-center justify-center">
@@ -116,7 +117,7 @@ const PropertyCard: React.FC<{ property: IProperty }> = ({ property }) => {
                 href={`mailto:${property.contactLinks.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-between rounded-full bg-[#171717] py-2 px-3 text-white hover:border-[#EDBE8C] border transition-all"
+                className="flex-1 flex items-center justify-between rounded-full bg-[#171717] py-2 px-3 text-decoration-none text-white hover:border-[#EDBE8C] border transition-all"
               >
                 <div className="flex flex-row gap-1 items-center">
                   <div className="rounded-full flex items-center justify-center">
@@ -135,7 +136,7 @@ const PropertyCard: React.FC<{ property: IProperty }> = ({ property }) => {
                 href={`https://wa.me/${property.contactLinks.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-between rounded-full bg-[#171717] py-2 px-3 text-white hover:border-[#EDBE8C] border transition-all"
+                className="flex-1 flex items-center justify-between rounded-full text-decoration-none bg-[#171717] py-2 px-3 text-white hover:border-[#EDBE8C] border transition-all"
               >
                 <div className="flex flex-row gap-1 items-center">
                   <div className="rounded-full bg-[#EDBE8C] p-0.5 flex items-center justify-center">

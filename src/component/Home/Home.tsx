@@ -1,10 +1,12 @@
+'use client'
+
 import React from 'react'
 import './Home.css'
 import HeroSection from './HeroSection/HeroSection'
 
 import { LuCircleArrowRight } from 'react-icons/lu'
 import { GoDotFill } from 'react-icons/go'
-// import Assistance from './Assistance/Assistance'
+import Assistance from './Assistance/Assistance'
 // import Testimonial from './Testimonial/Testimonial'
 import Contact from './Contact/Contact'
 import TopToBottomReveal from './TopToBottomReveal'
@@ -14,6 +16,8 @@ import CardStack from './Slider/Slider'
 import { images } from '@/data/assets'
 import AboutCard from '../Common/AboutCard'
 import LocationSection from '../Common/MapSection'
+import Link from 'next/link'
+import BlogSection from '../blogs/BlogSection'
 
 
 
@@ -68,17 +72,17 @@ const Home = () => {
             </div>
           </LeftToRightReveal> */}
 
-<div className='row mt-5'>
-      <div className='col-md-4'>
-        <AboutCard title="25+" description="Years of<br />Experience" />
-      </div>
-      <div className='col-md-4'>
-        <AboutCard title="84%" description="Customer<br />Satisfaction Rate" />
-      </div>
-      <div className='col-md-4'>
-        <AboutCard title="324" description="Exquisite Properties<br />Ready for your" />
-      </div>
-    </div>
+          <div className='row mt-5'>
+            <div className='col-md-4'>
+              <AboutCard title="25+" description="Years of<br />Experience" />
+            </div>
+            <div className='col-md-4'>
+              <AboutCard title="84%" description="Customer<br />Satisfaction Rate" />
+            </div>
+            <div className='col-md-4'>
+              <AboutCard title="324" description="Exquisite Properties<br />Ready for your" />
+            </div>
+          </div>
           <section id='service' className='about-container mt-5'>
             <div className='row' >
               <div className='col-md-6 mb-3' >
@@ -90,7 +94,9 @@ const Home = () => {
                     </h2>
                   </TopToBottomReveal>
                   <LeftToRightReveal>
-                    <button className='about-button'>Explore More <span style={{ color: "var(--primary-color)" }}><LuCircleArrowRight size={24} /></span></button>
+                    <Link href={'/property'} passHref className='text-decoration-none'>
+                      <button className='about-button'>Explore More <span style={{ color: "var(--primary-color)" }}><LuCircleArrowRight size={24} /></span></button>
+                    </Link>
                   </LeftToRightReveal>
                 </div>
               </div>
@@ -102,7 +108,7 @@ const Home = () => {
                         <img src={images.RoundedImage1} alt='Property Buying' className='about-card-image' width="100px" height="100px" />
                         <h5 className='about-card-text'>Property Buying</h5>
                       </div>
-                      <span style={{ color: "var(--primary-color)", margin: "0" }}><LuCircleArrowRight /></span>
+                      {/* <span style={{ color: "var(--primary-color)", margin: "0" }}><LuCircleArrowRight /></span> */}
                     </div>
                   </LeftToRightReveal>
 
@@ -112,7 +118,7 @@ const Home = () => {
                         <img src={images.RoundedImage2} alt='Property Buying' className='about-card-image' width="100px" height="100px" />
                         <h5 className='about-card-text'>Property Selling</h5>
                       </div>
-                      <span style={{ color: "var(--primary-color)" }}><LuCircleArrowRight /></span>
+                      {/* <span style={{ color: "var(--primary-color)" }}><LuCircleArrowRight /></span> */}
                     </div>
                   </LeftToRightReveal>
 
@@ -122,7 +128,7 @@ const Home = () => {
                         <img src={images.RoundedImage3} alt='Property Buying' className='about-card-image' width="100px" height="100px" />
                         <h5 className='about-card-text'>Leasing Services</h5>
                       </div>
-                      <span style={{ color: "var(--primary-color)" }}><LuCircleArrowRight /></span>
+                      {/* <span style={{ color: "var(--primary-color)" }}><LuCircleArrowRight /></span> */}
                     </div>
                   </LeftToRightReveal>
                 </div>
@@ -196,35 +202,42 @@ const Home = () => {
         </div>
       </section>
 
-  
-      <LocationSection
-      title="Give Us a Visit"
-      address="Suite 756 031 Ines Riverway, Khanmanchester"
-      mapImageSrc={images.mapImage}
-      imageGallery={[
-        {
-          id: "main",
-          src: images.OfficeImage,
-          alt: "Modern office interior"
-        },
-        {
-          id: "thumb-1",
-          src: "/office/office1.png",
-          alt: "Office hallway with glass partitions"
-        },
-        {
-          id: "thumb-2",
-          src: "/office/office2.png",
-          alt: "Contemporary living space"
-        },
-        {
-          id: "thumb-3",
-          src: "/office/office3.png",
-          alt: "Contemporary living space"
-        }
 
-      ]}
-    />
+      {/* Agents */}
+
+      <Assistance />
+      {/* Blog Preview */}
+      <BlogSection />
+
+
+      <LocationSection
+        title="Give Us a Visit"
+        address=" 814 Burlington Tower, Business Bay, Dubai-UAE"
+        mapImageSrc={images.mapImage}
+        imageGallery={[
+          {
+            id: "main",
+            src: images.OfficeImage,
+            alt: "Modern office interior"
+          },
+          {
+            id: "thumb-1",
+            src: "/office/office1.png",
+            alt: "Office hallway with glass partitions"
+          },
+          {
+            id: "thumb-2",
+            src: "/office/office2.png",
+            alt: "Contemporary living space"
+          },
+          {
+            id: "thumb-3",
+            src: "/office/office3.png",
+            alt: "Contemporary living space"
+          }
+
+        ]}
+      />
       <Contact />
     </section>
   )

@@ -13,7 +13,7 @@ interface TeamGridProps {
   members: IAgent[];
 }
 
-const TeamMemberCard: React.FC<{ member: IAgent }> = ({
+export const TeamMemberCard: React.FC<{ member: IAgent }> = ({
   member
 }) => {
   const [isHovered, setIsHovered] = useState(false);

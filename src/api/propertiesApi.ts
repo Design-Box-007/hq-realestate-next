@@ -1,6 +1,7 @@
 // api/propertiesApi.ts
 
 import { IProperty } from "@/types"; // Update with the correct path to your types file
+import { formatShortDate } from "@/utils/formatDateString";
 
 // Define the Property API response format from WordPress
 export interface Property {
@@ -15,7 +16,7 @@ export interface Property {
         property_description: string;
         property_price: string;
         initial_payment: string;
-        square_ft:number;
+        square_ft: number;
         completion_date: string;
         property_units: string;
         installment_years: string;
@@ -59,7 +60,7 @@ const propertyFormatter = async (data: Property[]): Promise<IProperty[]> => {
                 description: acf.property_description,
                 price: parseFloat(acf.property_price), // Convert to number if it's a string
                 installmentYears: parseInt(acf.installment_years, 10),
-                completionDate: acf.completion_date,
+                completionDate: formatShortDate(acf.completion_date),
                 initialPayment: parseFloat(acf.initial_payment),
                 units: parseInt(acf.property_units, 10),
                 area: {

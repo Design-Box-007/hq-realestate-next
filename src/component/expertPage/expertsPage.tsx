@@ -98,7 +98,7 @@ export default function ExpertsPage() {
         <div className="map-section my-5">
         <LocationSection
       title="Give Us a Visit"
-      address="Suite 756 031 Ines Riverway, Khanmanchester"
+      address=" 814 Burlington Tower, Business Bay, Dubai-UAE"
       mapImageSrc={images.mapImage}
       imageGallery={[
         {

@@ -200,7 +200,7 @@ export interface IProperty {
   propertyType: string;
   propertyCategoryType: "commercial" | "residential";
   description: string;
-  price: string | number;
+  price: number;
   installmentYears: number;
   initialPayment: string | number;
   completionDate?: string;

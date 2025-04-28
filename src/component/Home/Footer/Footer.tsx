@@ -88,18 +88,18 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center text-xs !mt-6">
-          <div className="font-now">
+          {/* <div className="font-now">
             <Link href="/terms" className="hover:text-[#BF9D5B] text-decoration-none !text-gray-400 transition-colors no-underline">
               Terms & Services
             </Link>
-          </div>
+          </div> */}
           <div className="text-center">
             <a className="footer-author text-decoration-none !text-base !text-white !font-medium !m-0" href="https://www.pixelpanda.ae/" target="_blank">
               This website is Designed and Developed by <b>The Pixel Panda Technology</b>
             </a>
           </div>
 
-          <div className="!m-0 font-now flex items-center">
+          {/* <div className="!m-0 font-now flex items-center">
             <Link href="/conditions" className="hover:text-[#BF9D5B] text-decoration-none transition-colors !text-gray-400 no-underline">
               Conditions
             </Link>
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
             <Link href="/privacy" className="hover:text-[#BF9D5B] text-decoration-none transition-colors !text-gray-400 no-underline">
               Privacy Policy
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

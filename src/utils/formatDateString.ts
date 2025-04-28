@@ -6,4 +6,18 @@ const formatDate = (dateString: string) => {
     return `${day} ${month}, ${year}`;
 };
 
+// utils/formatShortDate.ts
+
+export function formatShortDate(dateString: string): string {
+    const [day, month, year] = dateString.split('/');
+
+    if (!day || !month || !year) {
+        return '';
+    }
+
+    const shortYear = year.slice(2); // Take last two digits of year
+    return `${month}/${shortYear}`;
+}
+
+
 export default formatDate
