@@ -7,12 +7,12 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { images } from '@/data/assets';
 
 const Footer: React.FC = () => {
-  const handleScroll = (sectionId: string): void => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const handleScroll = (sectionId: string): void => {
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -33,14 +33,14 @@ const Footer: React.FC = () => {
 
           {/* Logo */}
           <div className="mb-6 md:mb-0">
-            <div className="flex items-center">
+            <Link href={'/'} className="flex items-center">
               <img
                 src={images.logo}
                 alt="Housing Quest"
                 className="logo-img object-cover"
                 width={100}
               />
-            </div>
+            </Link>
           </div>
 
           {/* Navigation Links */}

@@ -17,14 +17,16 @@ const Navbar: React.FC<NavbarProps> = ({ showMenu, setShowMenu, handleScroll }) 
   return (
     <div className='d-flex justify-content-between align-items-start space-y-5 space-x-10'>
       <LeftToRightReveal>
-        {/* Logo */}
-        <img
-          src={images.logo}
-          // className='logo-img'
-          alt='Housing Quest'
-          width={100}
-          height={50}
-        />
+        <Link href={'/'}>
+          {/* Logo */}
+          <img
+            src={images.logo}
+            // className='logo-img'
+            alt='Housing Quest'
+            width={100}
+            height={50}
+          />
+        </Link>
       </LeftToRightReveal>
 
       <div className='d-flex text-white align-items-center gap-2'>
@@ -62,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ showMenu, setShowMenu, handleScroll }) 
               { href: '/contact', label: 'Contact' },
               { href: '/blogs', label: 'Blog' },
               { href: '/experts', label: 'Experts' },
-             
+
             ].map(({ href, label }) => (
               <li key={label} className='mb-[5px]'>
                 <Link

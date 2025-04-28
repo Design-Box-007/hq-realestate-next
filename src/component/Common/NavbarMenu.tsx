@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
 
         {/* Logo */}
         <LeftToRightReveal>
-          <div className="flex items-center">
+          <Link href={'/'} className="flex items-center">
             <img
               src={images.logo}
               alt="Housing Quest"
@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
               width={100}
               height={60}
             />
-          </div>
+          </Link>
         </LeftToRightReveal>
         {/* Map Icon and Menu */}
         <div className="flex text-white items-center gap-4">
