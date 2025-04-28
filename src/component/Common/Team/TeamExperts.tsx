@@ -7,6 +7,8 @@ import { FaSearch } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useGetAgents } from '@/hooks/useGetAgents'; // ✅ correct hook
 import { IAgent } from '@/types';
+import LoadingScreen from '../LoadingScreen';
+import ErrorScreen from '../ErrorScreen';
 
 const urbanist = Urbanist({
   subsets: ['latin'],
@@ -41,21 +43,9 @@ const TeamExperts: React.FC<TeamExpertsProps> = ({
       );
     });
 
-  if (loading) {
-    return (
-      <div className="text-center py-5">
-        <p>Loading team members...</p>
-      </div>
-    );
-  }
 
-  if (error) {
-    return (
-      <div className="text-center py-5">
-        <p>Failed to load team members. Please try again.</p>
-      </div>
-    );
-  }
+    if (loading) return <LoadingScreen title="Loading" />;
+    if (error) return <ErrorScreen />;
 
   return (
     <section className="text-white pb-3">

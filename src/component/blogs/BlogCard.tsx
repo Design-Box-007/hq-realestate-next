@@ -33,8 +33,8 @@ const BlogCard: React.FC<{ blog: IBlog }> = ({ blog }) => {
       </div>
 
       <div className="m-2 ">
-        <h3 className="fs-4 font-bold text-white truncate">{blog.blog_title}</h3>
-        <p className="text-base text-gray-300 mt-2">{blog.blog_description}</p>
+        <h3 className="fs-4 font-bold text-white">{blog.blog_title}</h3>
+        <p className="text-base text-gray-300 mt-2 line-clamp-3">{blog.blog_description}</p>
         <Link
           href={`/blog/${formatToHyphenated(blog.blog_title)}`}
           className="block w-full mt-4 text-decoration-none"

@@ -14,21 +14,19 @@ import { IProperty } from "@/types";
 import Navbar from '../Common/NavbarMenu';
 import LocationSection from '../Common/MapSection';
 import { useGetProperties } from '@/hooks/useGetProperties';
+import ErrorScreen from '../Common/ErrorScreen';
+import LoadingScreen from '../Common/LoadingScreen';
 
 export default function PropertyDetailed() {
   const { propertyName } = useParams();
   const { properties, loading, error } = useGetProperties();
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  if (loading) return <LoadingScreen title="Properties are Loading" />;
+  if (error) return <ErrorScreen />;
 
   if (properties.length === 0) {
-    return <div>No properties found</div>;
+    return <ErrorScreen title='No Properties Found' />
   }
 
   const propertyData = properties.find((property: IProperty) =>

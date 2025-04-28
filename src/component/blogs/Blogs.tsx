@@ -6,6 +6,7 @@ import { images } from '@/data/assets'
 import CTA from '../Common/Cta';
 import { useGetBlogs } from '@/hooks/useGetBlogs';
 import Navbar from '../Common/NavbarMenu';
+import LoadingScreen from '../Common/LoadingScreen';
 
 
 
@@ -20,7 +21,7 @@ const Blogs = () => {
 
   const { blogs, loading, error } = useGetBlogs();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <LoadingScreen title="Blogs are Loading"/>;
   if (error) return <div>Error: {error}</div>;
 
   return (

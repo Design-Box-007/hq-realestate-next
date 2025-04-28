@@ -14,12 +14,23 @@ const Footer: React.FC = () => {
     }
   };
 
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Property', href: '/property' },
+    // { name: 'Services', href: '/services' },
+    { name: 'Experts', href: '/experts' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
+    // { name: 'properties', href: '/properties' },
+  ];
+
   return (
     <footer className="w-full bg-[#222222] py-8 px-4 md:px-8 rounded-t-2xl">
       <div className="max-w-7xl mx-auto">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-8">
-          
+
           {/* Logo */}
           <div className="mb-6 md:mb-0">
             <div className="flex items-center">
@@ -34,14 +45,14 @@ const Footer: React.FC = () => {
 
           {/* Navigation Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
-            {['home', 'about', 'service', 'property', 'contact'].map((section) => (
-              <button 
-                key={section}
-                className="text-white font-urbanist hover:text-[#BF9D5B] transition-colors text-sm"
-                onClick={() => handleScroll(section)}
+            {navLinks.map((section, index) => (
+              <Link
+                key={index}
+                href={section.href}
+                className="text-white font-urbanist hover:text-[#BF9D5B] text-decoration-none transition-colors text-sm"
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
+                {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
+              </Link>
             ))}
           </div>
 
@@ -51,19 +62,19 @@ const Footer: React.FC = () => {
               <FaInstagram size={18} />
             </Link>
             <Link href="https://medium.com/@housingquestrealestates" target="_blank"
-            className='!text-[#BF9D5B] !hover:text-white transition-colors'>
+              className='!text-[#BF9D5B] !hover:text-white transition-colors'>
               <FaMediumM size={18} />
             </Link>
             <Link href="https://wa.me/+971563600699" target="_blank"
-            className='!text-[#BF9D5B] !hover:text-white transition-colors'>
+              className='!text-[#BF9D5B] !hover:text-white transition-colors'>
               <FaWhatsapp size={18} />
             </Link>
             <Link href="https://www.facebook.com/people/Housing-Quest-Real-Estates/61574138710378/" target="_blank"
-            className='!text-[#BF9D5B] !hover:text-white transition-colors'>
+              className='!text-[#BF9D5B] !hover:text-white transition-colors'>
               <FaFacebook size={18} />
             </Link>
             <Link href="https://x.com/Hqrealestates" target="_blank"
-            className='!text-[#BF9D5B] !hover:text-white transition-colors'>
+              className='!text-[#BF9D5B] !hover:text-white transition-colors'>
               <FaXTwitter size={18} />
             </Link>
             <Link href="https://www.linkedin.com/company/106353735/admin/dashboard/" target="_blank" className='!text-[#BF9D5B] !hover:text-white transition-colors'>
@@ -73,17 +84,22 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#444444] mb-6"></div>
+        <div className="border-t border-[#444444] my-6"></div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs ">
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs !mt-6">
           <div className="font-now">
             <Link href="/terms" className="hover:text-[#BF9D5B] text-decoration-none !text-gray-400 transition-colors no-underline">
               Terms & Services
             </Link>
           </div>
+          <div className="text-center">
+            <a className="footer-author text-decoration-none !text-base !text-white !font-medium !m-0" href="https://www.pixelpanda.ae/" target="_blank">
+              This website is Designed and Developed by <b>The Pixel Panda Technology</b>
+            </a>
+          </div>
 
-          <div className="mt-4 md:mt-0 font-now flex items-center">
+          <div className="!m-0 font-now flex items-center">
             <Link href="/conditions" className="hover:text-[#BF9D5B] text-decoration-none transition-colors !text-gray-400 no-underline">
               Conditions
             </Link>

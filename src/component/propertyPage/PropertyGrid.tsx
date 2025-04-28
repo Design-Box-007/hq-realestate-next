@@ -6,23 +6,21 @@ import StepNavigation from '../Common/StepNavigation';
 import PortfolioHeader from '../Common/PortfolioHeader';
 import { useGetProperties } from '@/hooks/useGetProperties';
 import { IProperty } from '@/types';
+import LoadingScreen from '../Common/LoadingScreen';
+import ErrorScreen from '../Common/ErrorScreen';
 
 const PropertyPortfolio: React.FC = () => {
   const [search, setSearch] = useState('');
   const [currentStep, setCurrentStep] = useState(1);
   const { properties, loading, error } = useGetProperties();
 
-  if (loading) {
-      return <div>Loading...</div>;
-  }
-
-  if (error) {
-      return <div>Error: {error}</div>;
-  }
+  if (loading) return <LoadingScreen title="Properties are Loading" />;
+  if (error) return <ErrorScreen />;
 
   if (properties.length === 0) {
-      return <div>No properties found</div>;
+    return <ErrorScreen title='No Properties Found' />
   }
+
 
   const filteredProperties =properties.filter((property:IProperty) =>
     property.title.toLowerCase().includes(search.toLowerCase())

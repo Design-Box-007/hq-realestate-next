@@ -12,6 +12,8 @@ import RecentBlogsSection from "../blogs/RecentBlogsSection";
 import blogListDataV2 from "@/data/blog-v2";
 import CTA from "../Common/Cta";
 import { images } from "@/data/assets";
+import LoadingScreen from "../Common/LoadingScreen";
+import ErrorScreen from "../Common/ErrorScreen";
 
 
 // interface TeamData {
@@ -38,8 +40,8 @@ const Blog = () => {
 
   const { blogs, loading, error } = useGetBlogs();
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <LoadingScreen title="Blogs is Loading" />;
+  if (error) return <ErrorScreen />;
 
 
   // Find the specific blog data based on the slug
@@ -57,7 +59,7 @@ const Blog = () => {
       <div className="position-relative">
         <Navbar />
         <div className="my-2">
-        <BlogHeader blog={blogData} />
+          <BlogHeader blog={blogData} />
         </div>
         <FeaturedInvestmentAreas title={blogData.blog_subtitle} areas={blogData.investmentData} marketInsights={blogData.market_insights} />
         <div className="my-5">
