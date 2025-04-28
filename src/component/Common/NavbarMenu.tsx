@@ -32,7 +32,12 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
     <header
       className={`w-full ${isAbsolute ? 'absolute' : 'relative'} transition-all duration-300 z-50`}
     >
-      <div className="container !px-0 !py-0 flex justify-between  !lg:px-0 " style={{ padding: 0 }}>
+      <div className="container !py-0 flex justify-between !px-4"
+        style={{
+          width: "100%",
+          maxWidth: "100%"
+        }}
+      >
 
         {/* Logo */}
         <LeftToRightReveal>
@@ -46,7 +51,6 @@ const Navbar: React.FC<NavbarProps> = ({ isAbsolute = false }) => {
             />
           </div>
         </LeftToRightReveal>
-
         {/* Map Icon and Menu */}
         <div className="flex text-white items-center gap-4">
           <LeftToRightReveal>
@@ -103,7 +107,7 @@ ps-0
           </div>
         </div>
       </div>
-    </header>
+    </header >
   );
 };
 

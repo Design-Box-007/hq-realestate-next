@@ -8,9 +8,11 @@ import Navbar from '../NavbarMenu';
 export default function ContactPage() {
 
   return (
-    <div className="container-fluid ">
-      <Navbar isAbsolute={true} />
+    <div className="container-fluid relat">
       <div className="position-relative">
+        <div>
+          <Navbar isAbsolute={true} />
+        </div>
 
         <HeroSection
           title="Discover Your Dream Property in Dubai"
