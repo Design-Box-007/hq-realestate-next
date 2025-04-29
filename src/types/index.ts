@@ -202,7 +202,7 @@ export interface IProperty {
   description: string;
   price: number;
   installmentYears: number;
-  initialPayment: string | number;
+  initialPayment: number;
   completionDate?: string;
   units: number;
   area: {
