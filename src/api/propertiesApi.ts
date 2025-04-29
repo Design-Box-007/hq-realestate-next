@@ -30,7 +30,7 @@ export interface Property {
 
 // Fetch all properties and return only the ACF fields formatted
 export async function getProperties(): Promise<IProperty[]> {
-    const res = await fetch(`https://uzq.bth.mybluehostin.me/wp-json/wp/v2/hq-property?status=publish&_=${Date.now()}`, {
+    const res = await fetch(`https://admin.hqrealestates.com/wp-json/wp/v2/hq-property?status=publish&_=${Date.now()}`, {
         cache: 'no-store',
     });
 

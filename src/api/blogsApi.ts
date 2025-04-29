@@ -25,7 +25,7 @@ export interface Blog {
 
 // Fetch all blogs and return only the ACF fields formatted
 export async function getBlogs(): Promise<IBlog[]> {
-    const res = await fetch(`https://uzq.bth.mybluehostin.me/wp-json/wp/v2/hq-blog?status=publish&_=${Date.now()}`, {
+    const res = await fetch(`https://admin.hqrealestates.com/wp-json/wp/v2/hq-blog?status=publish&_=${Date.now()}`, {
         cache: 'no-store',
     });
 

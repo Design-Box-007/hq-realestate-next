@@ -10,7 +10,7 @@ export interface Agent {
 
 // Fetch all agents and return only acf fields, replacing profile_image ID with URL
 export async function getAgents(): Promise<IAgent[]> {
-    const res = await fetch(`https://uzq.bth.mybluehostin.me/wp-json/wp/v2/hq-agent?status=publish&_=${Date.now()}`, {
+    const res = await fetch(`https://admin.hqrealestates.com/wp-json/wp/v2/hq-agent?status=publish&_=${Date.now()}`, {
         cache: 'no-store'
     });
 
